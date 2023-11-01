@@ -1,7 +1,7 @@
-# Initial-Impact-of-CS-Website
-Societal impact of Computer Science - Front-End Website and Research 
+# ImpactOfCS-Website
+Website Develpoment and Research Essays
 
-Supplementary of Programming (Black) [1101] Project 
+Historic Achievements of Computer Science Essay from Programming (Black) [1101] Formative Project 
 
 Authored by Oscar Ryley
 
