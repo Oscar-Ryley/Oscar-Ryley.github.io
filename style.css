@@ -1,0 +1,35 @@
+body {
+    font-family:'EB Garamond'; 
+}
+
+a {
+    color:black;
+}
+
+.jumbotron {
+    background-color: rgba(0, 0, 0, 0.025);
+}
+
+.container {
+    padding-left: 50px; 
+    padding-right: 50px;
+}
+
+.column {
+    float: left;
+    padding: 30px;
+}
+  
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.c-text-left {
+    width: 80%;
+}
+  
+.c-img-right {
+    width: 20%;
+}
