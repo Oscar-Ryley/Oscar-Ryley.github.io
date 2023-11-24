@@ -1,7 +1,11 @@
-# ImpactOfCS-Website
-Website Develpoment and Research Essays
+# Oscar Ryley's Website
+Website Develpoment, Resume, Portfolio and Research Essays
 
-Historic Achievements of Computer Science Essay from Programming (Black) [1101] Formative Project 
+###Articles
+
+- Historic Achievements of Computer Science Essay from Programming (Black) [1101] Formative Project 
+
+<br>
 
 Authored by Oscar Ryley
 
