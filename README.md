@@ -1,7 +1,7 @@
 # Oscar Ryley's Website
 Website Develpoment, Resume, Portfolio and Research Essays
 
-###Articles
+### Articles
 
 - Historic Achievements of Computer Science Essay from Programming (Black) [1101] Formative Project 
 
