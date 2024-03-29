@@ -9,4 +9,4 @@ Website Develpoment, Resume, Portfolio and Research Essays
 
 Authored by Oscar Ryley
 
-Copyright © 2023 Oscar Ryley. All rights reserved
+Copyright © 2024 Oscar Ryley. All rights reserved
