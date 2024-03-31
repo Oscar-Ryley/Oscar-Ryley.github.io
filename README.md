@@ -1,11 +1,8 @@
 # Oscar Ryley's Website
-Website Develpoment, Resume, Portfolio and Research Essays
 
-### Articles
+[https://oscar-ryley.github.io/](https://oscar-ryley.github.io/)
 
-- Historic Achievements of Computer Science Essay from Programming (Black) [1101] Formative Project 
-
-<br>
+---
 
 Authored by Oscar Ryley
 
