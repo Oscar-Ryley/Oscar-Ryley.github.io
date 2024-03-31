@@ -26,10 +26,6 @@ a {
     clear: both;
 }
 
-.c-text-left {
-    width: 80%;
-}
-  
-.c-img-right {
-    width: 20%;
+#article-text {
+    font-size: 1.25em;
 }
