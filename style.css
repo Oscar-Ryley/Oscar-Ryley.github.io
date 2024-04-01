@@ -27,6 +27,10 @@ a {
     clear: both;
 }
 
+.nav-link:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
 #article-text {
     font-size: 1.25em;
 }
