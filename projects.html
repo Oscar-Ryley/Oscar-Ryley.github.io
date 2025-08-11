@@ -43,90 +43,122 @@
     </nav>
 
     <main class="container mx-auto">
-    <div id="project-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <h1 class="text-4xl md:text-5xl font-bold text-gray-800 text-center"> Programming </h1>
+    <br>
+    <div id="programming-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    </div>
+    <br><br>
+    <h1 class="text-4xl md:text-5xl font-bold text-gray-800 text-center"> Game Development </h1>
+    <br>
+    <div id="gamedev-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
     </div>
     </main>
 
     <script>
-        const projectsData = [
-          { title: "Get Moving with Godot!",
-            description: "Produced 6 video workshops for Game Jam participants, incl. Godot tutorial hosted on GitHub. Organised daily activities; designed marketing, branding and handled logistics for a 14 day hybrid event. ",
-            link: "https://oryley.itch.io/godot-workshop",
-            image: "getmovingwithgodot.jpg",
-            date: "13th August 2025",
-            tags: ["DurJam 2025", "Godot/ GDScript"] },
-          { title: "Painting with Digital Eyes",
-            description: "OpenCV facial detection integrated with OpenGL rendered eyes and acrylic painting front-end.",
+        const programmingProjects = [
+          {
+            title: "Painting with Digital Eyes",
+            description: "OpenCV facial detection integrated with OpenGL rendered eyes and acrylic painting front-end. Runner up for the Majestic Prize at AstonHack10.",
             link: "https://devpost.com/software/peeping-painting",
             image: "DigitalPainting.jpg",
             date: "23rd February 2025",
-            tags: ["AstonHack10", "OpenCV", "OpenGL"] },
-          { title: "Cube Route",
-            description: "Visualising Live Bus Route Data in Minecraft, spanning all of GB!",
+            tags: ["AstonHack10", "OpenCV", "OpenGL"]
+          },
+          {
+            title: "Cube Route",
+            description: "Visualising Live Bus Route Data in Minecraft, spanning all of GB! Runner up for The Data City data visualisation Challenge at LeedsHack 2025.",
             link: "https://devpost.com/software/cube-route",
             image: "cuberoute.jpg",
-            date: "9th February 2025", 
-            tags: ["LeedsHack 2025", "Java"]},
-          { title: "ExSpore",
-            description: "2D clicker game where you build up a network of diverse mushrooms.",
-            link: "https://oryley.itch.io/ex-spore",
-            image: "ExSpore.jpg",
-            date: "17th November 2024",
-            tags: ["hackSheffield9", "Godot/ GDScript"] },
-          { title: "BillBoard",
+            date: "9th February 2025",
+            tags: ["LeedsHack 2025", "Java"]
+          },
+          {
+            title: "BillBoard",
             description: "A Price Comparison Marketplace for Textbooks. Winner of the Junior Challenge at Dundee 2024.",
             link: "https://devpost.com/software/billboard-gw7mfs",
             image: "billboard.jpg",
             date: "10th March 2024",
-            tags: ["Dundee Quackathon 2024", "Hackathon Win"] },
-          { title: "It Slithers",
+            tags: ["Dundee Quackathon 2024", "Hackathon Win"]
+          },
+          {
+            title: "WristBand",
+            description: "Social Media for Logging Live Music. Coursework for Higher Programming Module (achieved 78%, 1st).",
+            link: "https://devpost.com/software/wristband-sr8me7",
+            image: "WristBand.png",
+            date: "25th January 2024",
+            tags: ["JavaScript", "HTML/CSS", "Client-Server"]
+          },
+          {
+            title: "Chimps on Wordle",
+            description: "The Infinite Monkey Theorem applied to Wordle. Python randomness, statistics & GUI experiments.",
+            link: "https://devpost.com/software/chimpsonwordle",
+            image: "chimpsonwordle.jpg",
+            date: "23rd November 2023",
+            tags: ["Python"]
+          },
+          {
+            title: "The Fountain of Knowledge",
+            description: "A Search Engine and Summarisation tool for Students and Academics (My A-Level Computer Science Project, achieved 100% - 75/75).",
+            link: "https://devpost.com/software/alevel-neaproject",
+            image: "fountoknow.jpg",
+            date: "9th February 2023",
+            tags: ["100%", "Python", "MySQL"]
+          }
+        ];
+
+        const gameDevelopmentProjects = [
+          {
+            title: "Get Moving with Godot!",
+            description: "Produced 6 video workshops for Game Jam participants, incl. Godot tutorial hosted on GitHub. Organised daily activities; designed marketing, branding and handled logistics for a 14 day hybrid event. ",
+            link: "https://oryley.itch.io/godot-workshop",
+            image: "getmovingwithgodot.jpg",
+            date: "13th August 2025",
+            tags: ["DurJam 2025", "Godot/ GDScript"]
+          },
+          {
+            title: "ExSpore",
+            description: "2D clicker game where you build up a network of diverse mushrooms, created for hackSheffield9.",
+            link: "https://oryley.itch.io/ex-spore",
+            image: "ExSpore.jpg",
+            date: "17th November 2024",
+            tags: ["hackSheffield9", "Godot/ GDScript"]
+          },
+          {
+            title: "Loan Shark",
+            description: "A 3D maze game with enemy algorithm about financial literacy, created for HackNotts '24.",
+            link: "https://devpost.com/software/loan-shark-yl9a1w",
+            image: "loanshark.jpg",
+            date: "27th October 2024",
+            tags: ["Hack Notts '24", "Godot/ GDScript"]
+          },
+          {
+            title: "The Snowball Game",
+            description: "Co-op Game about rolling the biggest snowballs, collaborative project for Higher Programming module, achieved 78%.",
+            link: "https://devpost.com/software/thesnowballgame",
+            image: "snowballgame.jpg",
+            date: "24th April 2024",
+            tags: ["Godot/ GDScript"]
+          },
+          {
+            title: "It Slithers",
             description: "3D Environmental Horror Game created for Spring Hackathon organised among friends.",
             link: "https://oryley.itch.io/it-slithers",
             image: "itslithers.jpg",
             date: "7th April 2024",
-            tags: ["CS Alumni Hack 2024", "Godot/ GDScript"] },
-          { title: "The Fountain of Knowledge",
-            description: "A Search Engine and Summarisation tool for Students and Academics (My A-Level NEA Project, achieved 100% - 75/75).",
-            link: "https://devpost.com/software/alevel-neaproject",
-            image: "fountoknow.jpg",
-            date: "2021-2023",
-            tags: ["100%", "Python", "MySQL"]  },
-          { title: "Chimps on Wordle",
-            description: "The Infinite Monkey Theorem applied to Wordle.",
-            link: "https://devpost.com/software/chimpsonwordle",
-            image: "chimpsonwordle.jpg",
-            date: "2021-2023",
-            tags: ["Python"]  },
-          { title: "WristBand",
-            description: "Social Media for Logging Live Music, Coursework for my Higher Programming Module (achieved 78%, 1st).",
-            link: "https://devpost.com/software/wristband-sr8me7",
-            image: "WristBand.png",
-            date: "January 2024",
-            tags: ["JavaScript", "HTML/CSS", "Client-Server"]  },
-          { title: "The Snowball Game",
-            description: "Co-op Game about rolling the biggest snowballs on a snowy day.",
-            link: "https://devpost.com/software/thesnowballgame",
-            image: "snowballgame.jpg",
-            date: "March 2024",
-            tags: ["Godot/ GDScript"]  },
-          { title: "Automated Obsolescence",
-            description: "A physics-based puzzle game.",
+            tags: ["CS Alumni Hack 2024", "Godot/ GDScript"]
+          },
+          {
+            title: "Automated Obsolescence",
+            description: "A physics-based puzzle game. Infinitely procedurally generated godot levels on theme, created for LanHack23.",
             link: "https://devpost.com/software/automated-obsolescence",
             image: "automatedobsolecence.jpg",
             date: "26th November 2023",
-            tags: ["LanHack23", "Godot/ GDScript"] },
-          { title: "Loan Shark",
-            description: "A game about financial literacy.",
-            link: "https://devpost.com/software/loan-shark-yl9a1w",
-            image: "loanshark.jpg",
-            date: "27th October 2024",
-            tags: ["Hack Notts '24", "Godot/ GDScript"]  },
-            
+            tags: ["LanHack23", "Godot/ GDScript"]
+          }
+        ];
 
-      ];
-
-      function createProjectCards(projects) {
-        const container = document.getElementById('project-container');
+      function createProjectCards(projects, containerid) {
+        const container = document.getElementById(containerid);
         projects.forEach(project => {
           const projectCard = document.createElement('a');
           projectCard.href = project.link;
@@ -177,7 +209,8 @@
         });
       }
 
-      createProjectCards(projectsData);
+      createProjectCards(programmingProjects, "programming-container");
+      createProjectCards(gameDevelopmentProjects, "gamedev-container");
 
     </script>
 
