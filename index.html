@@ -78,23 +78,146 @@
         });
 
         var allMarkers = [
-            { coords: [54.763397, -1.571940], alt: "DUWiT Hacks 2025", popupText: "<strong>DUWiT Hacks 2025:</strong> 1st-2nd Mar 2025", group: UKCluster, eventDate: new Date('2025-03-01') },
-            { coords: [54.767191, -1.576201], alt: "DurHack 2024", popupText: "<strong>DurHack 2024:</strong> 2nd-3rd Nov 2024", group: UKCluster, eventDate: new Date('2024-11-02') },
-            { coords: [54.767191, -1.576201], alt: "DurHack 2023", popupText: "<strong>DurHack 2023:</strong> 4th-5th Nov 2023", group: UKCluster, eventDate: new Date('2023-11-04') },
-            { coords: [54.767191, -1.576201], alt: "DurHack X (2025)", popupText: "<strong>DurHack X (2025):</strong> 1st-2nd Nov 2025", group: UKCluster, eventDate: new Date('2025-11-01') },
-            
-            { coords: [56.45859, -2.98273], alt: "Dundee Quackathon 2024", popupText: "<strong>Dundee Quackathon 2024:</strong> 9th-10th Mar 2024", group: UKCluster, eventDate: new Date('2024-03-09') },
-            { coords: [56.45859, -2.98273], alt: "Dundee Quackathon 2025", popupText: "<strong>Dundee Quackathon 2025:</strong> 8th-9th Mar 2025", group: UKCluster, eventDate: new Date('2025-03-08') },
-
-            { coords: [52.95314, -1.18719], alt: "HackNotts '24", popupText: "<strong>HackNotts '24:</strong> 26th-27th Oct 2024", group: UKCluster, eventDate: new Date('2024-10-26') },
-            { coords: [52.48671, -1.88824], alt: "AstonHack 10", popupText: "<strong>AstonHack 10:</strong> 22nd-23rd Feb 2025", group: UKCluster, eventDate: new Date('2025-02-22') },
-            { coords: [53.38126, -1.47873], alt: "hackSheffield 9", popupText: "<strong>hackSheffield 9:</strong> 16th-17th Nov 2024", group: UKCluster, eventDate: new Date('2024-11-16') },
-            { coords: [53.80909, -1.55387], alt: "LeedsHack 2025", popupText: "<strong>LeedsHack 2025:</strong> 8th-9th Feb 2025", group: UKCluster, eventDate: new Date('2025-02-08') },
-            { coords: [54.01039, -2.78772], alt: "LanHack23", popupText: "<strong>LanHack23:</strong> 25th-26th Nov 2023", group: UKCluster, eventDate: new Date('2023-11-25') },
-            { coords: [55.922916, -3.174278], alt: "UK Quantum Hackathon 2025", popupText: "<strong>UK Quantum Hackathon 2025:</strong> 20th-23rd Jul 2025", group: UKCluster, eventDate: new Date('2025-07-20') },
-
-            { coords: [39.95661, -75.18994], alt: "DragonHacks XI", popupText: "<strong>DragonHacks XI:</strong> 26th-27th Apr 2025", group: NACluster, eventDate: new Date('2025-04-26') },
-            { coords: [43.51534, -80.5135], alt: "SpurHacks", popupText: "<strong>SpurHacks:</strong> 20th-22nd Jun 2025", group: NACluster, eventDate: new Date('2025-06-20') }
+            { title: "DurHack X (2025)",
+                coords: [54.767191, -1.576201],
+                alt: "DurHack X (2025)",
+                date: "1st-2nd Nov 2025",
+                description: "Head of Logistics, on the Strategy team for the 10th annual DurHack. Upcoming Event.",
+                imageFolder: "2026/durhackx",
+                images: ["thumb.png"],
+                group: UKCluster,
+                eventDate: new Date('2025-11-01')
+            },
+            { title: "UK Quantum Hackathon 2025",
+                coords: [55.922916, -3.174278],
+                alt: "UK Quantum Hackathon 2025",
+                date: "20th-23rd Jul 2025",
+                imageFolder: "2025/quantum25",
+                images: ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg", "9.jpg", "10.jpg"],
+                description: "Organiser for the fourth UK Quantum Hackathon, hosted at the University of Edinburgh as part of the Quantum Fringe celebrating the International Year of Quantum Science and Technology. <br> Part of my Events Coordinator Summer Placement at the National Quantum Computing Centre (NQCC).",
+                group: UKCluster,
+                eventDate: new Date('2025-07-20')
+            },
+            { title: "SpurHacks",
+                coords: [43.51534, -80.5135],
+                alt: "SpurHacks",
+                date: "20th-22nd Jun 2025",
+                description: "Second event as a Major League Hacking Coach, training with Kari Groszewska. The inaugural SpurHacks organised by Konfer inc and Spur in Waterloo, ON, Canada.",
+                imageFolder: "2025/spurhacks",
+                images: ["thumb.png", "1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg"],
+                group: NACluster,
+                eventDate: new Date('2025-06-20')
+            },
+            { title: "DragonHacks XI",
+                coords: [39.95661, -75.18994],
+                alt: "DragonHacks XI",
+                date: "26th-27th Apr 2025",
+                description: "First event as a Major League Hacking Coach, the 11th annual DragonHacks at Drexel University in Philadelphia, PA, USA.",
+                imageFolder: "2025/dragonhacksxi",
+                images: ["thumb.png", "1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg"],
+                group: NACluster,
+                eventDate: new Date('2025-04-26')
+            },
+            { title: "Dundee Quackathon 2025",
+                coords: [56.45859, -2.98273],
+                alt: "Dundee Quackathon 2025",
+                date: "8th-9th Mar 2025",
+                description: "Volunteered at the 9th Hackathon at the University of Dundee.",
+                imageFolder: "2025/quack25",
+                images: ["thumb.jpg"],
+                group: UKCluster,
+                eventDate: new Date('2025-03-08')
+            },
+            { title: "DUWiTHacks 2025",
+                coords: [54.763397, -1.571940],
+                alt: "DUWiT Hacks 2025",
+                date: "1st-2nd Mar 2025",
+                description: "Volunteered at the first Durham University Women in Tech Hackathon.",
+                imageFolder: "2025/duwithacks25",
+                images: ["thumb.jpg"],
+                group: UKCluster,
+                eventDate: new Date('2025-03-01')
+            },
+            { title: "AstonHack 10",
+                coords: [52.48671, -1.88824],
+                alt: "AstonHack 10",
+                date: "22nd-23rd Feb 2025",
+                description: "Participated in the 10th annual Hackathon at Aston University, collaborated with a Birmingham student & a Durham student to create a painting with Digital eyes that follow faces.",
+                imageFolder: "2025/astonhack10",
+                images: ["thumb.jpg"],
+                group: UKCluster,
+                eventDate: new Date('2025-02-22')
+            },
+            { title: "LeedsHack 2025",
+                coords: [53.80909, -1.55387],
+                alt: "LeedsHack 2025",
+                date: "8th-9th Feb 2025",
+                description: 'Won Runner Up for \'The Data City Challenge: Streamlining Public Transport with Tech\' at LeedsHack 2025, for "applying technology in making public transport better and easier."',
+                imageFolder: "2025/leedshack25",
+                images: ["thumb.jpg"],
+                group: UKCluster,
+                eventDate: new Date('2025-02-08')
+            },
+            { title: "hackSheffield 9",
+                coords: [53.38126, -1.47873],
+                alt: "hackSheffield 9",
+                date: "16th-17th Nov 2024",
+                description: "Participated in a 24 hour Hackathon at the University of Sheffield, hosted in-person at 38 Mappin Street.",
+                imageFolder: "2025/hacksheffield9",
+                images: ["thumb.jpg"],
+                group: UKCluster,
+                eventDate: new Date('2024-11-16')
+            },
+            { title: "DurHack 2024",
+                coords: [54.767191, -1.576201],
+                alt: "DurHack 2024",
+                date: "2nd-3rd Nov 2024",
+                description: "Hacker Experience Officer for DurHack 2024, the largest MLH event in the UK and 2nd largest student-run Hackathon in Europe! <br><br> DurHack 2024 had: <br> Over 1,000 Applications <br> 600 Participants, with 206 external students from Cambridge, Imperial, Warwick, Nottingham etc <br> 130+ Projects submitted to our Devpost page",
+                imageFolder: "2025/durhack24",
+                images: ["thumb.png"],
+                group: UKCluster,
+                eventDate: new Date('2024-11-02')
+            },
+            { title: "HackNotts '24",
+                coords: [52.95314, -1.18719],
+                alt: "HackNotts '24",
+                date: "26th-27th Oct 2024",
+                description: "Participated in a 25 hour Halloween themed in-person Hackathon at the University of Nottingham's Computer Science Department.",
+                imageFolder: "2025/hacknotts24",
+                images: ["thumb.jpg"],
+                group: UKCluster,
+                eventDate: new Date('2024-10-26')
+            },
+            { title: "Dundee Quackathon 2024",
+                coords: [56.45859, -2.98273],
+                alt: "Dundee Quackathon 2024",
+                date: "9th-10th Mar 2024",
+                description: 'Won the Junior Challenge at Dundee\'s 2024 Quackathon, for "Creating an application that solves common problems students face every day".',
+                imageFolder: "2024/quack24",
+                images: ["thumb.jpg"],
+                group: UKCluster,
+                eventDate: new Date('2024-03-09')
+            },
+            { title: "LanHack23",
+                coords: [54.01039, -2.78772],
+                alt: "LanHack23",
+                date: "25th-26th Nov 2023",
+                description: "Remotely Participated in a Hackathon organised by Lancaster University's CompSoc and CyberSoc over 24 hours. My first time working with a game engine to produce a complete experience.",
+                imageFolder: "2024/lanhack23",
+                images: ["thumb.jpg"],
+                group: UKCluster,
+                eventDate: new Date('2023-11-25')
+            },
+            { title: "DurHack 2023",
+                coords: [54.767191, -1.576201],
+                alt: "DurHack 2023",
+                date: "4th-5th Nov 2023",
+                description: "Participated in my first Hackathon, working in a team over 24 hours to produce a web development project.",
+                imageFolder: "2024/durhack23",
+                images: ["thumb.jpg"],
+                group: UKCluster,
+                eventDate: new Date('2023-11-04')
+            }
         ];
 
         var today = new Date();
@@ -102,8 +225,63 @@
         allMarkers.forEach(function(markerInfo) {
             var icon = (markerInfo.eventDate >= today) ? upcomingEventIcon : pastEventIcon;
             var marker = L.marker(markerInfo.coords, { alt: markerInfo.alt, icon: icon });
-            marker.bindPopup(markerInfo.popupText);
+
+            var carouselHtml = '<div class="carousel-container">';
+            markerInfo.images.forEach(function(imageName, index) {
+                var imagePath = 'images/hackathons/' + markerInfo.imageFolder + '/' + imageName;
+                carouselHtml += '<div class="carousel-slide' + (index === 0 ? ' active' : '') + '">';
+                carouselHtml += '<img src="' + imagePath + '" alt="' + markerInfo.title + ' image ' + (index + 1) + '" class="carousel-image">';
+                carouselHtml += '</div>';
+            });
+
+            if (markerInfo.images.length > 1) {
+                carouselHtml += '<div class="carousel-nav-hover left-hover"></div>';
+                carouselHtml += '<div class="carousel-nav-hover right-hover"></div>';
+            }
+
+            carouselHtml += '</div>';
+
+            var popupHtml = '<div class="custom-popup-content" style="width: 300px;">';
+            popupHtml += carouselHtml;
+            popupHtml += '<h3 class="text-2xl font-bold text-gray-800" style="margin-bottom: 0; margin-top: 1rem;">' + markerInfo.title + '</h3>';
+            popupHtml += '<p class="text-sm text-gray-500" style="margin-top: 0;">' + markerInfo.date + '</p>';
+            popupHtml += '<p class="text-gray-600">' + markerInfo.description + '</p>';
+            popupHtml += '</div>';
+
+            marker.bindPopup(popupHtml, { closeButton: false });
             markerInfo.group.addLayer(marker);
+
+            marker.on('popupopen', function() {
+                const popup = this.getPopup().getElement();
+                const leftHover = popup.querySelector('.left-hover');
+                const rightHover = popup.querySelector('.right-hover');
+                const carouselContainer = popup.querySelector('.carousel-container');
+                const slides = Array.from(carouselContainer.querySelectorAll('.carousel-slide'));
+
+                if (leftHover && rightHover && slides.length > 1) {
+                    let currentSlideIndex = 0;
+
+                    slides.forEach((slide, index) => {
+                        if (slide.classList.contains('active')) {
+                            currentSlideIndex = index;
+                        }
+                    });
+
+                    const showSlide = (n) => {
+                        slides[currentSlideIndex].classList.remove('active');
+                        currentSlideIndex = (n + slides.length) % slides.length;
+                        slides[currentSlideIndex].classList.add('active');
+                    };
+
+                    leftHover.addEventListener('click', function() {
+                        showSlide(currentSlideIndex - 1);
+                    });
+
+                    rightHover.addEventListener('click', function() {
+                        showSlide(currentSlideIndex + 1);
+                    });
+                }
+            });
         });
 
         map.addLayer(UKCluster);
