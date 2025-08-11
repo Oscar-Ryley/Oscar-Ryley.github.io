@@ -1,7 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
-  <meta charset="utf-8">
-  <title>Redirecting to https://www.linkedin.com/in/oscar-ryley/</title>
-  <meta http-equiv="refresh" content="0; URL=https://www.linkedin.com/in/oscar-ryley/">
-  <link rel="canonical" href="https://www.linkedin.com/in/oscar-ryley/">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Oscar Ryley</title>
+    <link rel="icon" type="image/jpg" href="images/icon.jpg">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  </head>
+
+  <body>
+    
+    <nav>
+    <ul>
+      <li><a href="index.html" http-equiv="refresh"><i class="fa-solid fa-circle"></i></a></li>
+      <li><a href="#" id="open-about-modal">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="articles.html">Articles</a></li>
+      <li class="dropdown">
+        <a href="javascript:void(0)" class="dropbtn">Links</a>
+        <div class="dropdown-content">
+          <a href="https://www.linkedin.com/in/oscar-ryley/" target="_blank">
+            <i class="fa-brands fa-linkedin mr-2"></i> LinkedIn
+          </a>
+          <a href="https://github.com/Oscar-Ryley" target="_blank">
+            <i class="fa-brands fa-github mr-2"></i> GitHub
+          </a>
+          <a href="https://devpost.com/Oscar-Ryley" target="_blank">
+            <i class="fa-solid fa-code mr-2"></i> Devpost
+          </a>
+          <a href="https://oryley.itch.io/" target="_blank">
+            <i class="fa-brands fa-itch-io mr-2"></i> Itch.io
+          </a>
+          <a href="https://www.thebubble.org.uk/author/oscar-ryley/" target="_blank">
+            <i class="fa-solid fa-newspaper mr-2"></i> The Bubble
+          </a>
+        </div>
+      </li>
+    </ul>
+    </nav>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+
+    <div id="map" style="height: 90vh; width: 100%;"></div>
+
+    <script>
+        var UKcoords = [53.766850, -1.766995];
+        var NAcoords = [41.791139, -76.547263];
+
+        var map = L.map("map").setView(UKcoords, 6);
+
+        L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+
+        var UKCluster = L.markerClusterGroup({maxClusterRadius: 30});
+        var NACluster = L.markerClusterGroup({maxClusterRadius: 30});
+
+        var pastEventIcon = L.divIcon({
+            className: 'past-event-icon',
+            html: '<div style="background-color: #9333ea; width: 15pt; height: 15pt; border-radius: 50%;"></div>',
+            iconSize: [60, 60],
+            iconAnchor: [5, 5]
+        });
+
+        var upcomingEventIcon = L.divIcon({
+            className: 'upcoming-event-icon',
+            html: '<div style="background-color: #9333ea; opacity: 0.4; width: 15pt; height: 15pt; border-radius: 50%;"></div>',
+            iconSize: [60, 60],
+            iconAnchor: [5, 5]
+        });
+
+        var allMarkers = [
+            { coords: [54.763397, -1.571940], alt: "DUWiT Hacks 2025", popupText: "<strong>DUWiT Hacks 2025:</strong> 1st-2nd Mar 2025", group: UKCluster, eventDate: new Date('2025-03-01') },
+            { coords: [54.767191, -1.576201], alt: "DurHack 2024", popupText: "<strong>DurHack 2024:</strong> 2nd-3rd Nov 2024", group: UKCluster, eventDate: new Date('2024-11-02') },
+            { coords: [54.767191, -1.576201], alt: "DurHack 2023", popupText: "<strong>DurHack 2023:</strong> 4th-5th Nov 2023", group: UKCluster, eventDate: new Date('2023-11-04') },
+            { coords: [54.767191, -1.576201], alt: "DurHack X (2025)", popupText: "<strong>DurHack X (2025):</strong> 1st-2nd Nov 2025", group: UKCluster, eventDate: new Date('2025-11-01') },
+            
+            { coords: [56.45859, -2.98273], alt: "Dundee Quackathon 2024", popupText: "<strong>Dundee Quackathon 2024:</strong> 9th-10th Mar 2024", group: UKCluster, eventDate: new Date('2024-03-09') },
+            { coords: [56.45859, -2.98273], alt: "Dundee Quackathon 2025", popupText: "<strong>Dundee Quackathon 2025:</strong> 8th-9th Mar 2025", group: UKCluster, eventDate: new Date('2025-03-08') },
+
+            { coords: [52.95314, -1.18719], alt: "HackNotts '24", popupText: "<strong>HackNotts '24:</strong> 26th-27th Oct 2024", group: UKCluster, eventDate: new Date('2024-10-26') },
+            { coords: [52.48671, -1.88824], alt: "AstonHack 10", popupText: "<strong>AstonHack 10:</strong> 22nd-23rd Feb 2025", group: UKCluster, eventDate: new Date('2025-02-22') },
+            { coords: [53.38126, -1.47873], alt: "hackSheffield 9", popupText: "<strong>hackSheffield 9:</strong> 16th-17th Nov 2024", group: UKCluster, eventDate: new Date('2024-11-16') },
+            { coords: [53.80909, -1.55387], alt: "LeedsHack 2025", popupText: "<strong>LeedsHack 2025:</strong> 8th-9th Feb 2025", group: UKCluster, eventDate: new Date('2025-02-08') },
+            { coords: [54.01039, -2.78772], alt: "LanHack23", popupText: "<strong>LanHack23:</strong> 25th-26th Nov 2023", group: UKCluster, eventDate: new Date('2023-11-25') },
+            { coords: [55.922916, -3.174278], alt: "UK Quantum Hackathon 2025", popupText: "<strong>UK Quantum Hackathon 2025:</strong> 20th-23rd Jul 2025", group: UKCluster, eventDate: new Date('2025-07-20') },
+
+            { coords: [39.95661, -75.18994], alt: "DragonHacks XI", popupText: "<strong>DragonHacks XI:</strong> 26th-27th Apr 2025", group: NACluster, eventDate: new Date('2025-04-26') },
+            { coords: [43.51534, -80.5135], alt: "SpurHacks", popupText: "<strong>SpurHacks:</strong> 20th-22nd Jun 2025", group: NACluster, eventDate: new Date('2025-06-20') }
+        ];
+
+        var today = new Date();
+
+        allMarkers.forEach(function(markerInfo) {
+            var icon = (markerInfo.eventDate >= today) ? upcomingEventIcon : pastEventIcon;
+            var marker = L.marker(markerInfo.coords, { alt: markerInfo.alt, icon: icon });
+            marker.bindPopup(markerInfo.popupText);
+            markerInfo.group.addLayer(marker);
+        });
+
+        map.addLayer(UKCluster);
+        map.addLayer(NACluster);
+
+        var circlesData = [
+            { coords: [55.465208, -10.586449], tooltipText: "NA Hackathons", targetViewCoords: NAcoords },
+            { coords: [40.883785, -67.922996], tooltipText: "UK Hackathons", targetViewCoords: UKcoords }
+        ];
+
+        circlesData.forEach(function(circleInfo) {
+            var circle = L.circle(circleInfo.coords, {
+                color: '#9333ea',
+                fillColor: '#9333ea',
+                fillOpacity: 0.5,
+                radius: 100000
+            }).addTo(map);
+
+            circle.on('click', function(e) {
+                map.setView(circleInfo.targetViewCoords, 6);
+            });
+
+            circle.bindTooltip(circleInfo.tooltipText);
+        });
+        
+    </script>
+
+  </body>
+    
+    <div id="about-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+        <div class="relative bg-white rounded-2xl shadow-xl max-w-4xl w-full p-8 md:p-12 m-4 md:m-0">
+            <button id="close-about-modal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-900 text-2xl font-bold">
+                &times;
+            </button>
+            <div class="flex flex-col md:flex-row items-center md:items-center space-y-8 md:space-y-0 md:space-x-12">
+                <div class="w-32 h-32 md:w-48 md:h-48 flex-shrink-0">
+                    <div class="w-full h-full rounded-full overflow-hidden border-4 border-purple-600 shadow-lg">
+                        <img
+                            src="images/oscar.jpg"
+                            alt="Profile Image"
+                            class="w-full h-full object-cover"
+                            onerror="this.onerror=null;this.src='images/oscar.jpg';"
+                        />
+                    </div>
+                </div>
+                <div class="flex-1 text-center md:text-left space-y-4">
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-800">
+                        I'm Oscar Ryley!
+                    </h1>
+                    <p class="text-gray-600">
+                        Hackathon Coach for Major League Hacking <br> DurHack Head of Logistics <br> National Quantum Computing Centre Events Coordinator Summer Placement <br> Penultimate Year MEng Computer Science Undergraduate at Durham University
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const openModalBtn = document.getElementById('open-about-modal');
+        const closeModalBtn = document.getElementById('close-about-modal');
+        const modal = document.getElementById('about-modal');
+
+        function showModal() {
+            modal.classList.remove('hidden');
+        }
+
+        function hideModal() {
+            modal.classList.add('hidden');
+        }
+
+        openModalBtn.addEventListener('click', (event) => {
+            event.preventDefault();
+            showModal();
+        });
+
+        closeModalBtn.addEventListener('click', hideModal);
+
+        modal.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                hideModal();
+            }
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                hideModal();
+            }
+        });
+    </script>
+
+
 </html>

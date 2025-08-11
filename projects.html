@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Projects by Oscar Ryley</title>
+    <link rel="icon" type="image/jpg" href="images/icon.jpg">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="crossorigin=""/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  </head>
+
+  <body>
+    
+    <nav>
+    <ul>
+      <li><a href="index.html" http-equiv="refresh"><i class="fa-solid fa-circle"></i></a></li>
+      <li><a href="" id="open-about-modal">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="articles.html">Articles</a></li>
+      <li class="dropdown">
+        <a href="javascript:void(0)" class="dropbtn">Links</a>
+        <div class="dropdown-content">
+          <a href="https://www.linkedin.com/in/oscar-ryley/" target="_blank">
+            <i class="fa-brands fa-linkedin mr-2"></i> LinkedIn
+          </a>
+          <a href="https://github.com/Oscar-Ryley" target="_blank">
+            <i class="fa-brands fa-github mr-2"></i> GitHub
+          </a>
+          <a href="https://devpost.com/Oscar-Ryley" target="_blank">
+            <i class="fa-solid fa-code mr-2"></i> Devpost
+          </a>
+          <a href="https://oryley.itch.io/" target="_blank">
+            <i class="fa-brands fa-itch-io mr-2"></i> Itch.io
+          </a>
+          <a href="https://www.thebubble.org.uk/author/oscar-ryley/" target="_blank">
+            <i class="fa-solid fa-newspaper mr-2"></i> The Bubble
+          </a>
+        </div>
+      </li>
+    </ul>
+    </nav>
+
+    <main class="container mx-auto">
+    <div id="project-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    </div>
+    </main>
+
+    <script>
+        const projectsData = [
+          { title: "Get Moving with Godot!",
+            description: "Produced 6 video workshops for Game Jam participants, incl. Godot tutorial hosted on GitHub. Organised daily activities; designed marketing, branding and handled logistics for a 14 day hybrid event. ",
+            link: "https://oryley.itch.io/godot-workshop",
+            image: "getmovingwithgodot.jpg",
+            date: "13th August 2025",
+            tags: ["DurJam 2025", "Godot/ GDScript"] },
+          { title: "Painting with Digital Eyes",
+            description: "OpenCV facial detection integrated with OpenGL rendered eyes and acrylic painting front-end.",
+            link: "https://devpost.com/software/peeping-painting",
+            image: "DigitalPainting.jpg",
+            date: "23rd February 2025",
+            tags: ["AstonHack10", "OpenCV", "OpenGL"] },
+          { title: "Cube Route",
+            description: "Visualising Live Bus Route Data in Minecraft, spanning all of GB!",
+            link: "https://devpost.com/software/cube-route",
+            image: "cuberoute.jpg",
+            date: "9th February 2025", 
+            tags: ["LeedsHack 2025", "Java"]},
+          { title: "ExSpore",
+            description: "2D clicker game where you build up a network of diverse mushrooms.",
+            link: "https://oryley.itch.io/ex-spore",
+            image: "Exspore.jpg",
+            date: "17th November 2024",
+            tags: ["hackSheffield9", "Godot/ GDScript"] },
+          { title: "BillBoard",
+            description: "A Price Comparison Marketplace for Textbooks. Winner of the Junior Challenge at Dundee 2024.",
+            link: "https://devpost.com/software/billboard-gw7mfs",
+            image: "billboard.jpg",
+            date: "10th March 2024",
+            tags: ["Dundee Quackathon 2024", "Hackathon Win"] },
+          { title: "It Slithers",
+            description: "3D Environmental Horror Game created for Spring Hackathon organised among friends.",
+            link: "https://oryley.itch.io/it-slithers",
+            image: "itslithers.jpg",
+            date: "7th April 2024",
+            tags: ["CS Alumni Hack 2024", "Godot/ GDScript"] },
+          { title: "The Fountain of Knowledge",
+            description: "A Search Engine and Summarisation tool for Students and Academics (My A-Level NEA Project, achieved 100% - 75/75).",
+            link: "https://devpost.com/software/alevel-neaproject",
+            image: "fountoknow.jpg",
+            date: "2021-2023",
+            tags: ["100%", "Python", "MySQL"]  },
+          { title: "Chimps on Wordle",
+            description: "The Infinite Monkey Theorem applied to Wordle.",
+            link: "https://devpost.com/software/chimpsonwordle",
+            image: "chimpsonwordle.jpg",
+            date: "2021-2023",
+            tags: ["Python"]  },
+          { title: "WristBand",
+            description: "Social Media for Logging Live Music, Coursework for my Higher Programming Module (achieved 78%, 1st).",
+            link: "https://devpost.com/software/wristband-sr8me7",
+            image: "WristBand.png",
+            date: "January 2024",
+            tags: ["JavaScript", "HTML/CSS", "Client-Server"]  },
+          { title: "The Snowball Game",
+            description: "Co-op Game about rolling the biggest snowballs on a snowy day.",
+            link: "https://devpost.com/software/thesnowballgame",
+            image: "snowballgame.jpg",
+            date: "March 2024",
+            tags: ["Godot/ GDScript"]  },
+          { title: "Automated Obsolescence",
+            description: "A physics-based puzzle game.",
+            link: "https://devpost.com/software/automated-obsolescence",
+            image: "automatedobsolecence.jpg",
+            date: "26th November 2023",
+            tags: ["LanHack23", "Godot/ GDScript"] },
+          { title: "Loan Shark",
+            description: "A game about financial literacy.",
+            link: "https://devpost.com/software/loan-shark-yl9a1w",
+            image: "loanshark.jpg",
+            date: "27th October 2024",
+            tags: ["Hack Notts '24", "Godot/ GDScript"]  },
+            
+
+      ];
+
+      function createProjectCards(projects) {
+        const container = document.getElementById('project-container');
+        projects.forEach(project => {
+          const projectCard = document.createElement('a');
+          projectCard.href = project.link;
+          projectCard.target = "_blank";
+          projectCard.className = 'project-card bg-white rounded-xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-2xl overflow-hidden';
+
+          const image = document.createElement('img');
+          image.src = "images/projects/" + project.image;
+          image.alt = `Image for ${project.title}`;
+          image.className = 'w-full h-48 object-cover';
+
+          const contentContainer = document.createElement('div');
+          contentContainer.className = 'p-6';
+
+          const title = document.createElement('h3');
+          title.className = 'text-2xl font-bold text-gray-800 mb-2';
+          title.textContent = project.title;
+
+          const date = document.createElement('p');
+          date.className = 'text-sm text-gray-500 mb-2';
+          date.textContent = project.date;
+
+          const description = document.createElement('p');
+          description.className = 'text-gray-600 mb-4';
+          description.textContent = project.description;
+
+          contentContainer.appendChild(title);
+          contentContainer.appendChild(date);
+          contentContainer.appendChild(description);
+
+          if (project.tags && Array.isArray(project.tags)) {
+            const tagsContainer = document.createElement('div');
+            tagsContainer.className = 'flex flex-wrap gap-2';
+
+            project.tags.forEach(tagText => {
+                const tagElement = document.createElement('span');
+                tagElement.className = 'inline-block bg-purple-200 text-purple-800 text-xs font-semibold px-2 py-1 rounded-full tracking-wide';
+                tagElement.textContent = tagText;
+                tagsContainer.appendChild(tagElement);
+            });
+            contentContainer.appendChild(tagsContainer);
+          }
+
+          projectCard.appendChild(image);
+          projectCard.appendChild(contentContainer);
+
+          container.appendChild(projectCard);
+        });
+      }
+
+      createProjectCards(projectsData);
+
+    </script>
+
+  </body>
+
+    <div id="about-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+        <div class="relative bg-white rounded-2xl shadow-xl max-w-4xl w-full p-8 md:p-12 m-4 md:m-0">
+            <button id="close-about-modal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-900 text-2xl font-bold">
+                &times;
+            </button>
+            <div class="flex flex-col md:flex-row items-center md:items-center space-y-8 md:space-y-0 md:space-x-12">
+                <div class="w-32 h-32 md:w-48 md:h-48 flex-shrink-0">
+                    <div class="w-full h-full rounded-full overflow-hidden border-4 border-purple-600 shadow-lg">
+                        <img
+                            src="images/oscar.jpg"
+                            alt="Profile Image"
+                            class="w-full h-full object-cover"
+                            onerror="this.onerror=null;this.src='images/oscar.jpg';"
+                        />
+                    </div>
+                </div>
+                <div class="flex-1 text-center md:text-left space-y-4">
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-800">
+                        I'm Oscar Ryley!
+                    </h1>
+                    <p class="text-gray-600">
+                        Hackathon Coach for Major League Hacking <br> DurHack Head of Logistics <br> National Quantum Computing Centre Events Coordinator Summer Placement <br> Penultimate Year MEng Computer Science Undergraduate at Durham University
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const openModalBtn = document.getElementById('open-about-modal');
+        const closeModalBtn = document.getElementById('close-about-modal');
+        const modal = document.getElementById('about-modal');
+
+        function showModal() {
+            modal.classList.remove('hidden');
+        }
+
+        function hideModal() {
+            modal.classList.add('hidden');
+        }
+
+        openModalBtn.addEventListener('click', (event) => {
+            event.preventDefault();
+            showModal();
+        });
+
+        closeModalBtn.addEventListener('click', hideModal);
+
+        modal.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                hideModal();
+            }
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                hideModal();
+            }
+        });
+    </script>
+
+
+</html>
