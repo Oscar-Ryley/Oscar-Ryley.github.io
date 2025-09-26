@@ -1,446 +1,277 @@
 <!DOCTYPE html>
 <html lang="en">
-
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oscar Ryley</title>
-    <link rel="icon" type="image/jpg" href="images/icon.jpg">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="crossorigin=""/>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  </head>
-
-  <body>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fb;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
     
-    <nav>
-    <ul>
-      <li><a href="index.html" http-equiv="refresh"><i class="fa-solid fa-circle"></i></a></li>
-      <li><a href="#" id="open-about-modal">About</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="articles.html">Articles</a></li>
-      <li class="dropdown">
-        <a href="javascript:void(0)" class="dropbtn">Links</a>
-        <div class="dropdown-content">
-          <a href="https://www.linkedin.com/in/oscar-ryley/" target="_blank">
-            <i class="fa-brands fa-linkedin mr-2"></i> LinkedIn
-          </a>
-          <a href="https://github.com/Oscar-Ryley" target="_blank">
-            <i class="fa-brands fa-github mr-2"></i> GitHub
-          </a>
-          <a href="https://devpost.com/Oscar-Ryley" target="_blank">
-            <i class="fa-solid fa-code mr-2"></i> Devpost
-          </a>
-          <a href="https://oryley.itch.io/" target="_blank">
-            <i class="fa-brands fa-itch-io mr-2"></i> Itch.io
-          </a>
-          <a href="https://www.thebubble.org.uk/author/oscar-ryley/" target="_blank">
-            <i class="fa-solid fa-newspaper mr-2"></i> The Bubble
-          </a>
-        </div>
-      </li>
-    </ul>
-    </nav>
-
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
-
-    <div id="map" style="height: 90vh; width: 100%;"></div>
-
-    <script>
-        var UKcoords = [53.766850, -1.766995];
-        var NAcoords = [41.791139, -76.547263];
-
-        var map = L.map("map").setView(UKcoords, 6);
-
-        L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-            maxZoom: 19,
-            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-        }).addTo(map);
-
-        var UKCluster = L.markerClusterGroup({maxClusterRadius: 30});
-        var NACluster = L.markerClusterGroup({maxClusterRadius: 30});
-
-        var hackathonIcon = L.divIcon({
-            className: 'event-icon',
-            html: '<div style="background-color: #9333ea; width: 15pt; height: 15pt; border-radius: 50%;"></div>',
-            iconSize: [50, 50],
-            iconAnchor: [5, 5]
-        });
-
-        var conferenceIcon = L.divIcon({
-            className: 'event-icon',
-            html: '<div style="background-color: #3342ea; width: 15pt; height: 15pt; border-radius: 50%;"></div>',
-            iconSize: [50, 50],
-            iconAnchor: [5, 5]
-        });
-
-        var allMarkers = [
-            {
-                title: "Quantum Computing for Energy Workshop",
-                coords: [51.50611, -0.13204],
-                alt: "Quantum Computing for Energy",
-                date: "23rd Sep 2025",
-                imageFolder: "2026/qcenergy",
-                images: ["1.png", "2.jpg"],
-                description: "Facilitated for a workshop, bridging the gap between Quantum Computing research and the Energy Sector. Hosted at the Royal Society; in partnership with the Department for Science, Innovation and Technology, and the Department for Energy Security and Net Zero.",
-                group: UKCluster,
-                type: "conference",
-                tags: ["NQCC", "Facilitator", "#2"]
-            },
-            {
-                title: "Energy Efficient Computing Workshop",
-                coords: [51.573027, -1.313564],
-                alt: "Energy Efficient Computing",
-                date: "15th-16th Sep 2025",
-                imageFolder: "2026/scenergy",
-                images: ["1.jpg"],
-                description: "Attended a conference by STFC Scientific Computing at Rutherford Appleton Laboratory, in partnership with the Computational Science Centre for Research Communities (CoSeC). <br><br> Topics ranged from Linear Algebra and floating point precision to community engagement and the reality of HPC data centres like ARCHER2.",
-                group: UKCluster,
-                type: "conference",
-                tags: ["NQCC (STFC)", "#1"]
-            },
-            {
-                title: "UK Quantum Hackathon 2025",
-                coords: [55.922916, -3.174278],
-                alt: "UK Quantum Hackathon 2025",
-                date: "21st-23rd Jul 2025",
-                imageFolder: "2025/quantum25",
-                images: ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg", "9.jpg", "10.jpg"],
-                description: "Organiser for the fourth UK Quantum Hackathon, hosted at the University of Edinburgh as part of the Quantum Fringe celebrating the International Year of Quantum Science and Technology. <br><br> Part of my Events Coordinator Summer Placement at the National Quantum Computing Centre (NQCC).",
-                group: UKCluster,
-                type: "hackathon",
-                tags: ["NQCC", "Organiser", "#13"]
-            },
-            {
-                title: "SpurHacks",
-                coords: [43.51534, -80.5135],
-                alt: "SpurHacks",
-                date: "20th-22nd Jun 2025",
-                description: "Second event as a Major League Hacking Coach, training with Kari Groszewska. The inaugural SpurHacks organised by Konfer inc and Spur in Waterloo, ON, Canada.",
-                imageFolder: "2025/spurhacks",
-                images: ["thumb.png", "1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg"],
-                group: NACluster,
-                type: "hackathon",
-                tags: ["MLH Paired", "#12"]
-            },
-            {
-                title: "DragonHacks XI",
-                coords: [39.95661, -75.18994],
-                alt: "DragonHacks XI",
-                date: "26th-27th Apr 2025",
-                description: "First event as a Major League Hacking Coach, the 11th annual DragonHacks at Drexel University in Philadelphia, PA, USA.",
-                imageFolder: "2025/dragonhacksxi",
-                images: ["thumb.png", "1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg"],
-                group: NACluster,
-                type: "hackathon",
-                tags: ["MLH Cohort", "#11"]
-            },
-            {
-                title: "Dundee Quackathon 2025",
-                coords: [56.45859, -2.98273],
-                alt: "Dundee Quackathon 2025",
-                date: "8th-9th Mar 2025",
-                description: "Volunteered at the 9th Hackathon at the University of Dundee.",
-                imageFolder: "2025/quack25",
-                images: ["thumb.jpg", "1.JPG", "2.JPG", "3.JPG", "4.JPG", "5.JPG", "6.JPG"],
-                group: UKCluster,
-                type: "hackathon",
-                tags: ["Volunteer", "#10"]
-            },
-            {
-                title: "DUWiT Hacks 2025",
-                coords: [54.763397, -1.571940],
-                alt: "DUWiT Hacks 2025",
-                date: "1st-2nd Mar 2025",
-                description: "Volunteered at the first Durham University Women in Tech Hackathon.",
-                imageFolder: "2025/duwithacks25",
-                images: ["thumb.jpg", "1.jpg", "2.jpg", "3.jpg", "4.jpg"],
-                group: UKCluster,
-                type: "hackathon",
-                tags: ["Volunteer", "#9",]
-            },
-            {
-                title: "AstonHack 10",
-                coords: [52.48671, -1.88824],
-                alt: "AstonHack 10",
-                date: "22nd-23rd Feb 2025",
-                description: "Participated in the 10th annual Hackathon at Aston University, collaborated with a Birmingham student & a Durham student to create a painting with Digital eyes that follow faces.",
-                imageFolder: "2025/astonhack10",
-                images: ["thumb.jpg", "1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg"],
-                group: UKCluster,
-                type: "hackathon",
-                tags: ["#8"]
-            },
-            {
-                title: "LeedsHack 2025",
-                coords: [53.80909, -1.55387],
-                alt: "LeedsHack 2025",
-                date: "8th-9th Feb 2025",
-                description: 'Won Runner Up for \'The Data City Challenge: Streamlining Public Transport with Tech\' at LeedsHack 2025, for "applying technology in making public transport better and easier."',
-                imageFolder: "2025/leedshack25",
-                images: ["thumb.jpg", "1.png", "2.png", "3.jpg", "4.jpg"],
-                group: UKCluster,
-                type: "hackathon",
-                tags: ["Runner Up", "#7"]
-            },
-            {
-                title: "hackSheffield 9",
-                coords: [53.38126, -1.47873],
-                alt: "hackSheffield 9",
-                date: "16th-17th Nov 2024",
-                description: "Participated in a 24 hour Hackathon at the University of Sheffield, hosted in-person at 38 Mappin Street.",
-                imageFolder: "2025/hacksheffield9",
-                images: ["thumb.jpg", "1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg"],
-                group: UKCluster,
-                type: "hackathon",
-                tags: ["#6"]
-            },
-            {
-                title: "DurHack 2024",
-                coords: [54.767191, -1.576201],
-                alt: "DurHack 2024",
-                date: "2nd-3rd Nov 2024",
-                description: "Hacker Experience Officer for DurHack 2024, the largest MLH event in the UK and 2nd largest student-run Hackathon in Europe! <br><br> DurHack 2024 had: <br> Over 1,000 Applications <br> 600 Participants, with 206 external students from Cambridge, Imperial, Warwick, Nottingham etc <br> 130+ Projects submitted to our Devpost page",
-                imageFolder: "2025/durhack24",
-                images: ["thumb.png", "1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg"],
-                group: UKCluster,
-                type: "hackathon",
-                tags: ["Organiser", "#5"]
-            },
-            {
-                title: "HackNotts 24",
-                coords: [52.95314, -1.18719],
-                alt: "HackNotts 24",
-                date: "26th-27th Oct 2024",
-                description: "Participated in a 25 hour Halloween themed in-person Hackathon at the University of Nottingham's Computer Science Department.",
-                imageFolder: "2025/hacknotts24",
-                images: ["thumb.jpg", "1.jpeg", "2.jpeg", "3.jpg"],
-                group: UKCluster,
-                type: "hackathon",
-                tags: ["#4"]
-            },
-            {
-                title: "Dundee Quackathon 2024",
-                coords: [56.45859, -2.98273],
-                alt: "Dundee Quackathon 2024",
-                date: "9th-10th Mar 2024",
-                description: 'Won the Junior Challenge at Dundee\'s 2024 Quackathon, for "Creating an application that solves common problems students face every day".',
-                imageFolder: "2024/quack24",
-                images: ["thumb.jpg", "1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg", "9.jpg"],
-                group: UKCluster,
-                type: "hackathon",
-                tags: [ "Winner", "#3"]
-            },
-            {
-                title: "LanHack23",
-                coords: [54.01039, -2.78772],
-                alt: "LanHack23",
-                date: "25th-26th Nov 2023",
-                description: "Remotely Participated in a Hackathon organised by Lancaster University's CompSoc and CyberSoc over 24 hours. My first time working with a game engine to produce a complete experience.",
-                imageFolder: "2024/lanhack23",
-                images: ["thumb.jpg"],
-                group: UKCluster,
-                type: "hackathon",
-                tags: ["Remote", "#2"]
-            },
-            {
-                title: "DurHack 2023",
-                coords: [54.767191, -1.576201],
-                alt: "DurHack 2023",
-                date: "4th-5th Nov 2023",
-                description: "Participated in my first Hackathon, working in a team over 24 hours to produce a web development project.",
-                imageFolder: "2024/durhack23",
-                images: ["thumb.jpg", "1.jpg"],
-                group: UKCluster,
-                type: "hackathon",
-                tags: ["#1"]
-            }
-        ];
-
-        conferenceMarkers = [
-
-        ];
-
-        var today = new Date();
-
-        allMarkers.forEach(function(markerInfo) {
+    <div class="bg-purple-900 text-white w-full shadow-lg">
+        <div class="max-w-4xl mx-auto flex items-center justify-between py-6 px-4 md:py-8">
             
-            if (markerInfo.type == "hackathon") {
-                var icon = hackathonIcon;
-            } else {
-                var icon = conferenceIcon;
-            };
-            
-            var marker = L.marker(markerInfo.coords, { alt: markerInfo.alt, icon: icon });
-
-            var carouselHtml = '<div class="carousel-container">';
-            markerInfo.images.forEach(function(imageName, index) {
-                var imagePath = 'images/map/' + markerInfo.imageFolder + '/' + imageName;
-                carouselHtml += '<div class="carousel-slide' + (index === 0 ? ' active' : '') + '">';
-                carouselHtml += '<img src="' + imagePath + '" alt="' + markerInfo.title + ' image ' + (index + 1) + '" class="carousel-image">';
-                carouselHtml += '</div>';
-            });
-
-            if (markerInfo.images.length > 1) {
-                carouselHtml += '<div class="carousel-nav-hover left-hover"></div>';
-                carouselHtml += '<div class="carousel-nav-hover right-hover"></div>';
-            }
-
-            carouselHtml += '</div>';
-
-            var tagsHtml = '';
-            
-            if (markerInfo.tags && markerInfo.tags.length > 0) {
-                tagsHtml = '<div style="display: flex; flex-wrap: wrap; gap: 5px;">';
-                tagsHtml += markerInfo.tags.map(function(tag) {
-                    if (markerInfo.type == "hackathon") {
-                        return '<a href="#" class="inline-block bg-purple-200 !text-purple-800 text-xs font-semibold px-2 py-1 rounded-full tracking-wide">' + tag + '</a>';
-                    } else {
-                        return '<a href="#" class="inline-block bg-blue-200 !text-blue-800 text-xs font-semibold px-2 py-1 rounded-full tracking-wide">' + tag + '</a>';
-                    }
-                }).join(' ');
-                tagsHtml += '</div>';
-            }
-
-            var popupHtml = '<div class="custom-popup-content" style="width: 300px;">';
-            popupHtml += carouselHtml;
-            popupHtml += '<h3 class="text-2xl font-bold text-gray-800" style="margin-bottom: 0; margin-top: 1rem;">' + markerInfo.title + '</h3>';
-
-            popupHtml += '<div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0; margin-bottom: 0.2rem;">';
-            popupHtml += '<p class="text-sm text-gray-500" style="margin: 0;">' + markerInfo.date + '</p>';
-            popupHtml += tagsHtml;
-            popupHtml += '</div>';
-
-            popupHtml += '<p class="text-gray-600">' + markerInfo.description + '</p>';
-            popupHtml += '</div>';
-
-            marker.bindPopup(popupHtml, { closeButton: false });
-            markerInfo.group.addLayer(marker);
-
-            marker.on('popupopen', function() {
-                const popup = this.getPopup().getElement();
-                const leftHover = popup.querySelector('.left-hover');
-                const rightHover = popup.querySelector('.right-hover');
-                const carouselContainer = popup.querySelector('.carousel-container');
-                const slides = Array.from(carouselContainer.querySelectorAll('.carousel-slide'));
-
-                if (leftHover && rightHover && slides.length > 1) {
-                    let currentSlideIndex = 0;
-
-                    slides.forEach((slide, index) => {
-                        if (slide.classList.contains('active')) {
-                            currentSlideIndex = index;
-                        }
-                    });
-
-                    const showSlide = (n) => {
-                        slides[currentSlideIndex].classList.remove('active');
-                        currentSlideIndex = (n + slides.length) % slides.length;
-                        slides[currentSlideIndex].classList.add('active');
-                    };
-
-                    leftHover.addEventListener('click', function() {
-                        showSlide(currentSlideIndex - 1);
-                    });
-
-                    rightHover.addEventListener('click', function() {
-                        showSlide(currentSlideIndex + 1);
-                    });
-                }
-            });
-        });
-
-        map.addLayer(UKCluster);
-        map.addLayer(NACluster);
-
-        var circlesData = [
-            { coords: [55.465208, -10.586449], tooltipText: "NA", targetViewCoords: NAcoords },
-            { coords: [40.883785, -67.922996], tooltipText: "UK", targetViewCoords: UKcoords }
-        ];
-
-        circlesData.forEach(function(circleInfo) {
-            var circle = L.circle(circleInfo.coords, {
-                color: '#9333ea',
-                fillColor: '#9333ea',
-                fillOpacity: 0.5,
-                radius: 100000
-            }).addTo(map);
-
-            circle.on('click', function(e) {
-                map.setView(circleInfo.targetViewCoords, 6);
-            });
-
-            circle.bindTooltip(circleInfo.tooltipText);
-        });
-        
-    </script>
-
-  </body>
-    
-    <div id="about-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
-        <div class="relative bg-white rounded-2xl shadow-xl max-w-4xl w-full p-8 md:p-12 m-4 md:m-0">
-            <button id="close-about-modal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-900 text-2xl font-bold">
-                &times;
-            </button>
-            <div class="flex flex-col md:flex-row items-center md:items-center space-y-8 md:space-y-0 md:space-x-12">
-                <div class="w-32 h-32 md:w-48 md:h-48 flex-shrink-0">
-                    <div class="w-full h-full rounded-full overflow-hidden border-4 border-purple-600 shadow-lg">
-                        <img
-                            src="images/oscar.jpg"
-                            alt="Profile Image"
-                            class="w-full h-full object-cover"
-                            onerror="this.onerror=null;this.src='images/oscar.jpg';"
-                        />
-                    </div>
-                </div>
-                <div class="flex-1 text-center md:text-left space-y-4">
-                    <h1 class="text-4xl md:text-5xl font-bold text-gray-800">
-                        I'm Oscar Ryley!
-                    </h1>
-                    <p class="text-gray-600">
-                        Hackathon Coach for Major League Hacking <br> Hackathons UK Associate <br> DurHack Head of Logistics <br> Penultimate Year MEng Computer Science Undergraduate at Durham University
-                    </p>
+            <div class="w-32 h-32 md:w-40 md:h-40 flex-shrink-0 mr-4 md:mr-6">
+                <div class="w-full h-full rounded-full overflow-hidden border-4 border-white shadow-lg">
+                    <img
+                        src="images/oscar.jpg"
+                        alt="Oscar Ryley Profile"
+                        class="w-full h-full object-cover"
+                    />
                 </div>
             </div>
+
+            <div class="flex-1 flex flex-col items-start justify-center space-y-1.5 md:space-y-2 text-left"> 
+                
+                <h1 class="text-4xl md:text-5xl font-bold">Oscar Ryley</h1>
+                
+                <p class="text-lg font-light">MEng Computer Science Student at Durham University</p>
+                
+                <a href="/map"> <p class="text-base font-medium text-purple-200"> You'll find me supporting the Hackathon community most weekends as a Coach for Major League Hacking, Hackathons UK Associate, and the DurHack Head of Logistics. <b class="hover:underline">[Map]</b> </p> </a>
+
+            </div>
+            
         </div>
     </div>
 
-    <script>
-        const openModalBtn = document.getElementById('open-about-modal');
-        const closeModalBtn = document.getElementById('close-about-modal');
-        const modal = document.getElementById('about-modal');
+    <div class="max-w-4xl mx-auto mb-12 pt-8">
 
-        function showModal() {
-            modal.classList.remove('hidden');
-        }
+        <section id="articles" class="mb-10 px-4 md:px-0">
+            <h2 class="text-3xl font-normal mb-4 text-gray-900">Articles</h2>
+            
+            <div class="space-y-4 text-base text-gray-900">
 
-        function hideModal() {
-            modal.classList.add('hidden');
-        }
+                <div>
+                    <p class="mb-1 leading-relaxed">
+                        <b>Perfectionism and Achievement Hunting</b>, The Bubble, 7th June 2025.
+                        <a class="font-medium text-purple-700 hover:underline" href="https://www.thebubble.org.uk/lifestyle/perfectionism-and-achievements/">[Article]</a>
+                    </p>
+                </div>
+                <div>
+                    <p class="mb-1 leading-relaxed">
+                        <b>A Love Letter to Small Northern Towns, Exploring Barnsworth from 'Thank Goodness You're Here!'</b>, The Bubble, 23rd May 2025.
+                        <a class="font-medium text-purple-700 hover:underline" href="https://www.thebubble.org.uk/lifestyle/tgyh/">[Article]</a>
+                    </p>
+                </div>
+                <div>
+                    <p class="mb-1 leading-relaxed">
+                        <b>DurHack through the Lens of its Organisers</b>, 2024 Organisers, DurHack Medium, 30th October 2024.
+                        <a class="font-medium text-purple-700 hover:underline" href="https://medium.com/@DurHack_press/durhack-through-the-lens-of-its-organisers-6cbf67309586">[Article]</a>
+                    </p>
+                </div>
 
-        openModalBtn.addEventListener('click', (event) => {
-            event.preventDefault();
-            showModal();
-        });
+            </div>
+        </section>
 
-        closeModalBtn.addEventListener('click', hideModal);
+        <section id="articles" class="mb-10 px-4 md:px-0">
+            <h2 class="text-3xl font-normal mb-4 text-gray-900">Projects</h2>
+            
+            <div class="space-y-4 text-base text-gray-900">
 
-        modal.addEventListener('click', (event) => {
-            if (event.target === modal) {
-                hideModal();
-            }
-        });
+                <div>
+                    <p class="mb-1 leading-relaxed">
+                        <b>Get Moving with Godot!</b>, DurJam 2025, 13th August 2025. <i>GDScript</i>.
+                        <a class="font-medium text-purple-700 hover:underline" href="https://oryley.itch.io/godot-workshop">[Itch.io]</a>,
+                        <a class="font-medium text-purple-700 hover:underline" href="https://devpost.com/software/get-moving-with-godot">[Devpost]</a>,
+                        <a class="font-medium text-purple-700 hover:underline" href="https://github.com/Oscar-Ryley/Get-Moving-with-Godot-Workshop">[GitHub]</a>,
+                        <a class="font-medium text-purple-700 hover:underline" href="https://www.youtube.com/watch?v=MCJwWjI3ezE">[YouTube]</a>
+                    </p>
+                </div>
+                <div>
+                    <p class="mb-1 leading-relaxed">
+                        <b>Painting with Digital Eyes</b>, w/ Maks Nowak & Tommy Vranch-Ward, AstonHack10, 23rd February 2025. <i>OpenCV, WebGL, Acrylic Paint</i>.
+                        <a class="font-medium text-purple-700 hover:underline" href="https://devpost.com/software/peeping-painting">[Devpost]</a>,
+                        <a class="font-medium text-purple-700 hover:underline" href="https://github.com/f2reninj5/peeping_painting">[GitHub]</a>
+                    </p>
+                </div>
+                <div>
+                    <p class="mb-1 leading-relaxed">
+                        <b>Cube Route</b>, w/ Matthew Peters & William Mendez, LeedsHack 2025, 9th February 2025. <i>Java.</i>
+                        <a class="font-medium text-purple-700 hover:underline" href="https://devpost.com/software/cube-route">[Devpost]</a>
+                        <a class="font-medium text-purple-700 hover:underline" href="https://github.com/FaintLocket424/leedshack2025">[GitHub]</a>
+                    </p>
+                </div>
+                <div>
+                    <p class="mb-1 leading-relaxed">
+                        <b>ExSpore</b>, w/ Kaalkidan (Kaal) Sahele & Clarissa Hui, hackSheffield 9, 17th November 2024. <i>GDScript</i>.
+                        <a class="font-medium text-purple-700 hover:underline" href="https://oryley.itch.io/ex-spore">[Itch.io]</a>,
+                        <a class="font-medium text-purple-700 hover:underline" href="https://devpost.com/software/exspore">[Devpost]</a>,
+                        <a class="font-medium text-purple-700 hover:underline" href="https://github.com/Oscar-Ryley/ExSpore">[GitHub]</a>
+                    </p>
+                </div>
+                <div>
+                    <p class="mb-1 leading-relaxed">
+                        <b>Loan Shark</b>, HackNotts '24, 27th October 2024. <i>GDScript</i>.
+                        <a class="font-medium text-purple-700 hover:underline" href="https://oryley.itch.io/loan-shark">[Itch.io]</a>,
+                        <a class="font-medium text-purple-700 hover:underline" href="https://devpost.com/software/loan-shark-yl9a1w">[Devpost]</a>,
+                        <a class="font-medium text-purple-700 hover:underline" href="https://github.com/Oscar-Ryley/LoanShark">[GitHub]</a>
+                    </p>
+                </div>
+                <div>
+                    <p class="mb-1 leading-relaxed">
+                        <b>The Snowball Game</b>, w/ Matthew Peters, Higher Programming [78%], 24th April 2024. <i>GDScript</i>.
+                        <a class="font-medium text-purple-700 hover:underline" href="https://oryley.itch.io/the-snowball-game">[Itch.io]</a>,
+                        <a class="font-medium text-purple-700 hover:underline" href="https://devpost.com/software/thesnowballgame">[Devpost]</a>,
+                        <a class="font-medium text-purple-700 hover:underline" href="https://github.com/Oscar-Ryley/TheSnowballGame">[GitHub]</a>
+                    </p>
+                </div>
+                <div>
+                    <p class="mb-1 leading-relaxed">
+                        <b>It Slithers</b>, w/ Rui Aroújo, CS Alumni Hack 2024, 7th April 2024. <i>GDScript</i>.
+                        <a class="font-medium text-purple-700 hover:underline" href="https://oryley.itch.io/it-slithers">[Itch.io]</a>,
+                        <a class="font-medium text-purple-700 hover:underline" href="https://devpost.com/software/a-blr8ig">[Devpost]</a>,
+                        <a class="font-medium text-purple-700 hover:underline" href="https://github.com/Oscar-Ryley/It-Slithers">[GitHub]</a>
+                    </p>
+                </div>
+                <div>
+                    <p class="mb-1 leading-relaxed">
+                        <b>BillBoard</b>, w/ Maks Nowak, Erik Lippert & Matthew Savin, Dundee Quackathon 2024, 10th March 2024. <i>Python, AngularJS, MongoDB</i>.
+                        <a class="font-medium text-purple-700 hover:underline" href="https://devpost.com/software/billboard-gw7mfs">[Devpost]</a>,
+                        <a class="font-medium text-purple-700 hover:underline" href="https://github.com/Oscar-Ryley/BillBoard">[GitHub]</a>
+                    </p>
+                </div>
+                <div>
+                    <p class="mb-1 leading-relaxed">
+                        <b>WristBand</b>, Higher Programming [78%], 25th January 2024. <i>JavaScript, HTML/ CSS, Client-Server</i>.
+                        <a class="font-medium text-purple-700 hover:underline" href="https://devpost.com/software/wristband-sr8me7">[Devpost]</a>,
+                        <a class="font-medium text-purple-700 hover:underline" href="https://github.com/Oscar-Ryley/WristBand">[GitHub]</a>
+                    </p>
+                </div>
+                <div>
+                    <p class="mb-1 leading-relaxed">
+                        <b>Automated Obsolescence</b>, LanHack 2023, 26th November 2023. <i>GDScript</i>.
+                        <a class="font-medium text-purple-700 hover:underline" href="https://oryley.itch.io/automated-obsolescence">[Itch.io]</a>,
+                        <a class="font-medium text-purple-700 hover:underline" href="https://devpost.com/software/automated-obsolescence">[Devpost]</a>,
+                        <a class="font-medium text-purple-700 hover:underline" href="https://github.com/Oscar-Ryley/AutomatedObsolescence">[GitHub]</a>
+                    </p>
+                </div>
+                <div>
+                    <p class="mb-1 leading-relaxed">
+                        <b>Chimps on Wordle</b>, 23rd November 2023. <i>Python</i>.
+                        <a class="font-medium text-purple-700 hover:underline" href="https://devpost.com/software/chimpsonwordle">[Devpost]</a>,
+                        <a class="font-medium text-purple-700 hover:underline" href="https://github.com/Oscar-Ryley/ChimpsOnWordle">[GitHub]</a>
+                    </p>
+                </div>
+                <div>
+                    <p class="mb-1 leading-relaxed">
+                        <b>The Fountain of Knowledge: Academic Search Engine</b>, A-Level Computer Science Project [100%, 75/75], 9th February 2023. <i>Python, SQLite</i>.
+                        <a class="font-medium text-purple-700 hover:underline" href="https://devpost.com/software/alevel-neaproject">[Devpost]</a>,
+                        <a class="font-medium text-purple-700 hover:underline" href="https://github.com/Oscar-Ryley/TheFountainOfKnowledge">[GitHub]</a>
+                    </p>
+                </div>
 
-        document.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape') {
-                hideModal();
-            }
-        });
-    </script>
+            </div>
+        </section>
 
+        <hr><br>
 
+        <section id="Hackathon Experience" class="mb-10 px-4 md:px-0">
+            <h2 class="text-2xl font-normal mb-4 text-gray-900">Hackathon Experience</h2>
+            
+            <div class="space-y-4 text-base text-gray-900">
+
+                <div>
+                    <p class="mb-1 leading-relaxed">
+                        <b>Coach</b>, Major League Hacking, Mar 2025 - present
+                    </p>
+                </div>
+                <div>
+                    <p class="mb-1 leading-relaxed">
+                        <b>Events Coordinator Summer Placement</b>, National Quantum Computing Centre (NQCC), Jun - Sep 2025
+                    </p>
+                </div>
+                <div>
+                    <p class="mb-1 leading-relaxed">
+                        <b>(Events) Associate</b>, Hackathons UK, Aug 2025 - present
+                    </p>
+                </div>
+                <div>
+                    <p class="mb-1 leading-relaxed">
+                        <b>Head of Logistics</b>, DurHack, Feb 2024 - present
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="Teaching Experience" class="mb-10 px-4 md:px-0">
+            <h2 class="text-2xl font-normal mb-4 text-gray-900">Teaching Experience</h2>
+            
+            <div class="space-y-4 text-base text-gray-900">
+
+                <div>
+                    <p class="mb-1 leading-relaxed">
+                        Durham University Computer Science Department, Jun 2024 - present <br>
+                        <b>Lab Demonstrator</b>, Theory of Computation & Programming (Higher) <br>
+                        <b>Open Day Ambassador</b>, 10x Events
+                    </p>
+                </div>
+                <div>
+                    <p class="mb-1 leading-relaxed">
+                        <b>Code Club, Computeas</b>, Durham University Student Volunteering & Outreach (DUSVO), Feb 2024 - present <br>
+                        
+                    </p>
+                </div>
+                <div>
+                    <p class="mb-1 leading-relaxed">
+                        <b>Teaching Assistant, Robotics & Programming</b>, Engineering 4 Kids, Mar 2022 - Mar 2023
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="Other Experience" class="mb-10 px-4 md:px-0">
+            <h2 class="text-2xl font-normal mb-4 text-gray-900">Other Experience</h2>
+            
+            <div class="space-y-4 text-base text-gray-900">
+
+                <div>
+                    <p class="mb-1 leading-relaxed">
+                        <b>Web Developer (& Gaming Editor)</b>, The Bubble, Dec 2024 - present
+                    </p>
+                </div>
+                <div>
+                    <p class="mb-1 leading-relaxed">
+                        <b>Founder, President</b>, DurJam (DU Game Dev), Nov 2024 - present
+                    </p>
+                </div>
+                <div>
+                    <p class="mb-1 leading-relaxed">
+                        <b>Youth Worker</b>, Chesham Youth Centre, Sep 2021 - Mar 2023
+                    </p>
+                </div>
+                <div>
+                    <p class="mb-1 leading-relaxed">
+                        <b>Library Assistant</b>, Chesham Library, Oct 2019 - Apr 2020
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="Education" class="mb-10 px-4 md:px-0">
+            <h2 class="text-2xl font-normal mb-4 text-gray-900">Education</h2>
+            
+            <div class="space-y-4 text-base text-gray-900">
+
+                <div>
+                    <p class="mb-1 leading-relaxed">
+                        <b>MEng (Hons) Computer Science</b>, Durham University, Sep 2023 - Jun 2027. <i>First Class Honours (2nd Year)</i>.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+</body>
 </html>
