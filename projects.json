@@ -1,0 +1,42 @@
+[
+    {
+        "title": "UK Quantum Hackathon 2025",
+        "date": "21st-23rd Jul 2025",
+        "tags": ["Hackathon #13", "Organiser"],
+        "description": "Organiser for the fourth UK Quantum Hackathon, hosted at the University of Edinburgh as part of the Quantum Fringe celebrating the International Year of Quantum Science and Technology.",
+        "imageFolder": "2025/quantum25",
+        "images": ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg", "9.jpg", "10.jpg"],
+        "fullDescription": "Detailed logistical breakdown included coordinating travel for international speakers, managing venue layout, and securing sponsorship materials. This was a flagship event for the NQCC.",
+        "pages": ["nqcc", "hackathons"]
+    },
+    {
+        "title": "Summer Student Showcase",
+        "date": "3rd Sep 2025",
+        "tags": ["Presentation"],
+        "description": "Presented my project on the facilitation of the Quantum Hackathon to the NQCC team.",
+        "imageFolder": "non/showcase",
+        "images": ["1.jpg", "2.jpg"],
+        "fullDescription": "The presentation covered metrics from the hackathon, key challenges solved, and suggestions for future event planning protocols. Received positive feedback from the senior management team.",
+        "pages": ["nqcc"]
+    },
+    {
+        "title": "Energy Efficient Computing Workshop",
+        "date": "15th-16th Sep 2025",
+        "tags": ["Conference #1", "Attendee"],
+        "description": "Facilitated a workshop, bridging the gap between Quantum Computing research and the Energy Sector. Hosted at the Royal Society, in partnership with the Department for Science, Innovation and Technology, and the Department for Energy Security and Net Zero.",
+        "imageFolder": "2026/scenergy",
+        "images": ["1.jpg"],
+        "fullDescription": "Assisted with delegate registration and managed Q&A sessions. Networked with researchers from DST and DEZ. The focus was on sustainable computing practices and resource optimization.",
+        "pages": ["nqcc", "conferences"]
+    },
+    {
+        "title": "Quantum Computing for Energy Workshop",
+        "date": "23rd Sep 2025",
+        "tags": ["Conference #2", "Facilitator"],
+        "description": "Facilitated a workshop, bridging the gap between Quantum Computing research and the Energy Sector. Hosted at the Royal Society, in partnership with the Department for Science, Innovation and Technology, and the Department for Energy Security and Net Zero.",
+        "imageFolder": "2026/qcenergy",
+        "images": ["1.png", "2.jpg"],
+        "fullDescription": "Handled the entire logistics chain: pre-event marketing, abstract submission review, catering arrangements, and on-site technical support for presenters.",
+        "pages": ["nqcc", "conferences"]
+    }
+]
