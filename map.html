@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oscar Ryley</title>
     <link rel="icon" type="image/jpg" href="images/icon.jpg">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  </head>
+</head>
 
-  <body>
+<body>
 
     <a href="/" class="back-button" style="position: fixed; top: 20px; right: 20px; z-index: 1000; color: black; background-color: white; border-radius: 50%; width: 40px; height: 40px; display: flex; justify-content: center; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
         <i class="fa-solid fa-arrow-left"></i>
@@ -53,307 +53,114 @@
             iconAnchor: [5, 5]
         });
 
-        var allMarkers = [
-            {
-                title: "Quantum Computing for Energy Workshop",
-                coords: [51.50611, -0.13204],
-                alt: "Quantum Computing for Energy",
-                date: "23rd Sep 2025",
-                imageFolder: "2026/qcenergy",
-                images: ["1.png", "2.jpg"],
-                description: "Facilitated for a workshop, bridging the gap between Quantum Computing research and the Energy Sector. Hosted at the Royal Society; in partnership with the Department for Science, Innovation and Technology, and the Department for Energy Security and Net Zero.",
-                group: UKCluster,
-                type: "conference",
-                tags: ["NQCC", "Facilitator", "#2"],
-                tagLinks: ["/nqcc", "", "/conferences"]
-            },
-            {
-                title: "Energy Efficient Computing Workshop",
-                coords: [51.573027, -1.313564],
-                alt: "Energy Efficient Computing",
-                date: "15th-16th Sep 2025",
-                imageFolder: "2026/scenergy",
-                images: ["1.jpg"],
-                description: "Attended a conference by STFC Scientific Computing at Rutherford Appleton Laboratory, in partnership with the Computational Science Centre for Research Communities (CoSeC). <br><br> Topics ranged from Linear Algebra and floating point precision to community engagement and the reality of HPC data centres like ARCHER2.",
-                group: UKCluster,
-                type: "conference",
-                tags: ["NQCC (STFC)", "#1"],
-                tagLinks: ["/nqcc", "/conferences"]
-            },
-            {
-                title: "UK Quantum Hackathon 2025",
-                coords: [55.922916, -3.174278],
-                alt: "UK Quantum Hackathon 2025",
-                date: "21st-23rd Jul 2025",
-                imageFolder: "2025/quantum25",
-                images: ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg", "9.jpg", "10.jpg"],
-                description: "Organiser for the fourth UK Quantum Hackathon, hosted at the University of Edinburgh as part of the Quantum Fringe celebrating the International Year of Quantum Science and Technology. <br><br> Part of my Events Coordinator Summer Placement at the National Quantum Computing Centre (NQCC).",
-                group: UKCluster,
-                type: "hackathon",
-                tags: ["NQCC", "Organiser", "#13"],
-                tagLinks: ["/nqcc", "", "/hackathons"]
-            },
-            {
-                title: "SpurHacks",
-                coords: [43.51534, -80.5135],
-                alt: "SpurHacks",
-                date: "20th-22nd Jun 2025",
-                description: "Second event as a Major League Hacking Coach, training with Kari Groszewska. The inaugural SpurHacks organised by Konfer inc and Spur in Waterloo, ON, Canada.",
-                imageFolder: "2025/spurhacks",
-                images: ["thumb.png", "1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg"],
-                group: NACluster,
-                type: "hackathon",
-                tags: ["MLH Paired", "#12"],
-                tagLinks: ["/mlh", "/hackathons"]
-            },
-            {
-                title: "DragonHacks XI",
-                coords: [39.95661, -75.18994],
-                alt: "DragonHacks XI",
-                date: "26th-27th Apr 2025",
-                description: "First event as a Major League Hacking Coach, the 11th annual DragonHacks at Drexel University in Philadelphia, PA, USA.",
-                imageFolder: "2025/dragonhacksxi",
-                images: ["thumb.png", "1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg"],
-                group: NACluster,
-                type: "hackathon",
-                tags: ["MLH Cohort", "#11"],
-                tagLinks: ["/mlh", "/hackathons"]
-            },
-            {
-                title: "Dundee Quackathon 2025",
-                coords: [56.45859, -2.98273],
-                alt: "Dundee Quackathon 2025",
-                date: "8th-9th Mar 2025",
-                description: "Volunteered at the 9th Hackathon at the University of Dundee.",
-                imageFolder: "2025/quack25",
-                images: ["thumb.jpg", "1.JPG", "2.JPG", "3.JPG", "4.JPG", "5.JPG", "6.JPG"],
-                group: UKCluster,
-                type: "hackathon",
-                tags: ["Volunteer", "#10"],
-                tagLinks: ["", "/hackathons"]
-            },
-            {
-                title: "DUWiT Hacks 2025",
-                coords: [54.763397, -1.571940],
-                alt: "DUWiT Hacks 2025",
-                date: "1st-2nd Mar 2025",
-                description: "Volunteered at the first Durham University Women in Tech Hackathon.",
-                imageFolder: "2025/duwithacks25",
-                images: ["thumb.jpg", "1.jpg", "2.jpg", "3.jpg", "4.jpg"],
-                group: UKCluster,
-                type: "hackathon",
-                tags: ["Volunteer", "#9",],
-                tagLinks: ["", "/hackathons"]
-            },
-            {
-                title: "AstonHack 10",
-                coords: [52.48671, -1.88824],
-                alt: "AstonHack 10",
-                date: "22nd-23rd Feb 2025",
-                description: "Participated in the 10th annual Hackathon at Aston University, collaborated with a Birmingham student & a Durham student to create a painting with Digital eyes that follow faces.",
-                imageFolder: "2025/astonhack10",
-                images: ["thumb.jpg", "1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg"],
-                group: UKCluster,
-                type: "hackathon",
-                tags: ["#8"],
-                tagLinks: ["/hackathons"]
-            },
-            {
-                title: "LeedsHack 2025",
-                coords: [53.80909, -1.55387],
-                alt: "LeedsHack 2025",
-                date: "8th-9th Feb 2025",
-                description: 'Won Runner Up for \'The Data City Challenge: Streamlining Public Transport with Tech\' at LeedsHack 2025, for "applying technology in making public transport better and easier."',
-                imageFolder: "2025/leedshack25",
-                images: ["thumb.jpg", "1.png", "2.png", "3.jpg", "4.jpg"],
-                group: UKCluster,
-                type: "hackathon",
-                tags: ["Runner Up", "#7"],
-                tagLinks: ["", "/hackathons"]
-            },
-            {
-                title: "hackSheffield 9",
-                coords: [53.38126, -1.47873],
-                alt: "hackSheffield 9",
-                date: "16th-17th Nov 2024",
-                description: "Participated in a 24 hour Hackathon at the University of Sheffield, hosted in-person at 38 Mappin Street.",
-                imageFolder: "2025/hacksheffield9",
-                images: ["thumb.jpg", "1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg"],
-                group: UKCluster,
-                type: "hackathon",
-                tags: ["#6"],
-                tagLinks: ["/hackathons"]
-            },
-            {
-                title: "DurHack 2024",
-                coords: [54.767191, -1.576201],
-                alt: "DurHack 2024",
-                date: "2nd-3rd Nov 2024",
-                description: "Hacker Experience Officer for DurHack 2024, the largest MLH event in the UK and 2nd largest student-run Hackathon in Europe! <br><br> DurHack 2024 had: <br> Over 1,000 Applications <br> 600 Participants, with 206 external students from Cambridge, Imperial, Warwick, Nottingham etc <br> 130+ Projects submitted to our Devpost page",
-                imageFolder: "2025/durhack24",
-                images: ["thumb.png", "1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg"],
-                group: UKCluster,
-                type: "hackathon",
-                tags: ["Organiser", "#5"],
-                tagLinks: ["", "/hackathons"]
-            },
-            {
-                title: "HackNotts 24",
-                coords: [52.95314, -1.18719],
-                alt: "HackNotts 24",
-                date: "26th-27th Oct 2024",
-                description: "Participated in a 25 hour Halloween themed in-person Hackathon at the University of Nottingham's Computer Science Department.",
-                imageFolder: "2025/hacknotts24",
-                images: ["thumb.jpg", "1.jpeg", "2.jpeg", "3.jpg"],
-                group: UKCluster,
-                type: "hackathon",
-                tags: ["#4"],
-                tagLinks: ["/hackathons"]
-            },
-            {
-                title: "Dundee Quackathon 2024",
-                coords: [56.45859, -2.98273],
-                alt: "Dundee Quackathon 2024",
-                date: "9th-10th Mar 2024",
-                description: 'Won the Junior Challenge at Dundee\'s 2024 Quackathon, for "Creating an application that solves common problems students face every day".',
-                imageFolder: "2024/quack24",
-                images: ["thumb.jpg", "1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg", "9.jpg"],
-                group: UKCluster,
-                type: "hackathon",
-                tags: [ "Winner", "#3"],
-                tagLinks: ["", "/hackathons"]
-            },
-            {
-                title: "LanHack23",
-                coords: [54.01039, -2.78772],
-                alt: "LanHack23",
-                date: "25th-26th Nov 2023",
-                description: "Remotely Participated in a Hackathon organised by Lancaster University's CompSoc and CyberSoc over 24 hours. My first time working with a game engine to produce a complete experience.",
-                imageFolder: "2024/lanhack23",
-                images: ["thumb.jpg"],
-                group: UKCluster,
-                type: "hackathon",
-                tags: ["Remote", "#2"],
-                tagLinks: ["", "/hackathons"]
-            },
-            {
-                title: "DurHack 2023",
-                coords: [54.767191, -1.576201],
-                alt: "DurHack 2023",
-                date: "4th-5th Nov 2023",
-                description: "Participated in my first Hackathon, working in a team over 24 hours to produce a web development project.",
-                imageFolder: "2024/durhack23",
-                images: ["thumb.jpg", "1.jpg"],
-                group: UKCluster,
-                type: "hackathon",
-                tags: ["#1"],
-                tagLinks: ["/hackathons"]
-            }
-        ];
+        async function fetchAndRenderMarkers() {
+            try {
+                const response = await fetch('./projects.json');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const allProjects = await response.json();
 
-        conferenceMarkers = [
+                // Filter for projects that have a 'maps' object
+                const mapProjects = allProjects.filter(project => project.maps && project.maps.coords);
 
-        ];
+                mapProjects.forEach(function(project) {
+                    // Access map data from the new 'maps' object
+                    const mapData = project.maps;
+                    let icon = (mapData.type === "hackathon") ? hackathonIcon : conferenceIcon;
 
-        var today = new Date();
+                    let marker = L.marker(mapData.coords, { alt: project.title, icon: icon });
 
-        allMarkers.forEach(function(markerInfo) {
-            
-            if (markerInfo.type == "hackathon") {
-                var icon = hackathonIcon;
-            } else {
-                var icon = conferenceIcon;
-            };
-            
-            var marker = L.marker(markerInfo.coords, { alt: markerInfo.alt, icon: icon });
-
-            var carouselHtml = '<div class="carousel-container">';
-            markerInfo.images.forEach(function(imageName, index) {
-                var imagePath = 'images/map/' + markerInfo.imageFolder + '/' + imageName;
-                carouselHtml += '<div class="carousel-slide' + (index === 0 ? ' active' : '') + '">';
-                carouselHtml += '<img src="' + imagePath + '" alt="' + markerInfo.title + ' image ' + (index + 1) + '" class="carousel-image">';
-                carouselHtml += '</div>';
-            });
-
-            if (markerInfo.images.length > 1) {
-                carouselHtml += '<div class="carousel-nav-hover left-hover"></div>';
-                carouselHtml += '<div class="carousel-nav-hover right-hover"></div>';
-            }
-
-            carouselHtml += '</div>';
-
-            var tagsHtml = '';
-            
-            if (markerInfo.tags && markerInfo.tags.length > 0) {
-                tagsHtml = '<div style="display: flex; flex-wrap: wrap; gap: 5px;">';
-                tagsHtml += markerInfo.tags.map(function(tag, index) { // Added index to get link
-                    var link = markerInfo.tagLinks && markerInfo.tagLinks[index] ? markerInfo.tagLinks[index] : '';
-                    
-                    var tagClass = markerInfo.type == "hackathon" 
-                        ? 'inline-block bg-purple-200 !text-purple-800 text-xs font-semibold px-2 py-1 rounded-full tracking-wide'
-                        : 'inline-block bg-blue-200 !text-blue-800 text-xs font-semibold px-2 py-1 rounded-full tracking-wide';
-                    
-                    if (link.trim() === '') {
-                        // Render as a non-clickable span if no link is provided
-                        return '<span class="' + tagClass + '">' + tag + '</span>';
+                    let carouselHtml = '<div class="carousel-container">';
+                    if (project.images && project.images.length > 0) {
+                        project.images.forEach(function(imageName, index) {
+                            let imagePath = 'images/map/' + project.imageFolder + '/' + imageName;
+                            carouselHtml += '<div class="carousel-slide' + (index === 0 ? ' active' : '') + '">';
+                            carouselHtml += '<img src="' + imagePath + '" alt="' + project.title + ' image ' + (index + 1) + '" class="carousel-image" onerror="this.onerror=null;this.src=\'https://placehold.co/600x400/CCCCCC/333333?text=Image+Unavailable\'">';
+                            carouselHtml += '</div>';
+                        });
                     } else {
-                        // Render as an anchor tag with the corresponding link
-                        return '<a href="' + link + '" class="' + tagClass + '">' + tag + '</a>';
+                        carouselHtml += '<div class="carousel-slide active"><img src="https://placehold.co/600x400/CCCCCC/333333?text=Image+Unavailable" class="carousel-image"></div>';
                     }
-                }).join(' ');
-                tagsHtml += '</div>';
-            }
 
-            var popupHtml = '<div class="custom-popup-content" style="width: 300px;">';
-            popupHtml += carouselHtml;
-            popupHtml += '<h3 class="text-2xl font-bold text-gray-800" style="margin-bottom: 0; margin-top: 1rem;">' + markerInfo.title + '</h3>';
+                    if (project.images.length > 1) {
+                        carouselHtml += '<div class="carousel-nav-hover left-hover"></div>';
+                        carouselHtml += '<div class="carousel-nav-hover right-hover"></div>';
+                    }
+                    carouselHtml += '</div>';
 
-            popupHtml += '<div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0; margin-bottom: 0.2rem;">';
-            popupHtml += '<p class="text-sm text-gray-500" style="margin: 0;">' + markerInfo.date + '</p>';
-            popupHtml += tagsHtml;
-            popupHtml += '</div>';
+                    let tagsHtml = '';
+                    // Access map tags from the 'maps' object
+                    if (mapData.tags && mapData.tags.length > 0) {
+                        tagsHtml = '<div style="display: flex; flex-wrap: wrap; gap: 5px;">';
+                        tagsHtml += mapData.tags.map(function(tag, index) {
+                            let link = mapData.tagLinks && mapData.tagLinks[index] ? mapData.tagLinks[index] : '';
+                            let tagClass = mapData.type === "hackathon"
+                                ? 'inline-block bg-purple-200 !text-purple-800 text-xs font-semibold px-2 py-1 rounded-full tracking-wide'
+                                : 'inline-block bg-blue-200 !text-blue-800 text-xs font-semibold px-2 py-1 rounded-full tracking-wide';
 
-            popupHtml += '<p class="text-gray-600">' + markerInfo.description + '</p>';
-            popupHtml += '</div>';
+                            if (link.trim() === '') {
+                                return '<span class="' + tagClass + '">' + tag + '</span>';
+                            } else {
+                                return '<a href="' + link + '" class="' + tagClass + '">' + tag + '</a>';
+                            }
+                        }).join(' ');
+                        tagsHtml += '</div>';
+                    }
 
-            marker.bindPopup(popupHtml, { closeButton: false });
-            markerInfo.group.addLayer(marker);
+                    let popupHtml = '<div class="custom-popup-content" style="width: 300px;">';
+                    popupHtml += carouselHtml;
+                    popupHtml += '<h3 class="text-2xl font-bold text-gray-800" style="margin-bottom: 0; margin-top: 1rem;">' + project.title + '</h3>';
+                    popupHtml += '<div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0; margin-bottom: 0.2rem;">';
+                    popupHtml += '<p class="text-sm text-gray-500" style="margin: 0;">' + project.date + '</p>';
+                    popupHtml += tagsHtml;
+                    popupHtml += '</div>';
+                    // Access map description from the 'maps' object
+                    popupHtml += '<p class="text-gray-600">' + mapData.description + '</p>';
+                    popupHtml += '</div>';
 
-            marker.on('popupopen', function() {
-                const popup = this.getPopup().getElement();
-                const leftHover = popup.querySelector('.left-hover');
-                const rightHover = popup.querySelector('.right-hover');
-                const carouselContainer = popup.querySelector('.carousel-container');
-                const slides = Array.from(carouselContainer.querySelectorAll('.carousel-slide'));
+                    marker.bindPopup(popupHtml, { closeButton: false });
 
-                if (leftHover && rightHover && slides.length > 1) {
-                    let currentSlideIndex = 0;
+                    const isNA = mapData.coords[0] > 24 && mapData.coords[0] < 50 && mapData.coords[1] < -50;
+                    if (isNA) {
+                        NACluster.addLayer(marker);
+                    } else {
+                        UKCluster.addLayer(marker);
+                    }
 
-                    slides.forEach((slide, index) => {
-                        if (slide.classList.contains('active')) {
-                            currentSlideIndex = index;
+                    marker.on('popupopen', function() {
+                        const popup = this.getPopup().getElement();
+                        const leftHover = popup.querySelector('.left-hover');
+                        const rightHover = popup.querySelector('.right-hover');
+                        const carouselContainer = popup.querySelector('.carousel-container');
+                        const slides = Array.from(carouselContainer.querySelectorAll('.carousel-slide'));
+                        if (leftHover && rightHover && slides.length > 1) {
+                            let currentSlideIndex = 0;
+                            slides.forEach((slide, index) => {
+                                if (slide.classList.contains('active')) {
+                                    currentSlideIndex = index;
+                                }
+                            });
+                            const showSlide = (n) => {
+                                slides[currentSlideIndex].classList.remove('active');
+                                currentSlideIndex = (n + slides.length) % slides.length;
+                                slides[currentSlideIndex].classList.add('active');
+                            };
+                            leftHover.addEventListener('click', function() { showSlide(currentSlideIndex - 1); });
+                            rightHover.addEventListener('click', function() { showSlide(currentSlideIndex + 1); });
                         }
                     });
+                });
 
-                    const showSlide = (n) => {
-                        slides[currentSlideIndex].classList.remove('active');
-                        currentSlideIndex = (n + slides.length) % slides.length;
-                        slides[currentSlideIndex].classList.add('active');
-                    };
+                map.addLayer(UKCluster);
+                map.addLayer(NACluster);
 
-                    leftHover.addEventListener('click', function() {
-                        showSlide(currentSlideIndex - 1);
-                    });
+            } catch (error) {
+                console.error("Error loading projects from JSON:", error);
+            }
+        }
 
-                    rightHover.addEventListener('click', function() {
-                        showSlide(currentSlideIndex + 1);
-                    });
-                }
-            });
-        });
-
-        map.addLayer(UKCluster);
-        map.addLayer(NACluster);
+        document.addEventListener('DOMContentLoaded', fetchAndRenderMarkers);
 
         var circlesData = [
             { coords: [55.465208, -10.586449], tooltipText: "NA", targetViewCoords: NAcoords },
@@ -374,9 +181,7 @@
 
             circle.bindTooltip(circleInfo.tooltipText);
         });
-        
     </script>
+</body>
 
-  </body>
-    
 </html>
