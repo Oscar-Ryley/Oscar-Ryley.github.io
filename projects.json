@@ -1,5 +1,22 @@
 [
     {
+        "title": "HackNotts 25",
+        "date": "25th-26th Oct 2025",
+        "tags": ["Hackathon #15"],
+        "description": "Participated in a fantasy themed Hackathon.",
+        "imageFolder": "2026/hacknotts25",
+        "images": [],
+        "fullDescription": "",
+        "pages": ["hackathons"],
+        "maps": {
+            "coords": [52.95314, -1.18719],
+            "type": "hackathon",
+            "tags": ["#15"],
+            "tagLinks": ["/hackathons"],
+            "description": "Participated in a fantasy themed Hackathon."
+        }
+    },
+    {
         "title": "WHACK 2025",
         "date": "18th-19th Oct 2025",
         "tags": ["Hackathon #14"],
