@@ -1,5 +1,22 @@
 [
     {
+        "title": "DurHack X",
+        "date": "1st-2nd Nov 2025",
+        "tags": ["Hackathon #16", "Organiser"],
+        "description": "",
+        "imageFolder": "2026/durhackx",
+        "images": ["thumb.png"],
+        "fullDescription": "",
+        "pages": ["hackathons"],
+        "maps": {
+            "coords": [54.767191, -1.576201],
+            "type": "hackathon",
+            "tags": ["#16", "Organiser"],
+            "tagLinks": ["/hackathons", ""],
+            "description": ""
+        }
+    },
+    {
         "title": "HackNotts 25",
         "date": "25th-26th Oct 2025",
         "tags": ["Hackathon #15"],
