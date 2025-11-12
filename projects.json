@@ -1,5 +1,39 @@
 [
     {
+        "title": "GreatUniHack 2025",
+        "date": "8th-9th Nov 2025",
+        "tags": ["Hackathons UK", "Hackathon #17"],
+        "description": "",
+        "imageFolder": "2026/guh25",
+        "images": [],
+        "fullDescription": "",
+        "pages": ["huk", "hackathons"],
+        "maps": {
+            "coords": [53.46972630511103, -2.233919548808626],
+            "type": "hackathon",
+            "tags": ["Hackathons UK", "#17"],
+            "tagLinks": ["", "/hackathons"],
+            "description": ""
+        }
+    },
+    {
+        "title": "MLH AI Roadshow: London",
+        "date": "6th Nov 2025",
+        "tags": ["MLH", "Conference #3", "Facilitator"],
+        "description": "",
+        "imageFolder": "2026/airoadshow",
+        "images": [],
+        "fullDescription": "",
+        "pages": ["mlh", "conferences"],
+        "maps": {
+            "coords": [51.531233130689415, -0.11876817318777301],
+            "type": "conference",
+            "tags": ["MLH", "Facilitator", "#3"],
+            "tagLinks": ["/mlh", "", "/conferences"],
+            "description": ""
+        }
+    },
+    {
         "title": "DurHack X",
         "date": "1st-2nd Nov 2025",
         "tags": ["Hackathon #16", "Organiser"],
