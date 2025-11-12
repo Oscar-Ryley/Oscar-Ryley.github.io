@@ -5,7 +5,7 @@
         "tags": ["Hackathons UK", "Hackathon #17"],
         "description": "",
         "imageFolder": "2026/guh25",
-        "images": [],
+        "images": ["2.jpg"],
         "fullDescription": "",
         "pages": ["huk", "hackathons"],
         "maps": {
@@ -22,7 +22,7 @@
         "tags": ["MLH", "Conference #3", "Facilitator"],
         "description": "",
         "imageFolder": "2026/airoadshow",
-        "images": [],
+        "images": ["1.png"],
         "fullDescription": "",
         "pages": ["mlh", "conferences"],
         "maps": {
@@ -45,8 +45,8 @@
         "maps": {
             "coords": [54.767191, -1.576201],
             "type": "hackathon",
-            "tags": ["#16", "Organiser"],
-            "tagLinks": ["/hackathons", ""],
+            "tags": ["Organiser", "#16"],
+            "tagLinks": ["", "/hackathons"],
             "description": ""
         }
     },
@@ -56,7 +56,7 @@
         "tags": ["Hackathon #15"],
         "description": "Participated in a fantasy themed Hackathon.",
         "imageFolder": "2026/hacknotts25",
-        "images": [],
+        "images": ["1.jpeg"],
         "fullDescription": "",
         "pages": ["hackathons"],
         "maps": {
@@ -73,7 +73,7 @@
         "tags": ["Hackathon #14"],
         "description": "Participated in the second Warwick Hackathon, the first open to external students.",
         "imageFolder": "2026/whack25",
-        "images": [],
+        "images": ["1.jpg", "2.JPG"],
         "fullDescription": "",
         "pages": ["hackathons"],
         "maps": {
