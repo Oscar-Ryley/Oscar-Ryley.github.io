@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oscar Ryley</title>
+    <link rel="icon" type="image/jpg" href="images/icon.jpg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fb;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+
+    <div class="bg-pink-900 text-white w-full shadow-lg">
+        <div class="max-w-4xl mx-auto flex items-center justify-between py-6 px-4 md:py-8">
+            <div class="flex-1 flex flex-col items-start justify-center space-y-1.5 md:space-y-2 text-left">
+                <h1 class="text-4xl md:text-5xl font-bold">Hackathons UK</h1>
+                <p class="text-lg font-light">Events Associate, Aug 2025 - present</p>
+                <p class="text-base font-medium text-pink-200"> Supporting student Hackathons across the UK by championing community, sharing experience-backed knowledge with organisers and mentoring participants at partner events. </p>
+            </div>
+            <a href="/" class="back-button absolute top-4 right-4 z-20 text-black bg-white rounded-full w-10 h-10 flex justify-center items-center shadow-md hover:bg-gray-100 transition">
+                <i class="fa-solid fa-arrow-left"></i>
+            </a>
+        </div>
+    </div>
+
+    <div id="project-list" class="max-w-4xl mx-auto mb-12 pt-8">
+        <div id="loading-indicator" class="text-center p-8 text-gray-500">Loading projects...</div>
+    </div>
+
+    <script>
+        const CURRENT_PAGE_ID = 'huk'; 
+
+        function generateProjectHtml(project) {
+            const tagBg = 'bg-pink-200 text-pink-800';
+
+            const tagsHtml = project.tags.map(tag => 
+                `<span class="inline-block ${tagBg} text-xs font-semibold px-3 py-1 rounded-full tracking-wide">${tag}</span>`
+            ).join('');
+
+            const carouselSlides = project.images.map((imageName, index) => {
+                const imagePath = `images/map/${project.imageFolder}/${imageName}`;
+                return `
+                    <div class="page-carousel-slide ${index === 0 ? 'active' : ''}">
+                        <img src="${imagePath}" alt="${project.title} image ${index + 1}" class="page-carousel-image" onerror="this.onerror=null;this.src='https://placehold.co/600x400/CCCCCC/333333?text=Image+Unavailable'">
+                    </div>
+                `;
+            }).join('');
+
+            const navHovers = (project.images.length > 1) ? `
+                <div class="page-carousel-nav-hover page-left-hover"></div>
+                <div class="page-carousel-nav-hover page-right-hover"></div>
+            ` : '';
+            
+            const finalText = project.fullDescription && project.fullDescription.trim() !== "" ? 
+                `
+                <div class="mt-4 space-y-4 text-base text-gray-700">
+                    <p class="leading-relaxed">${project.fullDescription}</p>
+                </div>
+                ` : "";
+
+            return `
+                <section id="${project.title.replace(/\s/g, '-')}" class="mb-10 px-4 md:px-0">
+                    <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                            
+                            <div>
+                                <h2 class="text-3xl font-bold mb-1 text-gray-900">${project.title}</h2>
+                                <p class="text-sm text-gray-500 mb-2">${project.date}</p>
+                                
+                                <div class="flex flex-wrap gap-2 mb-6">
+                                    ${tagsHtml}
+                                </div>
+
+                                <div class="space-y-4 text-base text-gray-700">
+                                    <p class="leading-relaxed">${project.description}</p>
+                                </div>
+                            </div>
+                            
+                            <div class="page-carousel-container" data-carousel-id="${project.title.toLowerCase().replace(/\s/g, '-')}-carousel">
+                                ${carouselSlides}
+                                ${navHovers}
+                            </div>
+                        </div>
+                        ${finalText}
+                    </div>
+                </section>
+            `;
+        }
+
+        function renderProjects(projectsData) {
+            const projectListContainer = document.getElementById('project-list');
+            const loadingIndicator = document.getElementById('loading-indicator');
+            
+            if (loadingIndicator) loadingIndicator.style.display = 'none';
+
+            if (projectsData.length === 0) {
+                 projectListContainer.innerHTML = `<div class="text-center p-8 text-gray-500">No projects found for this page.</div>`;
+                 return;
+            }
+
+            projectsData.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+            let allProjectsHtml = '';
+            projectsData.forEach(project => {
+                allProjectsHtml += generateProjectHtml(project);
+            });
+
+            projectListContainer.innerHTML = allProjectsHtml;
+            initializeCarousels();
+        }
+
+        async function fetchProjects() {
+            const loadingIndicator = document.getElementById('loading-indicator');
+            
+            try {
+                const response = await fetch('./projects.json');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const allProjects = await response.json();
+
+                const filteredProjects = allProjects.filter(project => 
+                    project.pages && Array.isArray(project.pages) && project.pages.includes(CURRENT_PAGE_ID)
+                );
+
+                console.log(`Loaded ${allProjects.length} projects. Filtered ${filteredProjects.length} projects for ${CURRENT_PAGE_ID}.`);
+                renderProjects(filteredProjects);
+
+            } catch (error) {
+                console.error("Error loading projects from JSON:", error);
+                if (loadingIndicator) loadingIndicator.innerHTML = `Error loading projects. Ensure 'projects.json' is available and valid JSON.`;
+            }
+        }
+
+        function initializeCarousels() {
+            const carousels = document.querySelectorAll('.page-carousel-container');
+
+            carousels.forEach(carouselContainer => {
+                const slides = Array.from(carouselContainer.querySelectorAll('.page-carousel-slide'));
+                const leftHover = carouselContainer.querySelector('.page-left-hover');
+                const rightHover = carouselContainer.querySelector('.page-right-hover');
+                
+                if (slides.length <= 1 || !leftHover || !rightHover) {
+                    if (leftHover) leftHover.style.display = 'none';
+                    if (rightHover) rightHover.style.display = 'none';
+                    return; 
+                }
+
+                let currentSlideIndex = 0;
+
+                slides.forEach((slide, index) => {
+                    if (index === 0) {
+                        slide.classList.add('active');
+                        currentSlideIndex = 0;
+                    } else {
+                         slide.classList.remove('active');
+                    }
+                });
+
+                const showSlide = (n) => {
+                    slides[currentSlideIndex].classList.remove('active');
+                    
+                    currentSlideIndex = (n + slides.length) % slides.length;
+                    
+                    slides[currentSlideIndex].classList.add('active');
+                };
+
+                leftHover.addEventListener('click', (event) => {
+                    event.stopPropagation();
+                    showSlide(currentSlideIndex - 1);
+                });
+
+                rightHover.addEventListener('click', (event) => {
+                    event.stopPropagation();
+                    showSlide(currentSlideIndex + 1);
+                });
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchProjects();
+        });
+    </script>
+</body>
+</html>

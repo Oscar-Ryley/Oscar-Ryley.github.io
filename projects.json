@@ -12,7 +12,7 @@
             "coords": [53.46972630511103, -2.233919548808626],
             "type": "hackathon",
             "tags": ["Hackathons UK", "#17"],
-            "tagLinks": ["", "/hackathons"],
+            "tagLinks": ["/huk", "/hackathons"],
             "description": ""
         }
     },
