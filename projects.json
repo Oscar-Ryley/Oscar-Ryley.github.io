@@ -1,5 +1,22 @@
 [
     {
+        "title": "HackSheffield 10",
+        "date": "29th-30th Nov 2025",
+        "tags": ["Hackathon #18", "MLH Debut"],
+        "description": "Third event as a Major League Hacking Coach, being shadowed by Erin Osher.",
+        "imageFolder": "2026/hacksheffield10",
+        "images": [],
+        "fullDescription": "",
+        "pages": ["hackathons", "mlh"],
+        "maps": {
+            "coords": [53.381633485252756, -1.4819594445202606],
+            "type": "hackathon",
+            "tags": ["MLH Debut", "#18"],
+            "tagLinks": ["/mlh", "/hackathons"],
+            "description": "Third event as a Major League Hacking Coach, being shadowed by Erin Osher."
+        }
+    },
+    {
         "title": "GreatUniHack 2025",
         "date": "8th-9th Nov 2025",
         "tags": ["Hackathon #17", "Hackathons UK"],
