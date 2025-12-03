@@ -1,11 +1,28 @@
 [
     {
+        "title": "HackSussex Game Jam 2025",
+        "date": "6th-7th Dec 2025",
+        "tags": ["Hackathon #18", "MLH Debut"],
+        "description": "Fourth event as a Major League Hacking Coach, First Solo event and in-person Game Jam!",
+        "imageFolder": "2026/hacksussexgamejam",
+        "images": ["1.png"],
+        "fullDescription": "",
+        "pages": ["hackathons", "mlh"],
+        "maps": {
+            "coords": [50.86576869263245, -0.0871443811122391],
+            "type": "hackathon",
+            "tags": ["MLH First Solo", "#19"],
+            "tagLinks": ["/mlh", "/hackathons"],
+            "description": "Fourth event as a Major League Hacking Coach, First Solo event and in-person Game Jam!"
+        }
+    },
+    {
         "title": "HackSheffield 10",
         "date": "29th-30th Nov 2025",
         "tags": ["Hackathon #18", "MLH Debut"],
         "description": "Third event as a Major League Hacking Coach, being shadowed by Erin Osher.",
         "imageFolder": "2026/hacksheffield10",
-        "images": [],
+        "images": ["1.png"],
         "fullDescription": "",
         "pages": ["hackathons", "mlh"],
         "maps": {
