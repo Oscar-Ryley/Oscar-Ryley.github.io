@@ -3,52 +3,152 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oscar Ryley</title>
+    <title>Oscar Ryley - NQCC</title>
     <link rel="icon" type="image/jpg" href="images/icon.jpg">
+    
+    <!-- TAILWIND CONFIGURATION -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="css/style.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f7f9fb;
+            transition: background-color 0.3s, color 0.3s;
         }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+
+        /* --- NEO-BRUTALIST SHADOWS --- */
+        .block-shadow {
+            box-shadow: 5px 5px 0px 0px #111827;
+        }
+        .block-shadow:hover {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px 0px #111827;
+        }
+        
+        /* Dark Mode Shadows (White/Gray) */
+        .dark .block-shadow {
+            box-shadow: 5px 5px 0px 0px #e5e7eb;
+        }
+        .dark .block-shadow:hover {
+            box-shadow: 2px 2px 0px 0px #e5e7eb;
+        }
+
+        /* Carousel Styles */
+        .page-carousel-container {
+            position: relative;
+            width: 100%;
+            height: 300px; 
+            overflow: hidden;
+            border: 2px solid black;
+            background-color: #000;
+        }
+        .dark .page-carousel-container {
+            border-color: white;
+        }
+        
+        .page-carousel-slide {
+            display: none;
+            width: 100%;
+            height: 100%;
+        }
+        .page-carousel-slide.active {
+            display: block;
+        }
+        .page-carousel-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .page-carousel-nav-hover {
+            position: absolute;
+            top: 0; bottom: 0; width: 50px;
+            cursor: pointer; z-index: 10;
+            display: flex; align-items: center; justify-content: center;
+            transition: background-color 0.2s;
+        }
+        .page-carousel-nav-hover:hover {
+            background-color: rgba(0,0,0,0.3);
+        }
+        .page-left-hover { left: 0; }
+        .page-right-hover { right: 0; }
+        
+        .page-left-hover::after { content: '\f053'; font-family: "Font Awesome 6 Free"; font-weight: 900; color: white; }
+        .page-right-hover::after { content: '\f054'; font-family: "Font Awesome 6 Free"; font-weight: 900; color: white; }
     </style>
 </head>
-<body class="min-h-screen">
+<body class="min-h-screen py-10 px-4 md:px-8 max-w-5xl mx-auto relative bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-100">
 
-    <div class="bg-blue-900 text-white w-full shadow-lg">
-        <div class="max-w-4xl mx-auto flex items-center justify-between py-6 px-4 md:py-8">
-            <div class="flex-1 flex flex-col items-start justify-center space-y-1.5 md:space-y-2 text-left">
-                <h1 class="text-4xl md:text-5xl font-bold">National Quantum Computing Centre</h1>
-                <p class="text-lg font-light">Events Coordinator Summer Placement, Jun - Sep 2025</p>
-                <p class="text-base font-medium text-blue-200"> Managing pre-event logistics, on-site support, and post-event documentation for events showcasing cutting-edge advancements in quantum technologies. </p>
+    <!-- CONTROLS CONTAINER (Top Right) -->
+    <div class="fixed md:absolute top-6 right-6 z-50 flex gap-4">
+        
+        <!-- Theme Toggle Button -->
+        <button id="theme-toggle" class="flex items-center justify-center w-12 h-12 bg-white dark:bg-gray-800 border-2 border-black dark:border-white block-shadow transition-all" aria-label="Toggle Dark Mode">
+            <i class="fa-solid fa-sun text-yellow-500 text-xl hidden dark:block"></i>
+            <i class="fa-solid fa-moon text-purple-700 text-xl block dark:hidden"></i>
+        </button>
+
+        <!-- Back Button -->
+        <a href="/" class="flex items-center justify-center w-12 h-12 bg-white dark:bg-gray-800 border-2 border-black dark:border-white block-shadow text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 transition-all">
+            <i class="fa-solid fa-arrow-left text-xl"></i>
+        </a>
+    </div>
+
+    <!-- HEADER / HERO SECTION -->
+    <header class="flex flex-col md:flex-row items-center md:items-start gap-8 mb-16 pt-8 md:pt-0">
+        
+        <!-- Logo Area -->
+        <div class="relative w-32 h-32 flex-shrink-0">
+            <div class="absolute inset-0 bg-blue-600 rounded-none translate-x-2 translate-y-2 border-2 border-black dark:border-white transition-colors"></div>
+            <div class="relative w-full h-full border-2 border-black dark:border-white z-10 bg-gray-900 flex items-center justify-center transition-colors">
+                <i class="fa-solid fa-atom text-5xl text-blue-400"></i>
             </div>
-            <a href="/" class="back-button absolute top-4 right-4 z-20 text-black bg-white rounded-full w-10 h-10 flex justify-center items-center shadow-md hover:bg-gray-100 transition">
-                <i class="fa-solid fa-arrow-left"></i>
-            </a>
         </div>
-    </div>
 
-    <div id="project-list" class="max-w-4xl mx-auto mb-12 pt-8">
-        <div id="loading-indicator" class="text-center p-8 text-gray-500">Loading projects...</div>
-    </div>
+        <div class="flex-1 text-center md:text-left space-y-4">
+            <div>
+                <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 dark:text-white">National Quantum Computing Centre</h1>
+                <p class="text-lg md:text-xl font-medium text-blue-700 dark:text-blue-400 mt-1 font-mono">JUN 2025 - SEP 2025</p>
+            </div>
+            
+            <p class="text-gray-700 dark:text-gray-300 text-lg max-w-3xl leading-relaxed">
+                Managing pre-event logistics, on-site support, and post-event documentation for events showcasing cutting-edge advancements in quantum technologies.
+            </p>
+        </div>
+    </header>
 
+    <!-- CONTENT CONTAINER -->
+    <main id="project-list" class="space-y-12">
+        <div id="loading-indicator" class="text-center p-8 text-gray-500 dark:text-gray-400 font-mono">LOADING DATA...</div>
+    </main>
+
+    <footer class="text-center py-10 text-gray-500 dark:text-gray-400 text-sm font-mono mt-12 border-t-2 border-gray-200 dark:border-gray-700">
+        <p>© 2025</p>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
     <script>
         const CURRENT_PAGE_ID = 'nqcc'; 
 
         function generateProjectHtml(project) {
-            const tagBg = 'bg-blue-200 text-blue-800';
-
+            // Tags: Using Blue theme for NQCC
             const tagsHtml = project.tags.map(tag => 
-                `<span class="inline-block ${tagBg} text-xs font-semibold px-3 py-1 rounded-full tracking-wide">${tag}</span>`
+                `<span class="inline-block border border-black dark:border-white bg-blue-100 dark:bg-blue-900 dark:text-white text-xs font-bold px-2 py-1 mr-2 mb-2 shadow-[2px_2px_0_0_#000] dark:shadow-[2px_2px_0_0_#e5e7eb]">${tag}</span>`
             ).join('');
 
             const carouselSlides = project.images.map((imageName, index) => {
                 const imagePath = `images/map/${project.imageFolder}/${imageName}`;
                 return `
                     <div class="page-carousel-slide ${index === 0 ? 'active' : ''}">
-                        <img src="${imagePath}" alt="${project.title} image ${index + 1}" class="page-carousel-image" onerror="this.onerror=null;this.src='https://placehold.co/600x400/CCCCCC/333333?text=Image+Unavailable'">
+                        <img src="${imagePath}" alt="${project.title}" class="page-carousel-image" onerror="this.onerror=null;this.src='https://placehold.co/600x400/000000/FFFFFF?text=Image+Unavailable'">
                     </div>
                 `;
             }).join('');
@@ -58,39 +158,46 @@
                 <div class="page-carousel-nav-hover page-right-hover"></div>
             ` : '';
             
-            const finalText = project.fullDescription && project.fullDescription.trim() !== "" ? 
-                `
-                <div class="mt-4 space-y-4 text-base text-gray-700">
-                    <p class="leading-relaxed">${project.fullDescription}</p>
-                </div>
-                ` : "";
+            const fullDescHtml = project.fullDescription && project.fullDescription.trim() !== "" ? 
+                `<div class="mt-6 pt-6 border-t-2 border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 leading-relaxed">
+                    ${project.fullDescription}
+                </div>` : "";
 
             return `
-                <section id="${project.title.replace(/\s/g, '-')}" class="mb-10 px-4 md:px-0">
-                    <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-                            
-                            <div>
-                                <h2 class="text-3xl font-bold mb-1 text-gray-900">${project.title}</h2>
-                                <p class="text-sm text-gray-500 mb-2">${project.date}</p>
-                                
-                                <div class="flex flex-wrap gap-2 mb-6">
-                                    ${tagsHtml}
-                                </div>
-
-                                <div class="space-y-4 text-base text-gray-700">
-                                    <p class="leading-relaxed">${project.description}</p>
-                                </div>
+                <article class="bg-white dark:bg-gray-800 border-2 border-black dark:border-white p-6 md:p-8 block-shadow mb-12 transition-colors">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                        
+                        <!-- Left: Content -->
+                        <div>
+                            <div class="flex flex-col mb-4">
+                                <h2 class="text-3xl font-extrabold text-gray-900 dark:text-white leading-tight mb-1">${project.title}</h2>
+                                <span class="font-mono text-sm text-gray-500 dark:text-gray-400 uppercase tracking-wide">${project.date}</span>
                             </div>
-                            
-                            <div class="page-carousel-container" data-carousel-id="${project.title.toLowerCase().replace(/\s/g, '-')}-carousel">
+
+                            <div class="flex flex-wrap mb-6">
+                                ${tagsHtml}
+                            </div>
+
+                            <div class="text-gray-700 dark:text-gray-300 leading-relaxed space-y-4 text-lg">
+                                <p>${project.description}</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Right: Carousel -->
+                        <div>
+                            <div class="page-carousel-container shadow-[4px_4px_0_0_#000] dark:shadow-[4px_4px_0_0_#e5e7eb] transition-shadow" data-carousel-id="${project.title.toLowerCase().replace(/\s/g, '-')}-carousel">
                                 ${carouselSlides}
                                 ${navHovers}
                             </div>
+                            <p class="text-xs text-center mt-2 font-mono text-gray-400 dark:text-gray-500">
+                                ${project.images.length > 1 ? '<i class="fa-solid fa-arrows-left-right"></i> CLICK SIDES TO NAVIGATE' : ''}
+                            </p>
                         </div>
-                        ${finalText}
+
                     </div>
-                </section>
+                    
+                    ${fullDescHtml}
+                </article>
             `;
         }
 
@@ -101,7 +208,7 @@
             if (loadingIndicator) loadingIndicator.style.display = 'none';
 
             if (projectsData.length === 0) {
-                 projectListContainer.innerHTML = `<div class="text-center p-8 text-gray-500">No projects found for this page.</div>`;
+                 projectListContainer.innerHTML = `<div class="text-center p-8 text-gray-500 font-mono">NO PROJECTS FOUND FOR THIS PAGE.</div>`;
                  return;
             }
 
@@ -121,21 +228,18 @@
             
             try {
                 const response = await fetch('./projects.json');
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                 const allProjects = await response.json();
 
                 const filteredProjects = allProjects.filter(project => 
                     project.pages && Array.isArray(project.pages) && project.pages.includes(CURRENT_PAGE_ID)
                 );
 
-                console.log(`Loaded ${allProjects.length} projects. Filtered ${filteredProjects.length} projects for ${CURRENT_PAGE_ID}.`);
                 renderProjects(filteredProjects);
 
             } catch (error) {
-                console.error("Error loading projects from JSON:", error);
-                if (loadingIndicator) loadingIndicator.innerHTML = `Error loading projects. Ensure 'projects.json' is available and valid JSON.`;
+                console.error("Error loading projects:", error);
+                if (loadingIndicator) loadingIndicator.innerHTML = `ERROR LOADING DATA. CHECK CONSOLE.`;
             }
         }
 
@@ -166,9 +270,7 @@
 
                 const showSlide = (n) => {
                     slides[currentSlideIndex].classList.remove('active');
-                    
                     currentSlideIndex = (n + slides.length) % slides.length;
-                    
                     slides[currentSlideIndex].classList.add('active');
                 };
 
@@ -184,7 +286,29 @@
             });
         }
 
+        // --- DARK MODE LOGIC ---
+        function initTheme() {
+            const toggleBtn = document.getElementById('theme-toggle');
+            
+            if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+
+            toggleBtn.addEventListener('click', () => {
+                if (document.documentElement.classList.contains('dark')) {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.theme = 'light';
+                } else {
+                    document.documentElement.classList.add('dark');
+                    localStorage.theme = 'dark';
+                }
+            });
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
+            initTheme();
             fetchProjects();
         });
     </script>

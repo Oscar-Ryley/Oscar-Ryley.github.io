@@ -1,0 +1,276 @@
+{
+  "education": [
+    {
+      "role": "MEng (Hons) Computer Science",
+      "company": "Durham University",
+      "date": "SEP 2023 - JUN 2027",
+      "details": "First Class Honours (2nd Year)",
+      "link": "#",
+      "bgColor": "bg-purple-800",
+      "icon": "fa-solid fa-graduation-cap",
+      "iconColor": "text-white"
+    }
+  ],
+  "articles": [
+    {
+      "title": "Perfectionism and Achievement Hunting",
+      "pub": "The Bubble",
+      "date": "7 JUN 2025",
+      "link": "https://www.thebubble.org.uk/lifestyle/perfectionism-and-achievements/",
+      "icon": "fa-solid fa-pen-nib"
+    },
+    {
+      "title": "A Love Letter to Small Northern Towns",
+      "pub": "The Bubble",
+      "date": "23 MAY 2025",
+      "link": "https://www.thebubble.org.uk/lifestyle/tgyh/",
+      "icon": "fa-solid fa-newspaper"
+    },
+    {
+      "title": "DurHack through the Lens of its Organisers",
+      "pub": "DurHack Medium",
+      "date": "30 OCT 2024",
+      "link": "https://medium.com/@DurHack_press/durhack-through-the-lens-of-its-organisers-6cbf67309586",
+      "icon": "fa-brands fa-medium"
+    },
+    {
+      "title": "Stealing Electricity - Cybercrime and the Law",
+      "pub": "Extended Project Qualification [A*]",
+      "date": "2 FEB 2022",
+      "link": "#",
+      "icon": "fa-solid fa-scroll"
+    },
+    {
+      "title": "Should your Self-Driving Car kill you?",
+      "pub": "Higher Project Qualification [A*]",
+      "date": "4 APR 2020",
+      "link": "#",
+      "icon": "fa-solid fa-car"
+    }
+  ],
+  "employment": [
+    {
+      "role": "Coach",
+      "company": "Major League Hacking",
+      "date": "MAR 2025 - PRESENT",
+      "link": "/mlh",
+      "bgColor": "bg-gray-900",
+      "icon": "fa-solid fa-code",
+      "iconColor": "text-yellow-400"
+    },
+    {
+      "role": "Events Coordinator",
+      "company": "National Quantum Computing Centre",
+      "date": "JUN 2025 - SEP 2025",
+      "link": "/nqcc",
+      "bgColor": "bg-blue-600",
+      "icon": "fa-solid fa-atom",
+      "iconColor": "text-white"
+    },
+    {
+      "role": "Associate (Events)",
+      "company": "Hackathons UK",
+      "date": "AUG 2025 - PRESENT",
+      "link": "/huk",
+      "bgColor": "bg-red-500",
+      "icon": "fa-solid fa-flag",
+      "iconColor": "text-white"
+    },
+    {
+      "role": "Lab Demonstrator",
+      "company": "Durham University",
+      "date": "JUN 2024 - PRESENT",
+      "details": "Theory of Computation & Programming (Higher)",
+      "link": "#",
+      "bgColor": "bg-purple-200",
+      "icon": "fa-solid fa-flask",
+      "iconColor": "text-purple-800"
+    }
+  ],
+  "volunteering": [
+    {
+      "role": "Head of Logistics",
+      "company": "DurHack",
+      "date": "FEB 2024 - PRESENT",
+      "bgColor": "bg-emerald-500",
+      "icon": "fa-solid fa-box-open",
+      "iconColor": "text-white"
+    },
+    {
+      "role": "Founder & President",
+      "company": "DurJam (DU Game Dev)",
+      "date": "NOV 2024 - PRESENT",
+      "bgColor": "bg-orange-400",
+      "icon": "fa-solid fa-gamepad",
+      "iconColor": "text-white"
+    },
+    {
+      "role": "Web Developer",
+      "company": "The Bubble",
+      "date": "DEC 2024 - PRESENT",
+      "bgColor": "bg-pink-500",
+      "icon": "fa-solid fa-desktop",
+      "iconColor": "text-white"
+    },
+    {
+      "role": "Code Club Volunteer",
+      "company": "Computeas (DUSVO)",
+      "date": "FEB 2024 - PRESENT",
+      "bgColor": "bg-indigo-500",
+      "icon": "fa-solid fa-chalkboard-user",
+      "iconColor": "text-white"
+    },
+    {
+      "role": "Teaching Assistant",
+      "company": "Engineering 4 Kids",
+      "date": "MAR 2022 - MAR 2023",
+      "bgColor": "bg-yellow-400",
+      "icon": "fa-solid fa-robot",
+      "iconColor": "text-black"
+    },
+    {
+      "role": "Youth Worker",
+      "company": "Chesham Youth Centre",
+      "date": "SEP 2021 - MAR 2023",
+      "bgColor": "bg-teal-500",
+      "icon": "fa-solid fa-users",
+      "iconColor": "text-white"
+    },
+    {
+      "role": "Library Assistant",
+      "company": "Chesham Library",
+      "date": "OCT 2019 - APR 2020",
+      "bgColor": "bg-amber-700",
+      "icon": "fa-solid fa-book",
+      "iconColor": "text-white"
+    }
+  ],
+  "projects": [
+    {
+      "title": "Get Moving with Godot!",
+      "desc": "DurJam 2025. Interactive workshop material.",
+      "tags": ["GDScript", "Godot"],
+      "links": [
+        { "icon": "fa-brands fa-itch-io", "url": "https://oryley.itch.io/godot-workshop" },
+        { "icon": "fa-solid fa-trophy", "url": "https://devpost.com/software/get-moving-with-godot" },
+        { "icon": "fa-brands fa-github", "url": "https://github.com/Oscar-Ryley/Get-Moving-with-Godot-Workshop" }
+      ],
+      "tagColor": "bg-purple-100"
+    },
+    {
+      "title": "Painting with Digital Eyes",
+      "desc": "AstonHack10. OpenCV & WebGL acrylic paint tool.",
+      "tags": ["OpenCV", "Python"],
+      "links": [
+        { "icon": "fa-solid fa-trophy", "url": "https://devpost.com/software/peeping-painting" },
+        { "icon": "fa-brands fa-github", "url": "https://github.com/f2reninj5/peeping_painting" }
+      ],
+      "tagColor": "bg-blue-100"
+    },
+    {
+      "title": "Cube Route",
+      "desc": "LeedsHack 2025. Java-based routing challenge.",
+      "tags": ["Java"],
+      "links": [
+        { "icon": "fa-solid fa-trophy", "url": "https://devpost.com/software/cube-route" },
+        { "icon": "fa-brands fa-github", "url": "https://github.com/FaintLocket424/leedshack2025" }
+      ],
+      "tagColor": "bg-red-100"
+    },
+    {
+      "title": "ExSpore",
+      "desc": "hackSheffield 9. Spore-based exploration game.",
+      "tags": ["GDScript"],
+      "links": [
+        { "icon": "fa-brands fa-itch-io", "url": "https://oryley.itch.io/ex-spore" },
+        { "icon": "fa-solid fa-trophy", "url": "https://devpost.com/software/exspore" },
+        { "icon": "fa-brands fa-github", "url": "https://github.com/Oscar-Ryley/ExSpore" }
+      ],
+      "tagColor": "bg-green-100"
+    },
+    {
+      "title": "Loan Shark",
+      "desc": "HackNotts '24. A game about dubious finance.",
+      "tags": ["GDScript"],
+      "links": [
+        { "icon": "fa-brands fa-itch-io", "url": "https://oryley.itch.io/loan-shark" },
+        { "icon": "fa-solid fa-trophy", "url": "https://devpost.com/software/loan-shark-yl9a1w" },
+        { "icon": "fa-brands fa-github", "url": "https://github.com/Oscar-Ryley/LoanShark" }
+      ],
+      "tagColor": "bg-teal-100"
+    },
+    {
+      "title": "The Snowball Game",
+      "desc": "Higher Programming [78%]. Arcade survival.",
+      "tags": ["GDScript"],
+      "links": [
+        { "icon": "fa-brands fa-itch-io", "url": "https://oryley.itch.io/the-snowball-game" },
+        { "icon": "fa-solid fa-trophy", "url": "https://devpost.com/software/thesnowballgame" },
+        { "icon": "fa-brands fa-github", "url": "https://github.com/Oscar-Ryley/TheSnowballGame" }
+      ],
+      "tagColor": "bg-cyan-100"
+    },
+    {
+      "title": "It Slithers",
+      "desc": "CS Alumni Hack 2024. Horror/Snake mashup.",
+      "tags": ["GDScript"],
+      "links": [
+        { "icon": "fa-brands fa-itch-io", "url": "https://oryley.itch.io/it-slithers" },
+        { "icon": "fa-solid fa-trophy", "url": "https://devpost.com/software/a-blr8ig" },
+        { "icon": "fa-brands fa-github", "url": "https://github.com/Oscar-Ryley/It-Slithers" }
+      ],
+      "tagColor": "bg-lime-100"
+    },
+    {
+      "title": "BillBoard",
+      "desc": "Dundee Quackathon 2024.",
+      "tags": ["Python", "AngularJS", "MongoDB"],
+      "links": [
+        { "icon": "fa-solid fa-trophy", "url": "https://devpost.com/software/billboard-gw7mfs" },
+        { "icon": "fa-brands fa-github", "url": "https://github.com/Oscar-Ryley/BillBoard" }
+      ],
+      "tagColor": "bg-yellow-100"
+    },
+    {
+      "title": "WristBand",
+      "desc": "Higher Programming [78%]. Client-Server app.",
+      "tags": ["JS", "HTML/CSS"],
+      "links": [
+        { "icon": "fa-solid fa-trophy", "url": "https://devpost.com/software/wristband-sr8me7" },
+        { "icon": "fa-brands fa-github", "url": "https://github.com/Oscar-Ryley/WristBand" }
+      ],
+      "tagColor": "bg-orange-100"
+    },
+    {
+      "title": "Automated Obsolescence",
+      "desc": "LanHack 2023. A game about planned failure.",
+      "tags": ["GDScript"],
+      "links": [
+        { "icon": "fa-brands fa-itch-io", "url": "https://oryley.itch.io/automated-obsolescence" },
+        { "icon": "fa-solid fa-trophy", "url": "https://devpost.com/software/automated-obsolescence" },
+        { "icon": "fa-brands fa-github", "url": "https://github.com/Oscar-Ryley/AutomatedObsolescence" }
+      ],
+      "tagColor": "bg-gray-100"
+    },
+    {
+      "title": "Chimps on Wordle",
+      "desc": "Side Project. Wordle solver analysis.",
+      "tags": ["Python"],
+      "links": [
+        { "icon": "fa-solid fa-trophy", "url": "https://devpost.com/software/chimpsonwordle" },
+        { "icon": "fa-brands fa-github", "url": "https://github.com/Oscar-Ryley/ChimpsOnWordle" }
+      ],
+      "tagColor": "bg-indigo-100"
+    },
+    {
+      "title": "The Fountain of Knowledge",
+      "desc": "A-Level CS Project [100%]. Academic Search Engine.",
+      "tags": ["Python", "SQLite"],
+      "links": [
+        { "icon": "fa-solid fa-trophy", "url": "https://devpost.com/software/alevel-neaproject" },
+        { "icon": "fa-brands fa-github", "url": "https://github.com/Oscar-Ryley/TheFountainOfKnowledge" }
+      ],
+      "tagColor": "bg-emerald-100"
+    }
+  ]
+}
