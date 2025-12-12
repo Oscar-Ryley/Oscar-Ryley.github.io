@@ -2,10 +2,10 @@
     {
         "title": "HackSussex Game Jam 2025",
         "date": "6th-7th Dec 2025",
-        "tags": ["Hackathon #18", "MLH Debut"],
+        "tags": ["Hackathon #19", "MLH First Solo"],
         "description": "Fourth event as a Major League Hacking Coach, First Solo event and in-person Game Jam!",
         "imageFolder": "2026/hacksussexgamejam",
-        "images": ["1.png"],
+        "images": ["1.png", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.JPG", "7.jpg", "8.jpg", "9.JPG", "10.JPG", "11.jpg"],
         "fullDescription": "",
         "pages": ["hackathons", "mlh"],
         "maps": {
@@ -22,7 +22,7 @@
         "tags": ["Hackathon #18", "MLH Debut"],
         "description": "Third event as a Major League Hacking Coach, being shadowed by Erin Osher.",
         "imageFolder": "2026/hacksheffield10",
-        "images": ["1.png"],
+        "images": ["1.png", "2.jpg", "3.JPG", "4.JPG", "5.JPG"],
         "fullDescription": "",
         "pages": ["hackathons", "mlh"],
         "maps": {
