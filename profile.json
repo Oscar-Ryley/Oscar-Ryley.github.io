@@ -48,13 +48,13 @@
       "icon": "fa-solid fa-car"
     }
   ],
-  "employment": [
+"employment": [
     {
       "role": "Coach",
       "company": "Major League Hacking",
       "date": "MAR 2025 - PRESENT",
       "link": "/mlh",
-      "bgColor": "bg-white-",
+      "bgColor": "bg-white dark:bg-white", 
       "icon": "images/profile/mlh-logo-color.svg",
       "iconColor": "text-yellow-400"
     },
@@ -63,7 +63,7 @@
       "company": "National Quantum Computing Centre",
       "date": "JUN 2025 - SEP 2025",
       "link": "/nqcc",
-      "bgColor": "bg-[#2e2d62]",
+      "bgColor": "bg-[#161539]",
       "icon": "images/profile/ukri.png",
       "iconColor": "text-white"
     },
@@ -72,7 +72,7 @@
       "company": "Hackathons UK",
       "date": "AUG 2025 - PRESENT",
       "link": "/huk",
-      "bgColor": "bg-white-500",
+      "bgColor": "bg-white dark:bg-white",
       "icon": "images/profile/HUK-Logo.png",
       "iconColor": "text-white"
     },
@@ -82,7 +82,7 @@
       "date": "JUN 2024 - PRESENT",
       "details": "Theory of Computation & Programming (Higher)",
       "link": "#",
-      "bgColor": "bg-purple-200",
+      "bgColor": "bg-purple-200 ", 
       "icon": "fa-solid fa-flask",
       "iconColor": "text-purple-800"
     }
