@@ -61,7 +61,7 @@
     {
       "role": "Events Coordinator",
       "company": "National Quantum Computing Centre",
-      "date": "JUN 2025 - SEP 2025",
+      "date": "JUN 2025 - SEP 2025, Summer Placement",
       "link": "/nqcc",
       "bgColor": "bg-[#2e2d62]",
       "icon": "images/profile/ukri.png",
@@ -98,6 +98,7 @@
       "role": "Co-Lead",
       "company": "DurHack",
       "date": "FEB 2024 - PRESENT",
+      "details": "Prev. Head of Logistics",
       "bgColor": "bg-indigo-600",
       "icon": "images/profile/DurHack.svg",
       "iconColor": "text-white"
