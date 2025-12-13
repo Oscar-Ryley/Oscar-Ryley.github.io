@@ -133,7 +133,7 @@
     </main>
 
     <footer class="text-center py-10 text-gray-500 dark:text-gray-400 text-sm font-mono mt-12 border-t-2 border-gray-200 dark:border-gray-700">
-        <p>© 2025 Oscar Ryley</p>
+        <p>©<span id="year">2025</span> Oscar Ryley</p>
     </footer>
 
     <!-- LOGIC -->
@@ -320,6 +320,8 @@
             initTheme();
             loadData();
         });
+
+        document.getElementById('year').textContent = new Date().getFullYear();
 
     </script>
 </body>
