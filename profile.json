@@ -6,8 +6,8 @@
       "date": "SEP 2023 - JUN 2027",
       "details": "First Class Honours (2nd Year)",
       "link": "#",
-      "bgColor": "bg-purple-800",
-      "icon": "fa-solid fa-graduation-cap",
+      "bgColor": "bg-purple-200",
+      "icon": "images/profile/durham.png",
       "iconColor": "text-white"
     }
   ],
@@ -63,7 +63,7 @@
       "company": "National Quantum Computing Centre",
       "date": "JUN 2025 - SEP 2025",
       "link": "/nqcc",
-      "bgColor": "bg-[#161539]",
+      "bgColor": "bg-[#2e2d62]",
       "icon": "images/profile/ukri.png",
       "iconColor": "text-white"
     },
@@ -77,14 +77,20 @@
       "iconColor": "text-white"
     },
     {
-      "role": "Lab Demonstrator",
-      "company": "Durham University",
+      "role": "Lab Demonstrator & Student Ambassador",
+      "company": "Durham University Department of Computer Science",
       "date": "JUN 2024 - PRESENT",
-      "details": "Theory of Computation & Programming (Higher)",
-      "link": "#",
-      "bgColor": "bg-purple-200 ", 
-      "icon": "fa-solid fa-flask",
+      "bgColor": "bg-purple-200", 
+      "icon": "images/profile/durham.png",
       "iconColor": "text-purple-800"
+    },
+    {
+      "role": "Teaching Assistant",
+      "company": "Engineering 4 Kids",
+      "date": "MAR 2022 - MAR 2023",
+      "bgColor": "bg-white dark:bg-white",
+      "icon": "images/profile/e4kids.png",
+      "iconColor": "text-black"
     }
   ],
   "volunteering": [
@@ -92,56 +98,40 @@
       "role": "Co-Lead",
       "company": "DurHack",
       "date": "FEB 2024 - PRESENT",
-      "bgColor": "bg-emerald-500",
-      "icon": "fa-solid fa-box-open",
-      "iconColor": "text-white"
-    },
-    {
-      "role": "Founder & President",
-      "company": "DurJam (DU Game Dev)",
-      "date": "NOV 2024 - PRESENT",
-      "bgColor": "bg-orange-400",
-      "icon": "fa-solid fa-gamepad",
+      "bgColor": "bg-indigo-600",
+      "icon": "images/profile/DurHack.svg",
       "iconColor": "text-white"
     },
     {
       "role": "Web Developer",
       "company": "The Bubble",
       "date": "DEC 2024 - PRESENT",
-      "bgColor": "bg-pink-500",
-      "icon": "fa-solid fa-desktop",
+      "bgColor": "bg-blue-200",
+      "icon": "images/profile/thebubble.png",
       "iconColor": "text-white"
     },
     {
-      "role": "Code Club Volunteer",
-      "company": "Computeas (DUSVO)",
+      "role": "Code Club & Computeas Volunteer",
+      "company": "DU Student Volunteering and Outreach",
       "date": "FEB 2024 - PRESENT",
-      "bgColor": "bg-indigo-500",
-      "icon": "fa-solid fa-chalkboard-user",
+      "bgColor": "bg-purple-100",
+      "icon": "images/profile/dusvo.png",
       "iconColor": "text-white"
-    },
-    {
-      "role": "Teaching Assistant",
-      "company": "Engineering 4 Kids",
-      "date": "MAR 2022 - MAR 2023",
-      "bgColor": "bg-yellow-400",
-      "icon": "fa-solid fa-robot",
-      "iconColor": "text-black"
     },
     {
       "role": "Youth Worker",
       "company": "Chesham Youth Centre",
       "date": "SEP 2021 - MAR 2023",
-      "bgColor": "bg-teal-500",
-      "icon": "fa-solid fa-users",
+      "bgColor": "bg-[#582657]",
+      "icon": "images/profile/cyc.jpg",
       "iconColor": "text-white"
     },
     {
       "role": "Library Assistant",
       "company": "Chesham Library",
       "date": "OCT 2019 - APR 2020",
-      "bgColor": "bg-amber-700",
-      "icon": "fa-solid fa-book",
+      "bgColor": "bg-white dark:bg-white",
+      "icon": "images/profile/bl.jpg",
       "iconColor": "text-white"
     }
   ],
