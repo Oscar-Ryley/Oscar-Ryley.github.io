@@ -63,7 +63,7 @@
       "company": "National Quantum Computing Centre",
       "date": "JUN 2025 - SEP 2025",
       "link": "/nqcc",
-      "bgColor": "bg-blue-600",
+      "bgColor": "bg-[#2e2d62]",
       "icon": "images/profile/ukri.png",
       "iconColor": "text-white"
     },
