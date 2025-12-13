@@ -64,12 +64,12 @@
         <div class="flex-1 text-center md:text-left space-y-4">
             <div>
                 <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 dark:text-white">Oscar Ryley</h1>
-                <p class="text-lg md:text-xl font-medium text-purple-700 dark:text-purple-400 mt-1">MEng Computer Science @ Durham University</p>
+                <p class="text-lg md:text-xl font-medium text-purple-700 dark:text-purple-400 mt-1">MEng Computer Science at Durham University</p>
             </div>
             
             <p class="text-gray-700 dark:text-gray-300 text-lg max-w-2xl leading-relaxed">
                 You'll find me supporting the Hackathon community most weekends as a Coach for <b>Major League Hacking</b>, 
-                Hackathons UK Associate, and the DurHack Head of Logistics.
+                the Co-Lead for <b>DurHack</b>, and a <b>Hackathons UK</b> Associate.
             </p>
 
             <div class="flex flex-wrap justify-center md:justify-start gap-4 pt-2">
@@ -77,9 +77,11 @@
                     <i class="fa-solid fa-map-location-dot"></i>
                     VIEW HACKATHON MAP
                 </a>
+                <a href="https://linkedin.com/oscar-ryley" class="flex items-center gap-2 bg-blue dark:bg-gray-800 text-gray-900 dark:text-white px-6 py-3 border-2 border-black dark:border-white font-bold text-sm block-shadow transition-all hover:bg-gray-50 dark:hover:bg-gray-700">
+                    <i class="fa-brands fa-linkedin text-lg"></i>
+                </a>
                 <a href="https://github.com/Oscar-Ryley" class="flex items-center gap-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-white px-6 py-3 border-2 border-black dark:border-white font-bold text-sm block-shadow transition-all hover:bg-gray-50 dark:hover:bg-gray-700">
                     <i class="fa-brands fa-github text-lg"></i>
-                    GITHUB
                 </a>
             </div>
         </div>
@@ -137,6 +139,19 @@
     <!-- LOGIC -->
     <script>
         
+        // --- HELPER TO CHECK IF ICON IS IMAGE OR CLASS ---
+        function getIconHtml(iconString, iconColorClass = '', sizeClass = 'w-6 h-6') {
+            if (!iconString) return '';
+
+            // If it contains a slash or dot, assume it's an image path
+            if (iconString.includes('/') || iconString.includes('.')) {
+                return `<img src="${iconString}" alt="icon" class="${sizeClass} object-contain inline-block">`;
+            }
+            
+            // Otherwise, assume it's a FontAwesome class
+            return `<i class="${iconString} ${iconColorClass}"></i>`;
+        }
+
         // --- RENDER FUNCTIONS ---
         
         // Used for Education, Employment, Volunteering
@@ -147,11 +162,22 @@
                 return;
             }
             
-            const html = data.map(item => `
+            const html = data.map(item => {
+                // Determine if icon is image or font for the large left box
+                let iconDisplay;
+                if (item.icon && (item.icon.includes('/') || item.icon.includes('.'))) {
+                    // It is an image
+                    iconDisplay = `<img src="${item.icon}" alt="${item.role} logo" class="w-14 h-14 object-contain">`;
+                } else {
+                    // It is a font icon
+                    iconDisplay = `<i class="${item.icon} text-3xl ${item.iconColor || ''}"></i>`;
+                }
+
+                return `
                 <a href="${item.link && item.link !== '#' ? item.link : 'javascript:void(0)'}" 
                    class="group flex flex-row border-2 border-black dark:border-white bg-white dark:bg-gray-800 block-shadow transition-all h-full min-h-[100px] cursor-${item.link && item.link !== '#' ? 'pointer' : 'default'}">
-                    <div class="w-24 ${item.bgColor} flex items-center justify-center border-r-2 border-black dark:border-white flex-shrink-0">
-                        <i class="${item.icon} text-3xl ${item.iconColor}"></i>
+                    <div class="w-24 ${item.bgColor} flex items-center justify-center border-r-2 border-black dark:border-white flex-shrink-0 overflow-hidden">
+                        ${iconDisplay}
                     </div>
                     <div class="p-4 flex flex-col justify-center w-full">
                         <h3 class="font-bold text-lg leading-tight group-hover:text-purple-700 dark:group-hover:text-purple-400 transition-colors dark:text-gray-100">${item.role}</h3>
@@ -160,7 +186,7 @@
                         <p class="text-xs font-mono text-gray-500 dark:text-gray-400 mt-2 uppercase tracking-wide"><i class="far fa-calendar mr-1"></i>${item.date}</p>
                     </div>
                 </a>
-            `).join('');
+            `}).join('');
             container.innerHTML = html;
         }
 
@@ -172,20 +198,29 @@
                 return;
             }
 
-            const html = data.map(item => `
+            const html = data.map(item => {
+                // Handle icon vs image for article list
+                let iconDisplay;
+                if (item.icon && (item.icon.includes('/') || item.icon.includes('.'))) {
+                    iconDisplay = `<img src="${item.icon}" alt="icon" class="w-5 h-5 mr-2 object-contain inline-block">`;
+                } else {
+                    iconDisplay = `<i class="${item.icon} mr-2 text-gray-400"></i>`;
+                }
+
+                return `
                 <a href="${item.link && item.link !== '#' ? item.link : 'javascript:void(0)'}" target="${item.link && item.link !== '#' ? '_blank' : '_self'}"
                    class="block border-2 border-black dark:border-white bg-white dark:bg-gray-800 block-shadow p-5 hover:bg-gray-50 dark:hover:bg-gray-750 transition-all">
                     <div class="flex items-start justify-between">
                         <div class="flex-1">
-                            <h3 class="font-bold text-lg text-gray-900 dark:text-gray-100 mb-1 hover:text-purple-700 dark:hover:text-purple-400 transition-colors">
-                                <i class="${item.icon} mr-2 text-gray-400"></i>${item.title}
+                            <h3 class="font-bold text-lg text-gray-900 dark:text-gray-100 mb-1 hover:text-purple-700 dark:hover:text-purple-400 transition-colors flex items-center">
+                                ${iconDisplay} ${item.title}
                             </h3>
                             <p class="text-gray-600 dark:text-gray-300 font-medium">${item.pub}</p>
                         </div>
                         <span class="text-xs font-mono text-gray-400 whitespace-nowrap ml-4 pt-1">${item.date}</span>
                     </div>
                 </a>
-            `).join('');
+            `}).join('');
             container.innerHTML = html;
         }
 
@@ -198,21 +233,27 @@
             }
 
             const html = data.map(item => {
-                // Generate Tags HTML (using the project's tagColor)
+                // Generate Tags HTML
                 const tagsHtml = item.tags.map(tag => 
                     `<span class="px-2 py-1 ${item.tagColor} dark:bg-gray-700 dark:text-gray-200 border border-black dark:border-gray-400 text-xs font-bold mr-2">${tag}</span>`
                 ).join('');
 
-                // Generate Links HTML
-                const linksHtml = item.links.map(link => 
-                    `<a href="${link.url}" target="_blank" class="hover:text-purple-600 dark:hover:text-purple-400 transition-colors"><i class="${link.icon}"></i></a>`
-                ).join('');
+                // Generate Links HTML (with image check)
+                const linksHtml = item.links.map(link => {
+                    let iconContent;
+                    if (link.icon && (link.icon.includes('/') || link.icon.includes('.'))) {
+                        iconContent = `<img src="${link.icon}" class="w-5 h-5 object-contain hover:opacity-75">`;
+                    } else {
+                        iconContent = `<i class="${link.icon}"></i>`;
+                    }
+                    return `<a href="${link.url}" target="_blank" class="hover:text-purple-600 dark:hover:text-purple-400 transition-colors flex items-center">${iconContent}</a>`;
+                }).join('');
 
                 return `
                 <div class="border-2 border-black dark:border-white bg-white dark:bg-gray-800 p-5 block-shadow flex flex-col h-full">
                     <div class="flex justify-between items-start mb-3">
                         <h3 class="font-bold text-lg leading-tight dark:text-gray-100">${item.title}</h3>
-                        <div class="flex gap-3 text-lg text-gray-400">
+                        <div class="flex gap-3 text-lg text-gray-400 items-center">
                             ${linksHtml}
                         </div>
                     </div>
@@ -231,7 +272,6 @@
         // --- FETCH DATA ---
         async function loadData() {
             try {
-                // FIXED: Now fetching profile.json
                 const response = await fetch('./profile.json');
                 
                 if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
@@ -258,14 +298,12 @@
         function initTheme() {
             const toggleBtn = document.getElementById('theme-toggle');
             
-            // Check local storage or system preference
             if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
                 document.documentElement.classList.add('dark');
             } else {
                 document.documentElement.classList.remove('dark');
             }
 
-            // Toggle Handler
             toggleBtn.addEventListener('click', () => {
                 if (document.documentElement.classList.contains('dark')) {
                     document.documentElement.classList.remove('dark');
@@ -277,7 +315,6 @@
             });
         }
 
-        // INITIALIZE
         document.addEventListener('DOMContentLoaded', () => {
             initTheme();
             loadData();

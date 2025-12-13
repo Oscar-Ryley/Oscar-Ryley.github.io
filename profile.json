@@ -54,7 +54,7 @@
       "company": "Major League Hacking",
       "date": "MAR 2025 - PRESENT",
       "link": "/mlh",
-      "bgColor": "bg-gray-900",
+      "bgColor": "bg-yellow-900",
       "icon": "fa-solid fa-code",
       "iconColor": "text-yellow-400"
     },
@@ -64,7 +64,7 @@
       "date": "JUN 2025 - SEP 2025",
       "link": "/nqcc",
       "bgColor": "bg-blue-600",
-      "icon": "fa-solid fa-atom",
+      "icon": "images/profile/ukri.png",
       "iconColor": "text-white"
     },
     {
@@ -72,8 +72,8 @@
       "company": "Hackathons UK",
       "date": "AUG 2025 - PRESENT",
       "link": "/huk",
-      "bgColor": "bg-red-500",
-      "icon": "fa-solid fa-flag",
+      "bgColor": "bg-pink-500",
+      "icon": "images/profile/HUK-Logo.png",
       "iconColor": "text-white"
     },
     {
@@ -89,7 +89,7 @@
   ],
   "volunteering": [
     {
-      "role": "Head of Logistics",
+      "role": "Co-Lead",
       "company": "DurHack",
       "date": "FEB 2024 - PRESENT",
       "bgColor": "bg-emerald-500",
