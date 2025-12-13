@@ -6,7 +6,7 @@
       "date": "SEP 2023 - JUN 2027",
       "details": "First Class Honours (2nd Year)",
       "link": "#",
-      "bgColor": "bg-purple-200",
+      "bgColor": "bg-purple-100",
       "icon": "images/profile/durham.png",
       "iconColor": "text-white"
     }
@@ -50,7 +50,7 @@
   ],
 "employment": [
     {
-      "role": "Coach",
+      "role": "Hackathon Coach",
       "company": "Major League Hacking",
       "date": "MAR 2025 - PRESENT",
       "link": "/mlh",
@@ -78,9 +78,9 @@
     },
     {
       "role": "Lab Demonstrator & Student Ambassador",
-      "company": "Durham University Department of Computer Science",
+      "company": "Department of Computer Science, Durham",
       "date": "JUN 2024 - PRESENT",
-      "bgColor": "bg-purple-200", 
+      "bgColor": "bg-purple-100", 
       "icon": "images/profile/durham.png",
       "iconColor": "text-purple-800"
     },
