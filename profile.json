@@ -54,8 +54,8 @@
       "company": "Major League Hacking",
       "date": "MAR 2025 - PRESENT",
       "link": "/mlh",
-      "bgColor": "bg-yellow-900",
-      "icon": "fa-solid fa-code",
+      "bgColor": "bg-white-",
+      "icon": "images/profile/mlh-logo-color.svg",
       "iconColor": "text-yellow-400"
     },
     {
@@ -72,7 +72,7 @@
       "company": "Hackathons UK",
       "date": "AUG 2025 - PRESENT",
       "link": "/huk",
-      "bgColor": "bg-pink-500",
+      "bgColor": "bg-white-500",
       "icon": "images/profile/HUK-Logo.png",
       "iconColor": "text-white"
     },
