@@ -6,7 +6,7 @@
       "date": "SEP 2023 - JUN 2027",
       "details": "First Class Honours (2nd Year)",
       "link": "#",
-      "bgColor": "bg-purple-100",
+      "bgColor": "bg-white dark:bg-white",
       "icon": "images/profile/durham.png",
       "iconColor": "text-white"
     }
@@ -34,7 +34,7 @@
       "role": "Lab Demonstrator & Student Ambassador",
       "company": "Department of Computer Science, Durham",
       "date": "JUN 2024 - PRESENT",
-      "bgColor": "bg-purple-100",
+      "bgColor": "bg-white dark:bg-white",
       "icon": "images/profile/durham.png",
       "iconColor": "text-purple-800"
     },
@@ -86,7 +86,7 @@
       "role": "Code Club & Computeas Volunteer",
       "company": "DU Student Volunteering and Outreach",
       "date": "FEB 2024 - JUN 2025",
-      "bgColor": "bg-purple-100",
+      "bgColor": "bg-white dark:bg-white",
       "icon": "images/profile/dusvo.png",
       "iconColor": "text-white"
     },
