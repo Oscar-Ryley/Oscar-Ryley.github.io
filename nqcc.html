@@ -227,7 +227,7 @@
             const loadingIndicator = document.getElementById('loading-indicator');
             
             try {
-                const response = await fetch('./projects.json');
+                const response = await fetch('./data.json');
                 if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                 const allProjects = await response.json();
                 const Events = allProjects.events;
