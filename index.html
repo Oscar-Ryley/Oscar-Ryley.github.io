@@ -171,27 +171,60 @@
             const html = data.map(item => {
                 // 1. CHECK STATUS
                 const isCurrent = item.date.toUpperCase().includes('PRESENT') || item.date.includes('2026') || item.date.includes('2027');
-
-                // 2. DEFINE STYLES
                 
-                let containerClasses, iconBorderClass;
+                // 2. CHECK IF LINK EXISTS
+                const hasLink = item.link && item.link !== '#';
+                const WrapperTag = hasLink ? 'a' : 'div';
+                const hrefAttr = hasLink ? `href="${item.link}"` : '';
+                const targetAttr = hasLink && item.link.startsWith('http') ? 'target="_blank"' : '';
 
+                // 3. DEFINE STYLES
+                let containerClasses = "border-2 transition-all h-full min-h-[100px] flex flex-row group ";
+                let iconBorderClass = "";
+
+                // --- BORDERS & BACKGROUNDS ---
                 if (isCurrent) {
-                    // CURRENT: Black Border, Black Shadow (block-shadow class), White BG
-                    containerClasses = "border-black dark:border-white bg-white dark:bg-gray-800 block-shadow";
+                    // CURRENT: Black/White border, White BG
+                    containerClasses += "border-black dark:border-white bg-white dark:bg-gray-800 ";
                     iconBorderClass = "border-black dark:border-white";
                 } else {
-                    // PAST: Gray Border, Gray Shadow (Manual Tailwind classes), Slightly off-white BG
-                    // We manually add the hover effect here to match the 'block-shadow' behavior but in gray
-                    containerClasses = `
-                        border-gray-300 dark:border-gray-600 
-                        bg-gray-50 dark:bg-gray-900 
-                        shadow-[5px_5px_0px_0px_#d1d5db] dark:shadow-[5px_5px_0px_0px_#4b5563]
-                        hover:translate-x-[2px] hover:translate-y-[2px] 
-                        hover:shadow-[2px_2px_0px_0px_#d1d5db] dark:hover:shadow-[2px_2px_0px_0px_#4b5563]
-                    `;
+                    // PAST: Gray border, Off-white BG
+                    containerClasses += "border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-900 ";
                     iconBorderClass = "border-gray-300 dark:border-gray-600";
                 }
+
+                // --- SHADOWS & INTERACTIVITY (REACTION) ---
+                if (hasLink) {
+                    containerClasses += "cursor-pointer ";
+                    
+                    if (isCurrent) {
+                        // Current + Link = Use the CSS class 'block-shadow' which has built-in hover effects
+                        containerClasses += "block-shadow ";
+                    } else {
+                        // Past + Link = Gray shadow + Manual hover effects
+                        containerClasses += `
+                            shadow-[5px_5px_0px_0px_#d1d5db] dark:shadow-[5px_5px_0px_0px_#4b5563]
+                            hover:translate-x-[2px] hover:translate-y-[2px] 
+                            hover:shadow-[2px_2px_0px_0px_#d1d5db] dark:hover:shadow-[2px_2px_0px_0px_#4b5563]
+                        `;
+                    }
+                } else {
+                    containerClasses += "cursor-default ";
+                    
+                    if (isCurrent) {
+                        // Current + No Link = Static Black Shadow (No movement)
+                        containerClasses += "shadow-[5px_5px_0px_0px_#111827] dark:shadow-[5px_5px_0px_0px_#e5e7eb] ";
+                    } else {
+                        // Past + No Link = Static Gray Shadow (No movement)
+                        containerClasses += "shadow-[5px_5px_0px_0px_#d1d5db] dark:shadow-[5px_5px_0px_0px_#4b5563] ";
+                    }
+                }
+
+                // --- TEXT COLOR HOVER ---
+                // Only change text color on hover if it is a link
+                const textHoverClasses = hasLink 
+                    ? "group-hover:text-purple-700 dark:group-hover:text-purple-400"
+                    : "";
 
                 // Determine icon type (Image vs Font)
                 let iconDisplay;
@@ -202,8 +235,7 @@
                 }
 
                 return `
-                <a href="${item.link && item.link !== '#' ? item.link : 'javascript:void(0)'}" 
-                   class="group flex flex-row border-2 ${containerClasses} transition-all h-full min-h-[100px] cursor-${item.link && item.link !== '#' ? 'pointer' : 'default'}">
+                <${WrapperTag} ${hrefAttr} ${targetAttr} class="${containerClasses}">
                     
                     <!-- Icon Box -->
                     <div class="w-24 flex items-center justify-center border-r-2 ${iconBorderClass} ${item.bgColor} flex-shrink-0 overflow-hidden">
@@ -212,18 +244,17 @@
                     
                     <!-- Content Box -->
                     <div class="p-4 flex flex-col justify-center w-full">
-                        <h3 class="font-bold text-lg leading-tight group-hover:text-purple-700 dark:group-hover:text-purple-400 transition-colors dark:text-gray-100">
+                        <h3 class="font-bold text-lg leading-tight ${textHoverClasses} transition-colors dark:text-gray-100">
                             ${item.role}
                         </h3>
                         <p class="font-semibold text-gray-600 dark:text-gray-300">${item.company}</p>
                         ${item.details ? `<p class="text-sm text-gray-500 dark:text-gray-400 mt-1 italic">${item.details}</p>` : ''}
                         
                         <div class="mt-2 flex items-center gap-2">
-                             ${!isCurrent ? '<span class="text-[10px] bg-gray-200 text-gray-500 px-1 rounded font-bold uppercase">PAST</span>' : ''}
                             <p class="text-xs font-mono text-gray-500 dark:text-gray-400 uppercase tracking-wide">${item.date}</p>
                         </div>
                     </div>
-                </a>
+                </${WrapperTag}>
             `}).join('');
             container.innerHTML = html;
         }
