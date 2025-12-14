@@ -31,15 +31,6 @@
       "iconColor": "text-white"
     },
     {
-      "role": "Associate (Events)",
-      "company": "Hackathons UK",
-      "date": "AUG 2025 - PRESENT",
-      "link": "/huk",
-      "bgColor": "bg-white dark:bg-white",
-      "icon": "images/profile/HUK-Logo.png",
-      "iconColor": "text-white"
-    },
-    {
       "role": "Lab Demonstrator & Student Ambassador",
       "company": "Department of Computer Science, Durham",
       "date": "JUN 2024 - JUN 2025",
@@ -67,6 +58,15 @@
       "iconColor": "text-white"
     },
     {
+      "role": "Associate (Events)",
+      "company": "Hackathons UK",
+      "date": "AUG 2025 - PRESENT",
+      "link": "/huk",
+      "bgColor": "bg-white dark:bg-white",
+      "icon": "images/profile/HUK-Logo.png",
+      "iconColor": "text-white"
+    },
+    {
       "role": "Web Developer",
       "company": "The Bubble",
       "date": "DEC 2024 - PRESENT",
@@ -75,19 +75,19 @@
       "iconColor": "text-white"
     },
     {
-      "role": "Code Club & Computeas Volunteer",
-      "company": "DU Student Volunteering and Outreach",
-      "date": "FEB 2024 - PRESENT",
-      "bgColor": "bg-purple-100",
-      "icon": "images/profile/dusvo.png",
-      "iconColor": "text-white"
-    },
-    {
       "role": "Founder, President",
       "company": "DurJam",
       "date": "NOV 2024 - JUN 2025",
       "bgColor": "bg-purple-900",
       "icon": "images/profile/DurJam.png",
+      "iconColor": "text-white"
+    },
+    {
+      "role": "Code Club & Computeas Volunteer",
+      "company": "DU Student Volunteering and Outreach",
+      "date": "FEB 2024 - JUN 2025",
+      "bgColor": "bg-purple-100",
+      "icon": "images/profile/dusvo.png",
       "iconColor": "text-white"
     },
     {
