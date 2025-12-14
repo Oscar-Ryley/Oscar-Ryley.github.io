@@ -61,7 +61,7 @@
     {
       "role": "Events Coordinator",
       "company": "National Quantum Computing Centre",
-      "date": "JUN 2025 - SEP 2025, Summer Placement",
+      "date": "JUN 2025 - SEP 2025 \n Summer Placement",
       "link": "/nqcc",
       "bgColor": "bg-[#2e2d62]",
       "icon": "images/profile/ukri.png",
@@ -79,7 +79,7 @@
     {
       "role": "Lab Demonstrator & Student Ambassador",
       "company": "Department of Computer Science, Durham",
-      "date": "JUN 2024 - PRESENT",
+      "date": "JUN 2024 - JUN 2025",
       "bgColor": "bg-purple-100", 
       "icon": "images/profile/durham.png",
       "iconColor": "text-purple-800"
@@ -117,6 +117,14 @@
       "date": "FEB 2024 - PRESENT",
       "bgColor": "bg-purple-100",
       "icon": "images/profile/dusvo.png",
+      "iconColor": "text-white"
+    },
+    {
+      "role": "Founder, President",
+      "company": "DurJam",
+      "date": "NOV 2024 - JUN 2025",
+      "bgColor": "bg-indigo-600",
+      "icon": "images/profile/DurJam.png",
       "iconColor": "text-white"
     },
     {
