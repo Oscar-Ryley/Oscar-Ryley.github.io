@@ -117,7 +117,7 @@
             <div>
                 <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 dark:text-white">Hackathons</h1>
                 <!-- Subtitle placeholder if needed -->
-                <p class="text-lg md:text-xl font-medium text-purple-700 dark:text-purple-400 mt-1 font-mono">MY JOURNEY</p>
+                <p class="text-lg md:text-xl font-medium text-purple-700 dark:text-purple-400 mt-1 font-mono"></p>
             </div>
             
             <p class="text-gray-700 dark:text-gray-300 text-lg max-w-3xl leading-relaxed">
@@ -228,11 +228,12 @@
             const loadingIndicator = document.getElementById('loading-indicator');
             
             try {
-                const response = await fetch('./projects.json');
+                const response = await fetch('./data.json');
                 if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                 const allProjects = await response.json();
+                const Events = allProjects.events;
 
-                const filteredProjects = allProjects.filter(project => 
+                const filteredProjects = Events.filter(project => 
                     project.pages && Array.isArray(project.pages) && project.pages.includes(CURRENT_PAGE_ID)
                 );
 

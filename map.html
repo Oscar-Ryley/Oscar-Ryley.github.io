@@ -184,10 +184,11 @@
         // --- 3. FETCH MARKERS ---
         async function fetchAndRenderMarkers() {
             try {
-                const response = await fetch('./projects.json');
+                const response = await fetch('./data.json');
                 if (!response.ok) throw new Error("JSON not found");
                 const allProjects = await response.json();
-                const mapProjects = allProjects.filter(p => p.maps && p.maps.coords);
+                const Events = allProjects.events;
+                const mapProjects = Events.filter(p => p.maps && p.maps.coords);
 
                 mapProjects.forEach(function(project) {
                     const mapData = project.maps;

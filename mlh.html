@@ -230,8 +230,9 @@
                 const response = await fetch('./projects.json');
                 if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                 const allProjects = await response.json();
+                const Events = allProjects.events;
 
-                const filteredProjects = allProjects.filter(project => 
+                const filteredProjects = Events.filter(project => 
                     project.pages && Array.isArray(project.pages) && project.pages.includes(CURRENT_PAGE_ID)
                 );
 
