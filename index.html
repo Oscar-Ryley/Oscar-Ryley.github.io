@@ -285,10 +285,10 @@
                 const data = await response.json();
 
                 renderExperience(data.education, 'education-container');
-                renderArticles(data.articles, 'articles-container');
+                // renderArticles(data.articles, 'articles-container');
                 renderExperience(data.employment, 'employment-container');
                 renderExperience(data.volunteering, 'volunteering-container');
-                renderProjects(data.projects, 'projects-container');
+                // renderProjects(data.projects, 'projects-container');
 
             } catch (error) {
                 console.error("Error loading data:", error);
