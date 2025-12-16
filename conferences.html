@@ -7,9 +7,7 @@
     <link rel="icon" type="image/png" href="images/icon.png">
     
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = { darkMode: 'class' }
-    </script>
+    <script> tailwind.config = { darkMode: 'class' } </script>
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
@@ -45,11 +43,6 @@
         .page-right-hover { right: 0; }
         .page-left-hover::after { content: '\f053'; font-family: "Font Awesome 6 Free"; font-weight: 900; color: white; }
         .page-right-hover::after { content: '\f054'; font-family: "Font Awesome 6 Free"; font-weight: 900; color: white; }
-
-        /* Modal Styles */
-        #modal-overlay {
-            backdrop-filter: blur(5px);
-        }
     </style>
 </head>
 <body class="min-h-screen py-10 px-4 md:px-8 max-w-5xl mx-auto relative bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-100">
@@ -91,10 +84,10 @@
     </footer>
 
     <!-- MODAL -->
-    <div id="modal-overlay" class="fixed inset-0 z-[100] hidden bg-black/70 flex items-center justify-center p-4" onclick="closeModal(event)">
+    <div id="modal-overlay" class="fixed inset-0 z-[100] hidden bg-black/70 flex items-center justify-center p-4 backdrop-blur-sm" onclick="closeModal(event)">
         <div class="bg-white dark:bg-gray-800 w-full max-w-4xl max-h-[90vh] overflow-y-auto border-2 border-black dark:border-white block-shadow relative animate-[fadeIn_0.2s_ease-out]" onclick="event.stopPropagation()">
-            <!-- Close Button -->
-            <button onclick="closeModal()" class="absolute top-4 right-4 z-50 w-10 h-10 flex items-center justify-center bg-red-500 text-white border-2 border-black dark:border-white font-bold hover:bg-red-600 transition-colors">
+            <!-- Close Button: BLUE for Conferences -->
+            <button onclick="closeModal()" class="absolute top-4 right-4 z-50 w-10 h-10 flex items-center justify-center bg-blue-600 text-white border-2 border-black dark:border-white font-bold hover:bg-blue-700 transition-colors">
                 <i class="fa-solid fa-xmark"></i>
             </button>
             
@@ -142,8 +135,6 @@
             return `
                 <article class="bg-white dark:bg-gray-800 border-2 border-black dark:border-white p-6 md:p-8 block-shadow mb-12 transition-colors cursor-pointer group hover:border-blue-500 dark:hover:border-blue-400" onclick="openModal(${index})">
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start pointer-events-none">
-                        
-                        <!-- Left: Content (Pointer events enabled for text selection if needed, but disabled here to ensure click bubbles to article) -->
                         <div class="pointer-events-auto">
                             <div class="flex flex-col mb-4">
                                 <h2 class="text-3xl font-extrabold text-gray-900 dark:text-white leading-tight mb-1 group-hover:text-blue-700 dark:group-hover:text-blue-400 transition-colors">${project.title}</h2>
@@ -161,8 +152,6 @@
                                 Read More <i class="fa-solid fa-arrow-right"></i>
                             </div>
                         </div>
-                        
-                        <!-- Right: Carousel -->
                         <div class="pointer-events-auto">
                             ${carouselHtml}
                         </div>
@@ -195,27 +184,22 @@
                         ${tagsHtml}
                     </div>
 
-                    <!-- Carousel -->
+                    <!-- Carousel (Same Dimension as Main Page) -->
                     <div class="w-full">
                         ${carouselHtml}
                     </div>
 
-                    <!-- Descriptions -->
-                    <div class="space-y-6 text-lg text-gray-800 dark:text-gray-200 leading-relaxed">
-                        <p class="font-bold border-l-4 border-blue-500 pl-4 py-1 bg-gray-50 dark:bg-gray-700/50">
-                            ${project.description}
-                        </p>
-                        ${project.fullDescription ? `
-                        <div class="prose dark:prose-invert max-w-none border-t-2 border-gray-200 dark:border-gray-700 pt-6">
-                            ${project.fullDescription}
-                        </div>` : ''}
+                    <!-- Descriptions (Merged Article Format) -->
+                    <div class="space-y-4 text-lg text-gray-800 dark:text-gray-200 leading-relaxed">
+                        <p>${project.description}</p>
+                        ${project.fullDescription ? `<div class="prose dark:prose-invert max-w-none pt-2">${project.fullDescription}</div>` : ''}
                     </div>
                 </div>
             `;
 
             modalOverlay.classList.remove('hidden');
-            document.body.style.overflow = 'hidden'; // Prevent background scrolling
-            initializeCarousels(modalContent); // Initialize carousel inside modal
+            document.body.style.overflow = 'hidden'; 
+            initializeCarousels(modalContent); 
         }
 
         function closeModal(event) {
@@ -235,7 +219,6 @@
                  return;
             }
 
-            // Sort and Store Global
             globalProjects = projectsData.sort((a, b) => new Date(b.date) - new Date(a.date));
 
             let allProjectsHtml = '';
@@ -281,13 +264,11 @@
                     slides[currentSlideIndex].classList.add('active');
                 };
 
-                // Add event listeners (Stop propagation to prevent modal trigger on card)
                 leftHover.onclick = (e) => { e.stopPropagation(); showSlide(currentSlideIndex - 1); };
                 rightHover.onclick = (e) => { e.stopPropagation(); showSlide(currentSlideIndex + 1); };
             });
         }
 
-        // Theme & Init
         function initTheme() {
             const toggleBtn = document.getElementById('theme-toggle');
             if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
