@@ -142,7 +142,10 @@
                         <span class="font-mono text-gray-500 dark:text-gray-400 uppercase tracking-wide text-lg border-b-2 border-blue-500 inline-block pb-1">${project.date}</span>
                     </div>
                     <div class="flex flex-wrap">${tagsHtml}</div>
-                    <div class="w-full">${carouselHtml}</div>
+                    
+                    <!-- Carousel: Constrained Width -->
+                    <div class="w-full max-w-xl">${carouselHtml}</div>
+
                     <div class="space-y-4 text-lg text-gray-800 dark:text-gray-200 leading-relaxed">
                         <p>${project.description}</p>
                         ${project.fullDescription ? `<div class="prose dark:prose-invert max-w-none pt-2">${project.fullDescription}</div>` : ''}

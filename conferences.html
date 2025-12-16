@@ -184,12 +184,12 @@
                         ${tagsHtml}
                     </div>
 
-                    <!-- Carousel (Same Dimension as Main Page) -->
-                    <div class="w-full">
+                    <!-- Carousel: Constrained Width to match List View -->
+                    <div class="w-full max-w-xl">
                         ${carouselHtml}
                     </div>
 
-                    <!-- Descriptions (Merged Article Format) -->
+                    <!-- Descriptions: Merged -->
                     <div class="space-y-4 text-lg text-gray-800 dark:text-gray-200 leading-relaxed">
                         <p>${project.description}</p>
                         ${project.fullDescription ? `<div class="prose dark:prose-invert max-w-none pt-2">${project.fullDescription}</div>` : ''}
