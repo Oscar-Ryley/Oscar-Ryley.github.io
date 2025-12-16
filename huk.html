@@ -6,126 +6,65 @@
     <title>Oscar Ryley - Hackathons UK</title>
     <link rel="icon" type="image/png" href="images/icon.png">
     
-    <!-- TAILWIND CONFIGURATION -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-        }
-    </script>
+    <script> tailwind.config = { darkMode: 'class' } </script>
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            transition: background-color 0.3s, color 0.3s;
-        }
+        body { font-family: 'Inter', sans-serif; transition: background-color 0.3s, color 0.3s; }
         .font-mono { font-family: 'JetBrains Mono', monospace; }
+        .block-shadow { box-shadow: 5px 5px 0px 0px #111827; }
+        .block-shadow:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0px 0px #111827; }
+        .dark .block-shadow { box-shadow: 5px 5px 0px 0px #e5e7eb; }
+        .dark .block-shadow:hover { box-shadow: 2px 2px 0px 0px #e5e7eb; }
 
-        /* --- NEO-BRUTALIST SHADOWS --- */
-        .block-shadow {
-            box-shadow: 5px 5px 0px 0px #111827;
-        }
-        .block-shadow:hover {
-            transform: translate(2px, 2px);
-            box-shadow: 2px 2px 0px 0px #111827;
-        }
-        
-        /* Dark Mode Shadows (White/Gray) */
-        .dark .block-shadow {
-            box-shadow: 5px 5px 0px 0px #e5e7eb;
-        }
-        .dark .block-shadow:hover {
-            box-shadow: 2px 2px 0px 0px #e5e7eb;
-        }
-
-        /* Carousel Styles */
-        .page-carousel-container {
-            position: relative;
-            width: 100%;
-            height: 300px; 
-            overflow: hidden;
-            border: 2px solid black;
-            background-color: #000;
-        }
-        .dark .page-carousel-container {
-            border-color: white;
-        }
-        
-        .page-carousel-slide {
-            display: none;
-            width: 100%;
-            height: 100%;
-        }
-        .page-carousel-slide.active {
-            display: block;
-        }
-        .page-carousel-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .page-carousel-nav-hover {
-            position: absolute;
-            top: 0; bottom: 0; width: 50px;
-            cursor: pointer; z-index: 10;
-            display: flex; align-items: center; justify-content: center;
-            transition: background-color 0.2s;
-        }
-        .page-carousel-nav-hover:hover {
-            background-color: rgba(0,0,0,0.3);
-        }
-        .page-left-hover { left: 0; }
-        .page-right-hover { right: 0; }
-        
+        .page-carousel-container { position: relative; width: 100%; height: 300px; overflow: hidden; border: 2px solid black; background-color: #000; }
+        .dark .page-carousel-container { border-color: white; }
+        .page-carousel-slide { display: none; width: 100%; height: 100%; }
+        .page-carousel-slide.active { display: block; }
+        .page-carousel-image { width: 100%; height: 100%; object-fit: cover; }
+        .page-carousel-nav-hover { position: absolute; top: 0; bottom: 0; width: 50px; cursor: pointer; z-index: 10; display: flex; align-items: center; justify-content: center; transition: background-color 0.2s; }
+        .page-carousel-nav-hover:hover { background-color: rgba(0,0,0,0.3); }
+        .page-left-hover { left: 0; } .page-right-hover { right: 0; }
         .page-left-hover::after { content: '\f053'; font-family: "Font Awesome 6 Free"; font-weight: 900; color: white; }
         .page-right-hover::after { content: '\f054'; font-family: "Font Awesome 6 Free"; font-weight: 900; color: white; }
     </style>
 </head>
 <body class="min-h-screen py-10 px-4 md:px-8 max-w-5xl mx-auto relative bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-100">
 
-    <!-- CONTROLS CONTAINER (Top Right) -->
-    <div class="fixed md:absolute top-6 right-6 z-50 flex gap-4">
-        
-        <!-- Theme Toggle Button -->
-        <button id="theme-toggle" class="flex items-center justify-center w-12 h-12 bg-white dark:bg-gray-800 border-2 border-black dark:border-white block-shadow transition-all" aria-label="Toggle Dark Mode">
+    <!-- NAV -->
+    <div class="fixed md:absolute top-6 right-6 z-40 flex gap-4">
+        <button id="theme-toggle" class="flex items-center justify-center w-12 h-12 bg-white dark:bg-gray-800 border-2 border-black dark:border-white block-shadow transition-all">
             <i class="fa-solid fa-sun text-yellow-500 text-xl hidden dark:block"></i>
             <i class="fa-solid fa-moon text-purple-700 text-xl block dark:hidden"></i>
         </button>
-
-        <!-- Back Button -->
         <a href="/" class="flex items-center justify-center w-12 h-12 bg-white dark:bg-gray-800 border-2 border-black dark:border-white block-shadow text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 transition-all">
             <i class="fa-solid fa-arrow-left text-xl"></i>
         </a>
     </div>
 
-    <!-- HEADER / HERO SECTION -->
+    <!-- HERO -->
     <header class="flex flex-col md:flex-row items-center md:items-start gap-8 mb-16 pt-8 md:pt-0">
-        
-        <!-- Logo Area -->
         <div class="relative w-32 h-32 flex-shrink-0">
             <div class="absolute inset-0 bg-pink-500 rounded-none translate-x-2 translate-y-2 border-2 border-black dark:border-white transition-colors"></div>
             <div class="relative w-full h-full border-2 border-black dark:border-white z-10 bg-gray-900 flex items-center justify-center transition-colors">
                 <img src="images/profile/HUK-Logo.png" alt="HUK Logo" class="w-full h-full object-cover">
             </div>
         </div>
-
         <div class="flex-1 text-center md:text-left space-y-4">
             <div>
                 <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 dark:text-white">Hackathons UK</h1>
                 <p class="text-lg md:text-xl font-medium text-pink-700 dark:text-pink-400 mt-1 font-mono">AUG 2025 - PRESENT</p>
             </div>
-            
             <p class="text-gray-700 dark:text-gray-300 text-lg max-w-3xl leading-relaxed">
                 Supporting student Hackathons across the UK by championing community, sharing experience-backed knowledge with organisers and mentoring participants.
             </p>
         </div>
     </header>
 
-    <!-- CONTENT CONTAINER -->
+    <!-- LIST -->
     <main id="project-list" class="space-y-12">
         <div id="loading-indicator" class="text-center p-8 text-gray-500 dark:text-gray-400 font-mono">LOADING DATA...</div>
     </main>
@@ -134,187 +73,128 @@
         <p>©<span id="year">2025</span> Oscar Ryley</p>
     </footer>
 
-    <!-- JAVASCRIPT LOGIC -->
+    <!-- MODAL -->
+    <div id="modal-overlay" class="fixed inset-0 z-[100] hidden bg-black/70 flex items-center justify-center p-4" onclick="closeModal(event)">
+        <div class="bg-white dark:bg-gray-800 w-full max-w-4xl max-h-[90vh] overflow-y-auto border-2 border-black dark:border-white block-shadow relative animate-[fadeIn_0.2s_ease-out]" onclick="event.stopPropagation()">
+            <button onclick="closeModal()" class="absolute top-4 right-4 z-50 w-10 h-10 flex items-center justify-center bg-red-500 text-white border-2 border-black dark:border-white font-bold hover:bg-red-600 transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div id="modal-content" class="p-6 md:p-10"></div>
+        </div>
+    </div>
+
+    <!-- LOGIC -->
     <script>
         const CURRENT_PAGE_ID = 'huk'; 
+        let globalProjects = [];
 
-        function generateProjectHtml(project) {
-            // Tags: Using Red/Pink theme for HUK tags
+        function generateCarouselHtml(images, title, folder) {
+            const slides = images.map((imageName, index) => {
+                const imagePath = `images/map/${folder}/${imageName}`;
+                return `<div class="page-carousel-slide ${index === 0 ? 'active' : ''}"><img src="${imagePath}" alt="${title}" class="page-carousel-image" onerror="this.onerror=null;this.src='https://placehold.co/600x400/000000/FFFFFF?text=Image+Unavailable'"></div>`;
+            }).join('');
+            const navHovers = (images.length > 1) ? `<div class="page-carousel-nav-hover page-left-hover"></div><div class="page-carousel-nav-hover page-right-hover"></div>` : '';
+            return `<div class="page-carousel-container shadow-[4px_4px_0_0_#000] dark:shadow-[4px_4px_0_0_#e5e7eb] transition-shadow">${slides}${navHovers}</div>`;
+        }
+
+        function generateProjectHtml(project, index) {
             const tagsHtml = project.tags.map(tag => 
                 `<span class="inline-block border border-black dark:border-white bg-pink-100 dark:bg-pink-900 dark:text-white text-xs font-bold px-2 py-1 mr-2 mb-2 shadow-[2px_2px_0_0_#000] dark:shadow-[2px_2px_0_0_#e5e7eb]">${tag}</span>`
             ).join('');
-
-            const carouselSlides = project.images.map((imageName, index) => {
-                const imagePath = `images/map/${project.imageFolder}/${imageName}`;
-                return `
-                    <div class="page-carousel-slide ${index === 0 ? 'active' : ''}">
-                        <img src="${imagePath}" alt="${project.title}" class="page-carousel-image" onerror="this.onerror=null;this.src='https://placehold.co/600x400/000000/FFFFFF?text=Image+Unavailable'">
-                    </div>
-                `;
-            }).join('');
-
-            const navHovers = (project.images.length > 1) ? `
-                <div class="page-carousel-nav-hover page-left-hover"></div>
-                <div class="page-carousel-nav-hover page-right-hover"></div>
-            ` : '';
-            
-            const fullDescHtml = project.fullDescription && project.fullDescription.trim() !== "" ? 
-                `<div class="mt-6 pt-6 border-t-2 border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 leading-relaxed">
-                    ${project.fullDescription}
-                </div>` : "";
+            const carouselHtml = generateCarouselHtml(project.images, project.title, project.imageFolder);
 
             return `
-                <article class="bg-white dark:bg-gray-800 border-2 border-black dark:border-white p-6 md:p-8 block-shadow mb-12 transition-colors">
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-                        
-                        <!-- Left: Content -->
-                        <div>
+                <article class="bg-white dark:bg-gray-800 border-2 border-black dark:border-white p-6 md:p-8 block-shadow mb-12 transition-colors cursor-pointer group hover:border-pink-500 dark:hover:border-pink-400" onclick="openModal(${index})">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start pointer-events-none">
+                        <div class="pointer-events-auto">
                             <div class="flex flex-col mb-4">
-                                <h2 class="text-3xl font-extrabold text-gray-900 dark:text-white leading-tight mb-1">${project.title}</h2>
+                                <h2 class="text-3xl font-extrabold text-gray-900 dark:text-white leading-tight mb-1 group-hover:text-pink-700 dark:group-hover:text-pink-400 transition-colors">${project.title}</h2>
                                 <span class="font-mono text-sm text-gray-500 dark:text-gray-400 uppercase tracking-wide">${project.date}</span>
                             </div>
-
-                            <div class="flex flex-wrap mb-6">
-                                ${tagsHtml}
-                            </div>
-
+                            <div class="flex flex-wrap mb-6">${tagsHtml}</div>
                             <div class="text-gray-700 dark:text-gray-300 leading-relaxed space-y-4 text-lg">
-                                <p>${project.description}</p>
+                                <p class="line-clamp-4">${project.description}</p>
+                            </div>
+                             <div class="mt-4 text-pink-600 dark:text-pink-400 font-bold text-sm uppercase flex items-center gap-2">
+                                Read More <i class="fa-solid fa-arrow-right"></i>
                             </div>
                         </div>
-                        
-                        <!-- Right: Carousel -->
-                        <div>
-                            <div class="page-carousel-container shadow-[4px_4px_0_0_#000] dark:shadow-[4px_4px_0_0_#e5e7eb] transition-shadow" data-carousel-id="${project.title.toLowerCase().replace(/\s/g, '-')}-carousel">
-                                ${carouselSlides}
-                                ${navHovers}
-                            </div>
-                            <p class="text-xs text-center mt-2 font-mono text-gray-400 dark:text-gray-500">
-                                ${project.images.length > 1 ? '<i class="fa-solid fa-arrows-left-right"></i> CLICK SIDES TO NAVIGATE' : ''}
-                            </p>
-                        </div>
-
+                        <div class="pointer-events-auto">${carouselHtml}</div>
                     </div>
-                    
-                    ${fullDescHtml}
                 </article>
             `;
         }
 
+        function openModal(index) {
+            const project = globalProjects[index];
+            const modalContent = document.getElementById('modal-content');
+            const tagsHtml = project.tags.map(tag => 
+                `<span class="inline-block border border-black dark:border-white bg-pink-100 dark:bg-pink-900 dark:text-white text-xs font-bold px-2 py-1 mr-2 mb-2 shadow-[2px_2px_0_0_#000] dark:shadow-[2px_2px_0_0_#e5e7eb]">${tag}</span>`
+            ).join('');
+            const carouselHtml = generateCarouselHtml(project.images, project.title, project.imageFolder);
+
+            modalContent.innerHTML = `
+                <div class="flex flex-col gap-6">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white mb-2">${project.title}</h2>
+                        <span class="font-mono text-gray-500 dark:text-gray-400 uppercase tracking-wide text-lg border-b-2 border-pink-500 inline-block pb-1">${project.date}</span>
+                    </div>
+                    <div class="flex flex-wrap">${tagsHtml}</div>
+                    <div class="w-full">${carouselHtml}</div>
+                    <div class="space-y-6 text-lg text-gray-800 dark:text-gray-200 leading-relaxed">
+                        <p class="font-bold border-l-4 border-pink-500 pl-4 py-1 bg-gray-50 dark:bg-gray-700/50">${project.description}</p>
+                        ${project.fullDescription ? `<div class="prose dark:prose-invert max-w-none border-t-2 border-gray-200 dark:border-gray-700 pt-6">${project.fullDescription}</div>` : ''}
+                    </div>
+                </div>
+            `;
+            document.getElementById('modal-overlay').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            initializeCarousels(modalContent);
+        }
+
+        function closeModal(event) {
+            if (event && event.target.id !== 'modal-overlay' && !event.target.closest('button')) return;
+            document.getElementById('modal-overlay').classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+
         function renderProjects(projectsData) {
-            const projectListContainer = document.getElementById('project-list');
-            const loadingIndicator = document.getElementById('loading-indicator');
-            
-            if (loadingIndicator) loadingIndicator.style.display = 'none';
-
-            if (projectsData.length === 0) {
-                 projectListContainer.innerHTML = `<div class="text-center p-8 text-gray-500 font-mono">NO PROJECTS FOUND FOR THIS PAGE.</div>`;
-                 return;
-            }
-
-            projectsData.sort((a, b) => new Date(b.date) - new Date(a.date));
-
-            let allProjectsHtml = '';
-            projectsData.forEach(project => {
-                allProjectsHtml += generateProjectHtml(project);
-            });
-
-            projectListContainer.innerHTML = allProjectsHtml;
-            initializeCarousels();
+            const container = document.getElementById('project-list');
+            document.getElementById('loading-indicator').style.display = 'none';
+            if (projectsData.length === 0) { container.innerHTML = `<div class="text-center p-8 font-mono">NO PROJECTS FOUND.</div>`; return; }
+            globalProjects = projectsData.sort((a, b) => new Date(b.date) - new Date(a.date));
+            container.innerHTML = globalProjects.map((p, i) => generateProjectHtml(p, i)).join('');
+            initializeCarousels(document);
         }
 
         async function fetchProjects() {
-            const loadingIndicator = document.getElementById('loading-indicator');
-            
             try {
-                const response = await fetch('./data.json');
-                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-                const allProjects = await response.json();
-                const Events = allProjects.events;
-
-                const filteredProjects = Events.filter(project => 
-                    project.pages && Array.isArray(project.pages) && project.pages.includes(CURRENT_PAGE_ID)
-                );
-
-                renderProjects(filteredProjects);
-
-            } catch (error) {
-                console.error("Error loading projects:", error);
-                if (loadingIndicator) loadingIndicator.innerHTML = `ERROR LOADING DATA. CHECK CONSOLE.`;
-            }
+                const res = await fetch('./data.json');
+                const data = await res.json();
+                renderProjects(data.events.filter(p => p.pages && p.pages.includes(CURRENT_PAGE_ID)));
+            } catch (e) { document.getElementById('loading-indicator').innerHTML = `ERROR LOADING DATA.`; }
         }
 
-        function initializeCarousels() {
-            const carousels = document.querySelectorAll('.page-carousel-container');
-
-            carousels.forEach(carouselContainer => {
-                const slides = Array.from(carouselContainer.querySelectorAll('.page-carousel-slide'));
-                const leftHover = carouselContainer.querySelector('.page-left-hover');
-                const rightHover = carouselContainer.querySelector('.page-right-hover');
-                
-                if (slides.length <= 1 || !leftHover || !rightHover) {
-                    if (leftHover) leftHover.style.display = 'none';
-                    if (rightHover) rightHover.style.display = 'none';
-                    return; 
-                }
-
-                let currentSlideIndex = 0;
-
-                slides.forEach((slide, index) => {
-                    if (index === 0) {
-                        slide.classList.add('active');
-                        currentSlideIndex = 0;
-                    } else {
-                         slide.classList.remove('active');
-                    }
-                });
-
-                const showSlide = (n) => {
-                    slides[currentSlideIndex].classList.remove('active');
-                    currentSlideIndex = (n + slides.length) % slides.length;
-                    slides[currentSlideIndex].classList.add('active');
-                };
-
-                leftHover.addEventListener('click', (event) => {
-                    event.stopPropagation();
-                    showSlide(currentSlideIndex - 1);
-                });
-
-                rightHover.addEventListener('click', (event) => {
-                    event.stopPropagation();
-                    showSlide(currentSlideIndex + 1);
-                });
+        function initializeCarousels(scope) {
+            scope.querySelectorAll('.page-carousel-container').forEach(c => {
+                const slides = Array.from(c.querySelectorAll('.page-carousel-slide'));
+                const left = c.querySelector('.page-left-hover'), right = c.querySelector('.page-right-hover');
+                if (slides.length <= 1) { if(left) left.style.display='none'; if(right) right.style.display='none'; return; }
+                let cur = 0;
+                const show = (n) => { slides[cur].classList.remove('active'); cur=(n+slides.length)%slides.length; slides[cur].classList.add('active'); };
+                left.onclick = (e) => { e.stopPropagation(); show(cur - 1); };
+                right.onclick = (e) => { e.stopPropagation(); show(cur + 1); };
             });
         }
 
-        // --- DARK MODE LOGIC ---
         function initTheme() {
-            const toggleBtn = document.getElementById('theme-toggle');
-            
-            if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                document.documentElement.classList.add('dark');
-            } else {
-                document.documentElement.classList.remove('dark');
-            }
-
-            toggleBtn.addEventListener('click', () => {
-                if (document.documentElement.classList.contains('dark')) {
-                    document.documentElement.classList.remove('dark');
-                    localStorage.theme = 'light';
-                } else {
-                    document.documentElement.classList.add('dark');
-                    localStorage.theme = 'dark';
-                }
-            });
+            if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) document.documentElement.classList.add('dark');
+            document.getElementById('theme-toggle').onclick = () => {
+                document.documentElement.classList.toggle('dark'); localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+            };
         }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            initTheme();
-            fetchProjects();
-        });
-
+        document.addEventListener('DOMContentLoaded', () => { initTheme(); fetchProjects(); });
         document.getElementById('year').textContent = new Date().getFullYear();
-    
     </script>
 </body>
 </html>
