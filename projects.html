@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oscar Ryley - Projects</title>
+    <link rel="icon" type="image/png" href="images/icon.png">
+    
+    <!-- TAILWIND CONFIGURATION -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+
+        /* --- NEO-BRUTALIST SHADOWS --- */
+        .block-shadow {
+            box-shadow: 5px 5px 0px 0px #111827;
+        }
+        .block-shadow:hover {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px 0px #111827;
+        }
+        
+        /* Dark Mode Shadows (White/Gray) */
+        .dark .block-shadow {
+            box-shadow: 5px 5px 0px 0px #e5e7eb;
+        }
+        .dark .block-shadow:hover {
+            box-shadow: 2px 2px 0px 0px #e5e7eb;
+        }
+
+        /* Button Hover Effects */
+        .btn-link:hover {
+            background-color: #f3f4f6;
+        }
+        .dark .btn-link:hover {
+            background-color: #374151;
+        }
+    </style>
+</head>
+<body class="min-h-screen py-10 px-4 md:px-8 max-w-6xl mx-auto relative bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-100">
+
+    <!-- CONTROLS CONTAINER (Top Right) -->
+    <div class="fixed md:absolute top-6 right-6 z-50 flex gap-4">
+        
+        <!-- Theme Toggle Button -->
+        <button id="theme-toggle" class="flex items-center justify-center w-12 h-12 bg-white dark:bg-gray-800 border-2 border-black dark:border-white block-shadow transition-all" aria-label="Toggle Dark Mode">
+            <i class="fa-solid fa-sun text-yellow-500 text-xl hidden dark:block"></i>
+            <i class="fa-solid fa-moon text-purple-700 text-xl block dark:hidden"></i>
+        </button>
+
+        <!-- Back Button -->
+        <a href="/" class="flex items-center justify-center w-12 h-12 bg-white dark:bg-gray-800 border-2 border-black dark:border-white block-shadow text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 transition-all">
+            <i class="fa-solid fa-arrow-left text-xl"></i>
+        </a>
+    </div>
+
+    <!-- HEADER / HERO SECTION -->
+    <header class="flex flex-col md:flex-row items-center md:items-start gap-8 mb-16 pt-8 md:pt-0">
+        
+        <!-- Logo Area -->
+        <div class="relative w-32 h-32 flex-shrink-0">
+            <div class="absolute inset-0 bg-emerald-600 rounded-none translate-x-2 translate-y-2 border-2 border-black dark:border-white transition-colors"></div>
+            <div class="relative w-full h-full border-2 border-black dark:border-white z-10 bg-gray-900 flex items-center justify-center transition-colors">
+                <i class="fa-solid fa-code-branch text-5xl text-emerald-400"></i>
+            </div>
+        </div>
+
+        <div class="flex-1 text-center md:text-left space-y-4">
+            <div>
+                <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 dark:text-white">Projects</h1>
+                <p class="text-lg md:text-xl font-medium text-emerald-700 dark:text-emerald-400 mt-1 font-mono">DEVELOPMENT & GAMES</p>
+            </div>
+            
+            <p class="text-gray-700 dark:text-gray-300 text-lg max-w-3xl leading-relaxed">
+                A collection of academic work, hackathon submissions, game jams, and personal coding projects.
+            </p>
+        </div>
+    </header>
+
+    <!-- CONTENT CONTAINER -->
+    <!-- Using a Grid here because projects are smaller than events (no images) -->
+    <main id="project-list" class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        <div id="loading-indicator" class="col-span-full text-center p-8 text-gray-500 dark:text-gray-400 font-mono">LOADING DATA...</div>
+    </main>
+
+    <footer class="text-center py-10 text-gray-500 dark:text-gray-400 text-sm font-mono mt-12 border-t-2 border-gray-200 dark:border-gray-700">
+        <p>©<span id="year">2025</span> Oscar Ryley</p>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        function generateLinkButton(link) {
+            let label = "View";
+            if(link.url.includes("github")) label = "Code";
+            if(link.url.includes("devpost")) label = "Devpost";
+            if(link.url.includes("itch.io")) label = "Itch.io";
+
+            return `
+                <a href="${link.url}" target="_blank" class="btn-link flex items-center gap-2 px-3 py-2 border-2 border-black dark:border-white text-sm font-bold bg-white dark:bg-gray-800 text-gray-900 dark:text-white shadow-[3px_3px_0_0_#000] dark:shadow-[3px_3px_0_0_#fff] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[2px_2px_0_0_#000] dark:hover:shadow-[2px_2px_0_0_#fff] transition-all">
+                    <i class="${link.icon} text-lg"></i>
+                    <span>${label}</span>
+                </a>
+            `;
+        }
+
+        function generateProjectHtml(project) {
+            // Handle Dark Mode Colors for tags: 
+            // The JSON provides 'bg-*-100'. We want 'dark:bg-*-900' and white text for dark mode.
+            // We use regex to replace '100' with '900' for the dark class.
+            const baseColor = project.tagColor || "bg-gray-100";
+            const darkColor = baseColor.replace('100', '900');
+            
+            const tagsHtml = project.tags.map(tag => 
+                `<span class="inline-block border border-black dark:border-white ${baseColor} dark:${darkColor} dark:text-white text-xs font-bold px-2 py-1 mr-2 mb-2 shadow-[2px_2px_0_0_#000] dark:shadow-[2px_2px_0_0_#e5e7eb]">${tag}</span>`
+            ).join('');
+
+            const linksHtml = project.links.map(link => generateLinkButton(link)).join('');
+
+            return `
+                <article class="flex flex-col h-full bg-white dark:bg-gray-800 border-2 border-black dark:border-white p-6 block-shadow transition-colors">
+                    
+                    <div class="flex-1">
+                        <h2 class="text-2xl font-extrabold text-gray-900 dark:text-white leading-tight mb-2">${project.title}</h2>
+                        
+                        <div class="flex flex-wrap mb-4">
+                            ${tagsHtml}
+                        </div>
+
+                        <p class="text-gray-700 dark:text-gray-300 leading-relaxed text-base mb-6">
+                            ${project.desc}
+                        </p>
+                    </div>
+
+                    <div class="mt-auto pt-4 border-t-2 border-gray-100 dark:border-gray-700 flex flex-wrap gap-3">
+                        ${linksHtml}
+                    </div>
+                </article>
+            `;
+        }
+
+        function renderProjects(projectsData) {
+            const projectListContainer = document.getElementById('project-list');
+            const loadingIndicator = document.getElementById('loading-indicator');
+            
+            if (loadingIndicator) loadingIndicator.style.display = 'none';
+
+            if (projectsData.length === 0) {
+                 projectListContainer.innerHTML = `<div class="col-span-full text-center p-8 text-gray-500 font-mono">NO PROJECTS FOUND.</div>`;
+                 return;
+            }
+
+            let allProjectsHtml = '';
+            projectsData.forEach(project => {
+                allProjectsHtml += generateProjectHtml(project);
+            });
+
+            projectListContainer.innerHTML = allProjectsHtml;
+        }
+
+        async function fetchProjects() {
+            const loadingIndicator = document.getElementById('loading-indicator');
+            
+            try {
+                const response = await fetch('./data.json');
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                const data = await response.json();
+                
+                // Assuming the JSON structure is { "projects": [...] }
+                const projects = data.projects;
+
+                if(projects) {
+                    renderProjects(projects);
+                } else {
+                    throw new Error("No 'projects' key found in JSON");
+                }
+
+            } catch (error) {
+                console.error("Error loading projects:", error);
+                if (loadingIndicator) loadingIndicator.innerHTML = `ERROR LOADING DATA. CHECK CONSOLE.`;
+            }
+        }
+
+        // --- DARK MODE LOGIC ---
+        function initTheme() {
+            const toggleBtn = document.getElementById('theme-toggle');
+            
+            if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+
+            toggleBtn.addEventListener('click', () => {
+                if (document.documentElement.classList.contains('dark')) {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.theme = 'light';
+                } else {
+                    document.documentElement.classList.add('dark');
+                    localStorage.theme = 'dark';
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            initTheme();
+            fetchProjects();
+        });
+
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+    </script>
+</body>
+</html>
