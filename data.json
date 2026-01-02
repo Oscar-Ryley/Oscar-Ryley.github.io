@@ -280,7 +280,7 @@
         "description": "Fourth event as a Major League Hacking Coach, First Solo event and in-person Game Jam!",
         "imageFolder": "2026/hacksussexgamejam",
         "images": ["1.png", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.JPG", "7.jpg", "8.jpg", "9.JPG", "10.JPG", "11.jpg"],
-        "fullDescription": "",
+        
         "pages": ["hackathons", "mlh"],
         "maps": {
             "coords": [50.86576869263245, -0.0871443811122391],
@@ -297,7 +297,7 @@
         "description": "Third event as a Major League Hacking Coach, being shadowed by Erin Osher.",
         "imageFolder": "2026/hacksheffield10",
         "images": ["1.png", "2.jpg", "3.JPG", "4.JPG", "5.JPG"],
-        "fullDescription": "",
+        
         "pages": ["hackathons", "mlh"],
         "maps": {
             "coords": [53.381633485252756, -1.4819594445202606],
@@ -314,7 +314,7 @@
         "description": "",
         "imageFolder": "2026/guh25",
         "images": ["1.png", "2.png", "3.jpg", "4.jpg", "5.jpg"],
-        "fullDescription": "",
+        
         "pages": ["huk", "hackathons"],
         "maps": {
             "coords": [53.46972630511103, -2.233919548808626],
@@ -331,7 +331,7 @@
         "description": "",
         "imageFolder": "2026/airoadshow",
         "images": ["1.png"],
-        "fullDescription": "",
+        
         "pages": ["mlh", "conferences"],
         "maps": {
             "coords": [51.531233130689415, -0.11876817318777301],
@@ -348,7 +348,7 @@
         "description": "",
         "imageFolder": "2026/durhackx",
         "images": ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg"],
-        "fullDescription": "",
+        
         "pages": ["hackathons"],
         "maps": {
             "coords": [54.767191, -1.576201],
@@ -365,7 +365,7 @@
         "description": "Participated in a fantasy themed Hackathon.",
         "imageFolder": "2026/hacknotts25",
         "images": ["1.jpeg", "2.jpeg", "3.JPG", "4.jpg"],
-        "fullDescription": "",
+        
         "pages": ["hackathons"],
         "maps": {
             "coords": [52.95314, -1.18719],
@@ -382,7 +382,7 @@
         "description": "Participated in the second Warwick Hackathon, the first open to external students.",
         "imageFolder": "2026/whack25",
         "images": ["1.jpg", "2.JPG", "3.JPG", "4.JPG"],
-        "fullDescription": "",
+        
         "pages": ["hackathons"],
         "maps": {
             "coords": [52.380053, -1.558762],
@@ -399,7 +399,7 @@
         "description": "Facilitated a workshop, bridging the gap between Quantum Computing research and the Energy Sector. Hosted at the Royal Society; in partnership with the Department for Science, Innovation and Technology, and the Department for Energy Security and Net Zero.",
         "imageFolder": "2026/qcenergy",
         "images": ["1.png", "2.jpg"],
-        "fullDescription": "",
+        
         "pages": ["nqcc", "conferences"],
         "maps": {
             "coords": [51.50611, -0.13204],
@@ -416,7 +416,7 @@
         "description": "Attended a conference by STFC Scientific Computing at Rutherford Appleton Laboratory, in partnership with the Computational Science Centre for Research Communities (CoSeC). Topics ranged from Linear Algebra and floating point precision to community engagement and the reality of HPC data centres like ARCHER2.",
         "imageFolder": "2026/scenergy",
         "images": ["1.jpg"],
-        "fullDescription": "",
+        
         "pages": ["nqcc", "conferences"],
         "maps": {
             "coords": [51.573027, -1.313564],
@@ -433,7 +433,7 @@
         "description": "Presented my project on the facilitation of the Quantum Hackathon to the NQCC team.",
         "imageFolder": "non/showcase",
         "images": ["1.jpg", "2.jpg"],
-        "fullDescription": "",
+        
         "pages": ["nqcc"]
     },
     {
@@ -443,7 +443,7 @@
         "description": "Organiser for the fourth UK Quantum Hackathon, hosted at the University of Edinburgh as part of the Quantum Fringe celebrating the International Year of Quantum Science and Technology.",
         "imageFolder": "2025/quantum25",
         "images": ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg", "9.jpg", "10.jpg"],
-        "fullDescription": "",
+        
         "pages": ["nqcc", "hackathons"],
         "maps": {
             "coords": [55.922916, -3.174278],
@@ -460,7 +460,7 @@
         "description": "Second event as a Major League Hacking Coach, training with Kari Groszewska. The inaugural SpurHacks organised by Konfer inc and Spur in Waterloo, ON, Canada.",
         "imageFolder": "2025/spurhacks",
         "images": ["thumb.png", "1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg"],
-        "fullDescription": "",
+        
         "pages": ["hackathons", "mlh"],
         "maps": {
             "coords": [43.51534, -80.5135],
@@ -477,7 +477,7 @@
         "description": "First event as a Major League Hacking Coach, the 11th annual DragonHacks at Drexel University in Philadelphia, PA, USA.",
         "imageFolder": "2025/dragonhacksxi",
         "images": ["thumb.png", "1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg"],
-        "fullDescription": "",
+        
         "pages": ["hackathons", "mlh"],
         "maps": {
             "coords": [39.95661, -75.18994],
@@ -494,7 +494,7 @@
         "description": "Volunteered at the 9th Hackathon at the University of Dundee.",
         "imageFolder": "2025/quack25",
         "images": ["thumb.jpg", "1.JPG", "2.JPG", "3.JPG", "4.JPG", "5.JPG", "6.JPG"],
-        "fullDescription": "",
+        
         "pages": ["hackathons"],
         "maps": {
             "coords": [56.45859, -2.98273],
@@ -511,7 +511,7 @@
         "description": "Volunteered at the first Durham University Women in Tech Hackathon.",
         "imageFolder": "2025/duwithacks25",
         "images": ["thumb.jpg", "1.jpg", "2.jpg", "3.jpg", "4.jpg"],
-        "fullDescription": "",
+        
         "pages": ["hackathons"],
         "maps": {
             "coords": [54.763397, -1.57194],
@@ -528,7 +528,7 @@
         "description": "Participated in the 10th annual Hackathon at Aston University, collaborated with a Birmingham student & a Durham student to create a painting with Digital eyes that follow faces.",
         "imageFolder": "2025/astonhack10",
         "images": ["thumb.jpg", "1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg"],
-        "fullDescription": "",
+        
         "pages": ["hackathons"],
         "maps": {
             "coords": [52.48671, -1.88824],
@@ -545,7 +545,7 @@
         "description": "Won Runner Up for 'The Data City Challenge: Streamlining Public Transport with Tech' at LeedsHack 2025, for \"applying technology in making public transport better and easier.\"",
         "imageFolder": "2025/leedshack25",
         "images": ["thumb.jpg", "1.png", "2.png", "3.jpg", "4.jpg"],
-        "fullDescription": "",
+        
         "pages": ["hackathons"],
         "maps": {
             "coords": [53.80909, -1.55387],
@@ -562,7 +562,7 @@
         "description": "Participated in a 24 hour Hackathon at the University of Sheffield, hosted in-person at 38 Mappin Street.",
         "imageFolder": "2025/hacksheffield9",
         "images": ["thumb.jpg", "1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg"],
-        "fullDescription": "",
+        
         "pages": ["hackathons"],
         "maps": {
             "coords": [53.38126, -1.47873],
@@ -579,7 +579,7 @@
         "description": "Hacker Experience Officer for DurHack 2024, the largest MLH event in the UK and 2nd largest student-run Hackathon in Europe! <br><br> DurHack 2024 had: <br> Over 1,000 Applications <br> 600 Participants, with 206 external students from Cambridge, Imperial, Warwick, Nottingham etc <br> 130+ Projects submitted to our Devpost page",
         "imageFolder": "2025/durhack24",
         "images": ["thumb.png", "1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg"],
-        "fullDescription": "",
+        
         "pages": ["hackathons", "durhack"],
         "maps": {
             "coords": [54.767191, -1.576201],
@@ -596,7 +596,7 @@
         "description": "Participated in a 25 hour Halloween themed in-person Hackathon at the University of Nottingham's Computer Science Department.",
         "imageFolder": "2025/hacknotts24",
         "images": ["thumb.jpg", "1.jpeg", "2.jpeg", "3.jpg"],
-        "fullDescription": "",
+        
         "pages": ["hackathons"],
         "maps": {
             "coords": [52.95314, -1.18719],
@@ -610,10 +610,10 @@
         "title": "Dundee Quackathon 2024",
         "date": "9th-10th Mar 2024",
         "tags": ["Hackaton #3", "Winner"],
-        "description": "Won the Junior Challenge at Dundee's 2024 Quackathon, for \"Creating an application that solves common problems students face every day\".",
+        "description": "Won the Junior Challenge at Dundee's 2024 Quackathon, for \"Creating an application that solves common problems students face every day\". My first external Hackathon, and first time in Scotland. I've been a part of Dundee's community ever since.",
         "imageFolder": "2024/quack24",
         "images": ["thumb.jpg", "1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg", "9.jpg"],
-        "fullDescription": "",
+        
         "pages": ["hackathons"],
         "maps": {
             "coords": [56.45859, -2.98273],
@@ -627,10 +627,10 @@
         "title": "LanHack23",
         "date": "25th-26th Nov 2023",
         "tags": ["Hackathon #2", "Remote"],
-        "description": "Remotely Participated in a Hackathon organised by Lancaster University's CompSoc and CyberSoc over 24 hours. My first time working with a game engine to produce a complete experience.",
+        "description": "Remotely Participated in a Hackathon organised by Lancaster University's CompSoc and CyberSoc over 24 hours. <br><br> This was my first time working with a game engine to produce a complete experience. I developed a physics-based puzzle game in Godot in which a robotic arm matches block patterns in order to create the next version of itself in response to the theme \"Networked Cybernetics.\" <br><br> I participated in this event remotely so that I could also go to DurHunt (a Mathematical Treasure Hunt hosted by Durham University Maths Problem Solving Society and Durham University Women in Tech) on Saturday 25th November. This did however give me valuable experience at a hybrid event, and mean that I could test out my game on my housemate.",
         "imageFolder": "2024/lanhack23",
         "images": ["thumb.jpg"],
-        "fullDescription": "",
+        
         "pages": ["hackathons"],
         "maps": {
             "coords": [54.01039, -2.78772],
@@ -644,17 +644,16 @@
         "title": "DurHack 2023",
         "date": "4th-5th Nov 2023",
         "tags": ["Hackathon #1"],
-        "description": "Participated in my first Hackathon, working in a team over 24 hours to produce a web development project.",
+        "description": "Participated in my first Hackathon, working in a team over 24 hours to produce a web development project. This was the first DurHack to feature the Megateam challenge system, the first to be hosted in the TLC, and had 455 participants - double that of the previous year. <br><br> I was first inspired to take part in Hackathons after learning about them at a talk Holly E (from Hackathons UK) gave at an experience day at McAfee in February 2020. Her manager talked about how being involved in Hackathons had made her a more impressive applicant for the internship, however, I was more excited by the prospect of building projects overnight with other students interested in tech! <br><br> I'd gotten immediately involved in the Computing Society at Durham, and so had heard about DurHack from both there and Quinn's lecture visits. ",
         "imageFolder": "2024/durhack23",
         "images": ["thumb.jpg", "1.jpg"],
-        "fullDescription": "",
         "pages": ["hackathons", "durhack"],
         "maps": {
             "coords": [54.767191, -1.576201],
             "type": "hackathon",
             "tags": ["#1"],
             "tagLinks": ["/hackathons"],
-            "description": "Participated in my first Hackathon, working in a team over 24 hours to produce a web development project."
+            "description": "Participated in my first Hackathon, working in a team over 24 hours to produce a web development project. This was the first DurHack to feature the Megateam challenge system, the first to be hosted in the TLC, and had 455 participants - double that of the previous year."
         }
     }
   ]
