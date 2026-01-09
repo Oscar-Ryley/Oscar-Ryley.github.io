@@ -274,6 +274,91 @@
   ],
   "events": [
     {
+        "title": "DUWiT Hacks 2026",
+        "date": "7th-8th Mar 2026",
+        "tags": ["Hackathon #24", "Upcoming"],
+        "description": "",
+        "imageFolder": "2026/duwithacks2026",
+        "images": ["1.png"],
+        
+        "pages": ["hackathons"],
+        "maps": {
+            "coords": [54.763397, -1.57194],
+            "type": "conference",
+            "tags": ["Upcoming", "#24"],
+            "tagLinks": ["/hackathons", "/hackathons"],
+            "description": ""
+        }
+    },
+    {
+        "title": "HackSussex 2026",
+        "date": "28th Feb - 1st Mar 2026",
+        "tags": ["Hackathon #23", "Upcoming"],
+        "description": "",
+        "imageFolder": "2026/hacksussex",
+        "images": ["1.png"],
+        
+        "pages": ["hackathons"],
+        "maps": {
+            "coords": [50.86576869263245, -0.0871443811122391],
+            "type": "conference",
+            "tags": ["Upcoming", "#23"],
+            "tagLinks": ["/hackathons", "/hackathons"],
+            "description": ""
+        }
+    },
+    {
+        "title": "HackEurope",
+        "date": "21st-22nd Feb 2026",
+        "tags": ["Hackathon #22", "Upcoming"],
+        "description": "",
+        "imageFolder": "2026/hackeurope",
+        "images": ["1.png"],
+        
+        "pages": ["hackathons"],
+        "maps": {
+            "coords": [53.344475127533016, -6.252133020542275],
+            "type": "conference",
+            "tags": ["Upcoming", "#22"],
+            "tagLinks": ["/hackathons", "/hackathons"],
+            "description": ""
+        }
+    },
+    {
+        "title": "LeedsHack 2026",
+        "date": "7th-8th Feb 2026",
+        "tags": ["Hackathon #21", "Upcoming"],
+        "description": "",
+        "imageFolder": "2026/leedshack2026",
+        "images": ["1.png"],
+        
+        "pages": ["hackathons"],
+        "maps": {
+            "coords": [53.80909, -1.55387],
+            "type": "conference",
+            "tags": ["Upcoming", "#21"],
+            "tagLinks": ["/hackathons", "/hackathons"],
+            "description": ""
+        }
+    },
+    {
+        "title": "ICHack 26",
+        "date": "32st Jan - 1st Feb 2026",
+        "tags": ["Hackathon #20", "Upcoming"],
+        "description": "",
+        "imageFolder": "2026/ichack26",
+        "images": ["1.png"],
+        
+        "pages": ["hackathons"],
+        "maps": {
+            "coords": [51.498814639144925, -0.17907028537246278],
+            "type": "conference",
+            "tags": ["Upcoming", "#20"],
+            "tagLinks": ["/hackathons", "/hackathons"],
+            "description": ""
+        }
+    },
+    {
         "title": "HackSussex Game Jam 2025",
         "date": "6th-7th Dec 2025",
         "tags": ["Hackathon #19", "MLH First Solo"],
