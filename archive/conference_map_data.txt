@@ -1,0 +1,25 @@
+"maps": {
+    "coords": [51.531233130689415, -0.11876817318777301],
+    "type": "conference",
+    "tags": ["MLH", "Facilitator", "#3"],
+    "tagLinks": ["/mlh", "", "/conferences"],
+    "description": ""
+}
+
+
+"maps": {
+    "coords": [51.50611, -0.13204],
+    "type": "conference",
+    "tags": ["NQCC", "Facilitator", "#2"],
+    "tagLinks": ["/nqcc", "", "/conferences"],
+    "description": "Facilitated for a workshop, bridging the gap between Quantum Computing research and the Energy Sector. Hosted at the Royal Society; in partnership with the Department for Science, Innovation and Technology, and the Department for Energy Security and Net Zero."
+}
+
+
+"maps": {
+    "coords": [51.573027, -1.313564],
+    "type": "conference",
+    "tags": ["NQCC (STFC)", "#1"],
+    "tagLinks": ["/nqcc", "/conferences"],
+    "description": "Attended a conference by STFC Scientific Computing at Rutherford Appleton Laboratory, in partnership with the Computational Science Centre for Research Communities (CoSeC). <br><br> Topics ranged from Linear Algebra and floating point precision to community engagement and the reality of HPC data centres like ARCHER2."
+}

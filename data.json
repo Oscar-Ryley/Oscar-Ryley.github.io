@@ -274,6 +274,23 @@
   ],
   "events": [
     {
+        "title": "DurHack 2026",
+        "date": "Nov 2026",
+        "tags": ["Hackathon #xx", "Upcoming", "Organiser"],
+        "description": "",
+        "imageFolder": "2026/durhackx",
+        "images": ["2.jpg"],
+        
+        "pages": [],
+        "maps": {
+            "coords": [54.763397, -1.57194],
+            "type": "conference",
+            "tags": ["Organiser", "Upcoming", "#xx"],
+            "tagLinks": ["", "/hackathons", "/hackathons"],
+            "description": ""
+        }
+    },
+    {
         "title": "DUWiT Hacks 2026",
         "date": "7th-8th Mar 2026",
         "tags": ["Hackathon #24", "Upcoming"],
@@ -281,7 +298,7 @@
         "imageFolder": "2026/duwithacks2026",
         "images": ["1.png"],
         
-        "pages": ["hackathons"],
+        "pages": [],
         "maps": {
             "coords": [54.763397, -1.57194],
             "type": "conference",
@@ -292,13 +309,13 @@
     },
     {
         "title": "HackSussex 2026",
-        "date": "28th Feb - 1st Mar 2026",
+        "date": "March 2026",
         "tags": ["Hackathon #23", "Upcoming"],
         "description": "",
         "imageFolder": "2026/hacksussex",
         "images": ["1.png"],
         
-        "pages": ["hackathons"],
+        "pages": [],
         "maps": {
             "coords": [50.86576869263245, -0.0871443811122391],
             "type": "conference",
@@ -315,7 +332,7 @@
         "imageFolder": "2026/hackeurope",
         "images": ["1.png"],
         
-        "pages": ["hackathons"],
+        "pages": [],
         "maps": {
             "coords": [53.344475127533016, -6.252133020542275],
             "type": "conference",
@@ -332,7 +349,7 @@
         "imageFolder": "2026/leedshack2026",
         "images": ["1.png"],
         
-        "pages": ["hackathons"],
+        "pages": [],
         "maps": {
             "coords": [53.80909, -1.55387],
             "type": "conference",
@@ -343,13 +360,13 @@
     },
     {
         "title": "ICHack 26",
-        "date": "32st Jan - 1st Feb 2026",
+        "date": "31st Jan - 1st Feb 2026",
         "tags": ["Hackathon #20", "Upcoming"],
         "description": "",
         "imageFolder": "2026/ichack26",
         "images": ["1.png"],
         
-        "pages": ["hackathons"],
+        "pages": [],
         "maps": {
             "coords": [51.498814639144925, -0.17907028537246278],
             "type": "conference",
@@ -417,14 +434,7 @@
         "imageFolder": "2026/airoadshow",
         "images": ["1.png"],
         
-        "pages": ["mlh", "conferences"],
-        "maps": {
-            "coords": [51.531233130689415, -0.11876817318777301],
-            "type": "conference",
-            "tags": ["MLH", "Facilitator", "#3"],
-            "tagLinks": ["/mlh", "", "/conferences"],
-            "description": ""
-        }
+        "pages": ["mlh", "conferences"]
     },
     {
         "title": "DurHack X",
@@ -485,14 +495,7 @@
         "imageFolder": "2026/qcenergy",
         "images": ["1.png", "2.jpg"],
         
-        "pages": ["nqcc", "conferences"],
-        "maps": {
-            "coords": [51.50611, -0.13204],
-            "type": "conference",
-            "tags": ["NQCC", "Facilitator", "#2"],
-            "tagLinks": ["/nqcc", "", "/conferences"],
-            "description": "Facilitated for a workshop, bridging the gap between Quantum Computing research and the Energy Sector. Hosted at the Royal Society; in partnership with the Department for Science, Innovation and Technology, and the Department for Energy Security and Net Zero."
-        }
+        "pages": ["nqcc", "conferences"]
     },
     {
         "title": "Energy Efficient Computing Workshop",
@@ -502,14 +505,7 @@
         "imageFolder": "2026/scenergy",
         "images": ["1.jpg"],
         
-        "pages": ["nqcc", "conferences"],
-        "maps": {
-            "coords": [51.573027, -1.313564],
-            "type": "conference",
-            "tags": ["NQCC (STFC)", "#1"],
-            "tagLinks": ["/nqcc", "/conferences"],
-            "description": "Attended a conference by STFC Scientific Computing at Rutherford Appleton Laboratory, in partnership with the Computational Science Centre for Research Communities (CoSeC). <br><br> Topics ranged from Linear Algebra and floating point precision to community engagement and the reality of HPC data centres like ARCHER2."
-        }
+        "pages": ["nqcc", "conferences"]
     },
     {
         "title": "Summer Student Showcase",
