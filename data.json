@@ -283,7 +283,7 @@
         
         "pages": [],
         "maps": {
-            "coords": [54.763397, -1.57194],
+            "coords": [54.767191, -1.576201],
             "type": "conference",
             "tags": ["Organiser", "Upcoming", "#xx"],
             "tagLinks": ["", "/hackathons", "/hackathons"],
@@ -359,7 +359,7 @@
         }
     },
     {
-        "title": "ICHack 26",
+        "title": "IC Hack 26",
         "date": "31st Jan - 1st Feb 2026",
         "tags": ["Hackathon #20", "Upcoming"],
         "description": "",
