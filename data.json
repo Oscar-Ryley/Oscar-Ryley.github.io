@@ -310,16 +310,16 @@
     {
         "title": "HackSussex 2026",
         "date": "March 2026",
-        "tags": ["Hackathon #23", "Upcoming"],
+        "tags": ["Hackathon #23", "Upcoming", "MLH"],
         "description": "",
         "imageFolder": "2026/hacksussex",
         "images": ["1.png"],
         
-        "pages": [],
+        "pages": ["mlh"],
         "maps": {
             "coords": [50.86576869263245, -0.0871443811122391],
             "type": "conference",
-            "tags": ["Upcoming", "#23"],
+            "tags": ["Upcoming", "MLH", "#23"],
             "tagLinks": ["/hackathons", "/hackathons"],
             "description": ""
         }
@@ -342,18 +342,18 @@
         }
     },
     {
-        "title": "LeedsHack 2026",
+        "title": "AstonHack 11",
         "date": "7th-8th Feb 2026",
-        "tags": ["Hackathon #21", "Upcoming"],
+        "tags": ["Hackathon #21", "Upcoming", "MLH"],
         "description": "",
-        "imageFolder": "2026/leedshack2026",
+        "imageFolder": "2026/astonhack11",
         "images": ["1.png"],
         
-        "pages": [],
+        "pages": ["mlh"],
         "maps": {
-            "coords": [53.80909, -1.55387],
+            "coords": [52.48671, -1.88824],
             "type": "conference",
-            "tags": ["Upcoming", "#21"],
+            "tags": ["Upcoming", "MLH", "#21"],
             "tagLinks": ["/hackathons", "/hackathons"],
             "description": ""
         }
