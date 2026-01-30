@@ -361,17 +361,17 @@
     {
         "title": "IC Hack 26",
         "date": "31st Jan - 1st Feb 2026",
-        "tags": ["Hackathon #20", "Upcoming"],
+        "tags": ["Hackathon #20"],
         "description": "",
         "imageFolder": "2026/ichack26",
         "images": ["1.png"],
         
-        "pages": [],
+        "pages": ["hackathons"],
         "maps": {
             "coords": [51.498814639144925, -0.17907028537246278],
-            "type": "conference",
-            "tags": ["Upcoming", "#20"],
-            "tagLinks": ["/hackathons", "/hackathons"],
+            "type": "hackathon",
+            "tags": ["#20"],
+            "tagLinks": ["/hackathons"],
             "description": ""
         }
     },
