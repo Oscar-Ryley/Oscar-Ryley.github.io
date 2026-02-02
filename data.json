@@ -291,6 +291,23 @@
         }
     },
     {
+        "title": "KentHackIt",
+        "date": "21st-22nd Mar 2026",
+        "tags": ["Hackathon #25", "Upcoming", "MLH"],
+        "description": "",
+        "imageFolder": "2026/kenthackit",
+        "images": ["1.png"],
+        
+        "pages": ["mlh"],
+        "maps": {
+            "coords": [51.29790517504074, 1.0629390223011717],
+            "type": "conference",
+            "tags": ["Upcoming", "MLH", "#25"],
+            "tagLinks": ["/hackathons", "/mlh", "/hackathons"],
+            "description": ""
+        }
+    },
+    {
         "title": "DUWiT Hacks 2026",
         "date": "7th-8th Mar 2026",
         "tags": ["Hackathon #24", "Upcoming"],
@@ -309,7 +326,7 @@
     },
     {
         "title": "HackSussex 2026",
-        "date": "March 2026",
+        "date": "28th February - 1st March 2026",
         "tags": ["Hackathon #23", "Upcoming", "MLH"],
         "description": "",
         "imageFolder": "2026/hacksussex",
