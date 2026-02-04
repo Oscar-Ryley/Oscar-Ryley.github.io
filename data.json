@@ -293,7 +293,7 @@
     {
         "title": "KentHackIt",
         "date": "21st-22nd Mar 2026",
-        "tags": ["Hackathon #25", "Upcoming", "MLH"],
+        "tags": ["Hackathon #26", "Upcoming", "MLH"],
         "description": "",
         "imageFolder": "2026/kenthackit",
         "images": ["1.png"],
@@ -302,7 +302,7 @@
         "maps": {
             "coords": [51.29790517504074, 1.0629390223011717],
             "type": "conference",
-            "tags": ["Upcoming", "MLH", "#25"],
+            "tags": ["Upcoming", "MLH", "#26"],
             "tagLinks": ["/hackathons", "/mlh", "/hackathons"],
             "description": ""
         }
@@ -310,7 +310,7 @@
     {
         "title": "DUWiT Hacks 2026",
         "date": "7th-8th Mar 2026",
-        "tags": ["Hackathon #24", "Upcoming"],
+        "tags": ["Hackathon #25", "Upcoming"],
         "description": "",
         "imageFolder": "2026/duwithacks2026",
         "images": ["1.png"],
@@ -319,7 +319,7 @@
         "maps": {
             "coords": [54.763397, -1.57194],
             "type": "conference",
-            "tags": ["Upcoming", "#24"],
+            "tags": ["Upcoming", "#25"],
             "tagLinks": ["/hackathons", "/hackathons"],
             "description": ""
         }
@@ -327,7 +327,7 @@
     {
         "title": "HackSussex 2026",
         "date": "28th February - 1st March 2026",
-        "tags": ["Hackathon #23", "Upcoming", "MLH"],
+        "tags": ["Hackathon #24", "Upcoming", "MLH"],
         "description": "",
         "imageFolder": "2026/hacksussex",
         "images": ["1.png"],
@@ -336,7 +336,24 @@
         "maps": {
             "coords": [50.86576869263245, -0.0871443811122391],
             "type": "conference",
-            "tags": ["Upcoming", "MLH", "#23"],
+            "tags": ["Upcoming", "MLH", "#24"],
+            "tagLinks": ["/hackathons", "/hackathons"],
+            "description": ""
+        }
+    },
+    {
+        "title": "HudHack",
+        "date": "26th February",
+        "tags": ["Hackathon #23", "Upcoming", "Hackathons UK"],
+        "description": "",
+        "imageFolder": "2026/hacksussex",
+        "images": ["1.png"],
+        
+        "pages": ["huk"],
+        "maps": {
+            "coords": [51.29790937067341, 1.0629074994872696],
+            "type": "conference",
+            "tags": ["Upcoming", "Hackathons UK", "#23"],
             "tagLinks": ["/hackathons", "/hackathons"],
             "description": ""
         }
