@@ -346,15 +346,15 @@
         "date": "26th February",
         "tags": ["Hackathon #23", "Upcoming", "Hackathons UK"],
         "description": "",
-        "imageFolder": "2026/hacksussex",
+        "imageFolder": "2026/hudhack",
         "images": ["1.png"],
         
         "pages": ["huk"],
         "maps": {
-            "coords": [51.29790937067341, 1.0629074994872696],
+            "coords": [53.64164521690647, -1.7777086899089118],
             "type": "conference",
             "tags": ["Upcoming", "Hackathons UK", "#23"],
-            "tagLinks": ["/hackathons", "/hackathons"],
+            "tagLinks": ["/hackathons", "/huk", "/hackathons"],
             "description": ""
         }
     },
