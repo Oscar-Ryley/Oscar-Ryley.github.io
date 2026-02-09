@@ -378,17 +378,17 @@
     {
         "title": "AstonHack 11",
         "date": "7th-8th Feb 2026",
-        "tags": ["Hackathon #21", "Upcoming", "MLH"],
+        "tags": ["Hackathon #21", "MLH"],
         "description": "",
         "imageFolder": "2026/astonhack11",
         "images": ["1.png"],
         
-        "pages": ["mlh"],
+        "pages": ["hackathons", "mlh"],
         "maps": {
             "coords": [52.48671, -1.88824],
-            "type": "conference",
-            "tags": ["Upcoming", "MLH", "#21"],
-            "tagLinks": ["/hackathons", "/hackathons"],
+            "type": "hackathon",
+            "tags": ["MLH", "#21"],
+            "tagLinks": ["/mlh", "/hackathons"],
             "description": ""
         }
     },
