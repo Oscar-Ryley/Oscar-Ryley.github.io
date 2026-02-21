@@ -361,17 +361,17 @@
     {
         "title": "HackEurope",
         "date": "21st-22nd Feb 2026",
-        "tags": ["Hackathon #22", "Upcoming"],
+        "tags": ["Hackathon #22"],
         "description": "",
         "imageFolder": "2026/hackeurope",
         "images": ["1.png"],
         
-        "pages": [],
+        "pages": ["hackathons"],
         "maps": {
             "coords": [53.344475127533016, -6.252133020542275],
-            "type": "conference",
-            "tags": ["Upcoming", "#22"],
-            "tagLinks": ["/hackathons", "/hackathons"],
+            "type": "hackathon",
+            "tags": ["#22"],
+            "tagLinks": ["/hackathons"],
             "description": ""
         }
     },
