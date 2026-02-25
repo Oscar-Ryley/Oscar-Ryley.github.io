@@ -344,17 +344,17 @@
     {
         "title": "HudHack",
         "date": "26th Feb 2026",
-        "tags": ["Hackathon #23", "Upcoming", "Hackathons UK"],
+        "tags": ["Hackathon #23", "Hackathons UK"],
         "description": "",
         "imageFolder": "2026/hudhack",
         "images": ["1.png"],
         
-        "pages": ["huk"],
+        "pages": ["huk", "hackathons"],
         "maps": {
             "coords": [53.64164521690647, -1.7777086899089118],
-            "type": "conference",
-            "tags": ["Upcoming", "Hackathons UK", "#23"],
-            "tagLinks": ["/hackathons", "/huk", "/hackathons"],
+            "type": "hackathon",
+            "tags": ["Hackathons UK", "#23"],
+            "tagLinks": ["/huk", "/hackathons"],
             "description": ""
         }
     },
