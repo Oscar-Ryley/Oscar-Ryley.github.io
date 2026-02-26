@@ -52,20 +52,17 @@
         }
 
         /* --- POPUP DARK MODE ADAPTATION --- */
-        /* Default (Light Mode) */
         .leaflet-popup-content-wrapper, .leaflet-popup-tip {
             background-color: #ffffff;
             color: #111827;
             transition: background-color 0.3s, color 0.3s;
         }
-        /* Dark Mode overrides */
         .dark .leaflet-popup-content-wrapper, 
         .dark .leaflet-popup-tip {
-            background-color: #1f2937; /* Tailwind gray-800 */
-            color: #f3f4f6; /* Tailwind gray-100 */
+            background-color: #1f2937; 
+            color: #f3f4f6; 
         }
 
-        /* Ensure links in popup don't default to browser blue */
         .leaflet-popup-content a {
             color: inherit;
             text-decoration: none;
@@ -99,7 +96,6 @@
         .left-hover { left: 0; } .left-hover::before { content: '<'; }
         .right-hover { right: 0; } .right-hover::before { content: '>'; }
 
-        /* Popup Layout Fixes */
         .leaflet-popup-content-wrapper { border-radius: 0.5rem; padding: 0; overflow: hidden; }
         .leaflet-popup-content { margin: 1rem; width: 280px !important; }
     </style>
@@ -107,26 +103,40 @@
 
 <body class="bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
 
-    <!-- BUTTONS CONTAINER (TOP RIGHT) -->
+    <!-- NAVIGATION BUTTONS (TOP LEFT) -->
+    <div class="fixed top-4 left-4 z-[1000] flex flex-col gap-3">
+        <!-- UK VIEW -->
+        <button onclick="zoomTo('UK')" class="p-3 w-12 h-12 flex items-center justify-center rounded-lg border-2 border-black dark:border-white bg-white dark:bg-gray-800 block-shadow transition-all group" title="View UK">
+            <i class="fa-solid fa-location-dot text-gray-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors"></i>
+        </button>
+
+        <!-- EUROPE VIEW -->
+        <button onclick="zoomTo('EU')" class="p-3 w-12 h-12 flex items-center justify-center rounded-lg border-2 border-black dark:border-white bg-white dark:bg-gray-800 block-shadow transition-all group" title="View Europe">
+            <i class="fa-solid fa-earth-europe text-gray-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors"></i>
+        </button>
+
+        <!-- NA VIEW -->
+        <button onclick="zoomTo('NA')" class="p-3 w-12 h-12 flex items-center justify-center rounded-lg border-2 border-black dark:border-white bg-white dark:bg-gray-800 block-shadow transition-all group" title="View North America">
+            <i class="fa-solid fa-earth-americas text-gray-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors"></i>
+        </button>
+    </div>
+
+    <!-- UTILITY BUTTONS (TOP RIGHT) -->
     <div class="fixed top-4 right-4 z-[1000] flex gap-3">
-        
-        <!-- THEME TOGGLE -->
         <button id="theme-toggle" class="p-3 w-12 h-12 flex items-center justify-center rounded-lg border-2 border-black dark:border-white bg-white dark:bg-gray-800 block-shadow transition-all" aria-label="Toggle Dark Mode">
             <i class="fa-solid fa-sun text-yellow-500 text-lg hidden dark:block"></i>
             <i class="fa-solid fa-moon text-purple-700 text-lg block dark:hidden"></i>
         </button>
 
-        <!-- BACK BUTTON -->
         <a href="/" class="p-3 w-12 h-12 flex items-center justify-center rounded-lg border-2 border-black dark:border-white bg-white dark:bg-gray-800 block-shadow transition-all text-gray-900 dark:text-white" aria-label="Back to Home">
             <i class="fa-solid fa-arrow-left text-lg"></i>
         </a>
-
     </div>
 
     <!-- MAP -->
     <div id="map" class="h-screen w-full bg-gray-200 dark:bg-gray-800"></div>
 
-    <!-- LOGIC -->
+    <!-- SCRIPTS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 
@@ -151,19 +161,26 @@
         }
         initTheme();
 
-        // --- 2. MAP SETUP ---
-        var UKcoords = [53.766850, -1.766995];
-        var NAcoords = [41.791139, -76.547263];
+        // --- 2. MAP SETUP & NAVIGATION ---
+        var UKcoords = [54.5, -3.5]; // Adjusted for better center
+        var NAcoords = [41.79, -76.54];
+        var EUcoords = [51.5, 10.0]; // Centered to cover Spain -> Finland & Ireland -> Slovakia
 
         var map = L.map("map", { zoomControl: false }).setView(UKcoords, 6);
 
-        // Zoom control bottom-right
         L.control.zoom({ position: 'bottomright' }).addTo(map);
 
         L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
             maxZoom: 19,
             attribution: '&copy; OpenStreetMap'
         }).addTo(map);
+
+        // Global function for the top-left buttons
+        function zoomTo(area) {
+            if (area === 'UK') map.setView(UKcoords, 6);
+            if (area === 'NA') map.setView(NAcoords, 6);
+            if (area === 'EU') map.setView(EUcoords, 5);
+        }
 
         var UKCluster = L.markerClusterGroup({maxClusterRadius: 30});
         var NACluster = L.markerClusterGroup({maxClusterRadius: 30});
@@ -212,34 +229,22 @@
                     }
                     carouselHtml += '</div>';
 
-                    // Tags HTML with Dark Mode Colors
+                    // Tags HTML
                     let tagsHtml = '';
                     if (mapData.tags && mapData.tags.length > 0) {
                         tagsHtml = '<div class="flex flex-wrap gap-1 mt-1">';
                         tagsHtml += mapData.tags.map((tag, i) => {
                             let link = mapData.tagLinks?.[i] || '';
-                            
-                            // Determine Colors
-                            let colorClass = '';
-                            if (mapData.type === "hackathon") {
-                                // Light: Purple bg / Dark Text
-                                // Dark: Dark Purple bg / Light Text
-                                colorClass = 'bg-purple-100 text-purple-900 dark:bg-purple-900 dark:text-purple-200 border-purple-200 dark:border-purple-700';
-                            } else {
-                                // Conference: Slate (Gray) to avoid Blue Text
-                                colorClass = 'bg-slate-100 text-slate-800 dark:bg-slate-700 dark:text-slate-200 border-slate-200 dark:border-slate-600';
-                            }
+                            let colorClass = (mapData.type === "hackathon") ? 
+                                'bg-purple-100 text-purple-900 dark:bg-purple-900 dark:text-purple-200 border-purple-200 dark:border-purple-700' : 
+                                'bg-slate-100 text-slate-800 dark:bg-slate-700 dark:text-slate-200 border-slate-200 dark:border-slate-600';
 
                             let baseClass = `${colorClass} border text-[10px] font-bold px-1.5 py-0.5 rounded uppercase transition-colors`;
-                            
-                            // Return link or span
                             return link ? `<a href="${link}" target="_blank" class="${baseClass} hover:opacity-75 no-underline">${tag}</a>` : `<span class="${baseClass}">${tag}</span>`;
                         }).join('');
                         tagsHtml += '</div>';
                     }
 
-                    // Popup Content
-                    // Note: dark:text-gray-100/300 ensure text is readable on the dark background
                     let popupContent = `
                         <div class="font-sans">
                             ${carouselHtml}
@@ -254,14 +259,13 @@
 
                     marker.bindPopup(popupContent, { closeButton: false, minWidth: 280 });
 
-                    // Cluster Logic
-                    if (mapData.coords[0] > 24 && mapData.coords[0] < 50 && mapData.coords[1] < -50) {
+                    // Distribution between NA and UK/EU clusters
+                    if (mapData.coords[1] < -30) {
                         NACluster.addLayer(marker);
                     } else {
                         UKCluster.addLayer(marker);
                     }
 
-                    // Carousel Events
                     marker.on('popupopen', function() {
                         const popup = this.getPopup().getElement();
                         const slides = Array.from(popup.querySelectorAll('.carousel-slide'));
@@ -271,7 +275,6 @@
                         if (left && right && slides.length > 1) {
                             let cur = 0;
                             slides.forEach((s, i) => { if(s.classList.contains('active')) cur = i; });
-                            
                             const change = (dir) => {
                                 slides[cur].classList.remove('active');
                                 cur = (cur + dir + slides.length) % slides.length;
@@ -287,30 +290,6 @@
             } catch (e) { console.error(e); }
         }
         fetchAndRenderMarkers();
-
-        // --- 4. NAVIGATION CIRCLES ---
-        var circlesData = [
-            { coords: [55.465208, -10.586449], tooltip: "View North America", target: NAcoords },
-            { coords: [40.883785, -67.922996], tooltip: "View UK", target: UKcoords }
-        ];
-
-        circlesData.forEach(function(c) {
-            var circle = L.circle(c.coords, {
-                color: '#9333ea',
-                fillColor: '#9333ea',
-                fillOpacity: 0.3,
-                radius: 80000,
-                weight: 2
-            }).addTo(map);
-
-            circle.on('click', () => map.setView(c.target, 6));
-
-            circle.bindTooltip(c.tooltip, {
-                permanent: false, 
-                direction: 'center',
-                className: 'font-bold text-xs bg-white text-black border border-black p-1 shadow-md' 
-            });
-        });
     </script>
 </body>
 </html>
