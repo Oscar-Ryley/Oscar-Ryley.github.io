@@ -162,11 +162,11 @@
         initTheme();
 
         // --- 2. MAP SETUP & NAVIGATION ---
-        var UKcoords = [54.5, -3.5]; // Adjusted for better center
+        var UKcoords = [54.3, -2.9]; // Adjusted for better center
         var NAcoords = [41.79, -76.54];
         var EUcoords = [51.5, 10.0]; // Centered to cover Spain -> Finland & Ireland -> Slovakia
 
-        var map = L.map("map", { zoomControl: false }).setView(UKcoords, 6);
+        var map = L.map("map", { zoomControl: false, zoomSnap: 0.1 }).setView(UKcoords, 6);
 
         L.control.zoom({ position: 'bottomright' }).addTo(map);
 
@@ -178,8 +178,8 @@
         // Global function for the top-left buttons
         function zoomTo(area) {
             if (area === 'UK') map.setView(UKcoords, 6);
-            if (area === 'NA') map.setView(NAcoords, 6);
-            if (area === 'EU') map.setView(EUcoords, 5);
+            if (area === 'NA') map.setView(NAcoords, 6.2);
+            if (area === 'EU') map.setView(EUcoords, 4.8);
         }
 
         var UKCluster = L.markerClusterGroup({maxClusterRadius: 30});
