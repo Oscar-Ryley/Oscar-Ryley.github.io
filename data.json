@@ -310,7 +310,7 @@
     {
         "title": "DUWiT Hacks 2026",
         "date": "7th-8th Mar 2026",
-        "tags": ["Hackathon #25", "Upcoming"],
+        "tags": ["Hackathon #25", "Volunteer", "Upcoming"],
         "description": "",
         "imageFolder": "2026/duwithacks2026",
         "images": ["1.png"],
@@ -319,7 +319,7 @@
         "maps": {
             "coords": [54.763397, -1.57194],
             "type": "conference",
-            "tags": ["Upcoming", "#25"],
+            "tags": ["Upcoming", "Volunteer" , "#25"],
             "tagLinks": ["/hackathons", "/hackathons"],
             "description": ""
         }
@@ -327,17 +327,17 @@
     {
         "title": "HackSussex 2026",
         "date": "28th Feb - 1st Mar 2026",
-        "tags": ["Hackathon #24", "Upcoming", "MLH"],
+        "tags": ["Hackathon #24", "MLH"],
         "description": "",
         "imageFolder": "2026/hacksussex",
         "images": ["1.png"],
         
-        "pages": ["mlh"],
+        "pages": ["mlh", "hackathons"],
         "maps": {
             "coords": [50.86576869263245, -0.0871443811122391],
-            "type": "conference",
-            "tags": ["Upcoming", "MLH", "#24"],
-            "tagLinks": ["/hackathons", "/hackathons"],
+            "type": "hackathon",
+            "tags": ["MLH", "#24"],
+            "tagLinks": ["/mlh", "/hackathons"],
             "description": ""
         }
     },
