@@ -52,7 +52,7 @@
       "role": "Co-Lead",
       "company": "DurHack",
       "date": "FEB 2024 - PRESENT",
-      "details": "Prev. Head of Logistics",
+      "details": "& Head of Logistics",
       "bgColor": "bg-indigo-600",
       "icon": "images/profile/DurHack.svg",
       "iconColor": "text-white"
@@ -398,7 +398,7 @@
         "tags": ["Hackathon #20"],
         "description": "",
         "imageFolder": "2026/ichack26",
-        "images": ["1.png"],
+        "images": ["1.jpeg", "2.jpg", "3.jpeg", "4.jpeg", "5.jpeg", "6.jpeg", "7.jpeg", "8.png"],
         
         "pages": ["hackathons"],
         "maps": {
