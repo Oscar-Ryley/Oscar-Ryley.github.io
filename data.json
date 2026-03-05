@@ -291,6 +291,40 @@
         }
     },
     {
+        "title": "HackUPC 2026",
+        "date": "24th-26th Apr 2026",
+        "tags": ["Hackathon #28", "Upcoming"],
+        "description": "10 years of HackUPC!",
+        "imageFolder": "2026/hackupc",
+        "images": ["1.png"],
+        
+        "pages": [],
+        "maps": {
+            "coords": [41.38793100892001, 2.1125387727526603],
+            "type": "conference",
+            "tags": ["Upcoming", "#28"],
+            "tagLinks": ["/hackathons", "/hackathons"],
+            "description": ""
+        }
+    },
+    {
+        "title": "Hack Kosice 2026",
+        "date": "18th-19th Apr 2026",
+        "tags": ["Hackathon #27", "Upcoming"],
+        "description": "",
+        "imageFolder": "2026/hackkosice",
+        "images": ["1.png"],
+        
+        "pages": [],
+        "maps": {
+            "coords": [48.72489696728081, 21.260977594460773],
+            "type": "conference",
+            "tags": ["Upcoming", "#27"],
+            "tagLinks": ["/hackathons", "/hackathons"],
+            "description": ""
+        }
+    },
+    {
         "title": "KentHackIt",
         "date": "21st-22nd Mar 2026",
         "tags": ["Hackathon #26", "Upcoming", "MLH"],
@@ -364,7 +398,7 @@
         "tags": ["Hackathon #22"],
         "description": "",
         "imageFolder": "2026/hackeurope",
-        "images": ["1.png"],
+        "images": ["1.png", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg"],
         
         "pages": ["hackathons"],
         "maps": {
