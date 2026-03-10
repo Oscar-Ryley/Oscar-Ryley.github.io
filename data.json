@@ -304,7 +304,7 @@
             "type": "conference",
             "tags": ["Upcoming", "#28"],
             "tagLinks": ["/hackathons", "/hackathons"],
-            "description": ""
+            "description": "10 years of HackUPC!"
         }
     },
     {
@@ -344,17 +344,17 @@
     {
         "title": "DUWiT Hacks 2026",
         "date": "7th-8th Mar 2026",
-        "tags": ["Hackathon #25", "Volunteer", "Upcoming"],
+        "tags": ["Hackathon #25", "Volunteer", "Hackathons UK"],
         "description": "",
         "imageFolder": "2026/duwithacks2026",
         "images": ["1.png"],
         
-        "pages": [],
+        "pages": ["hackathons", "huk"],
         "maps": {
             "coords": [54.763397, -1.57194],
-            "type": "conference",
-            "tags": ["Upcoming", "Volunteer" , "#25"],
-            "tagLinks": ["/hackathons", "/hackathons"],
+            "type": "hackathon",
+            "tags": ["Volunteer", "Hackathons UK" , "#25"],
+            "tagLinks": ["/hackathons", "/huk", "/hackathons"],
             "description": ""
         }
     },
@@ -362,7 +362,7 @@
         "title": "HackSussex 2026",
         "date": "28th Feb - 1st Mar 2026",
         "tags": ["Hackathon #24", "MLH"],
-        "description": "",
+        "description": "The first MLH event in over 10 years to feature a Hardware Lab!",
         "imageFolder": "2026/hacksussex",
         "images": ["1.png"],
         
@@ -372,7 +372,7 @@
             "type": "hackathon",
             "tags": ["MLH", "#24"],
             "tagLinks": ["/mlh", "/hackathons"],
-            "description": ""
+            "description": "The first MLH event in over 10 years to feature a Hardware Lab!"
         }
     },
     {
